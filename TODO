@@ -1,0 +1,18 @@
+HANDLERS AREN'T BINDING
+MAKE THEM WAIITTTTT
+
+
+=importXML("https://docs.google.com/forms/d/1W5a0DBG4Sj80nsbT5aRyy2sJjDu_WNbSbEIvDlxbmX8/viewform","//input[@type='radio']/@name")
+=importXML("https://docs.google.com/forms/d/1W5a0DBG4Sj80nsbT5aRyy2sJjDu_WNbSbEIvDlxbmX8/viewform","//input[@type='radio']/@id")
+
+
+=importXML("https://docs.google.com/forms/d/1W5a0DBG4Sj80nsbT5aRyy2sJjDu_WNbSbEIvDlxbmX8/viewform","//label[@class='ss-q-item-label']/@for")
+
+
+<label class="ss-q-item-label" for="entry_1513755944">
+
+
+
+
+Define variable up top that filters array to user defined array of indices
+Get two-column layout working

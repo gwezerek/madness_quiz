@@ -1,0 +1,103 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width">
+	<title>Madness Quiz</title>
+	<link rel="stylesheet" href="css/site.css">
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="/bower_components/underscore/underscore.js"></script>
+</head>
+
+<body>
+	<article class="viz-article">
+		<ul id="copy"></ul>
+		<div class="viz-container">
+			<header class="viz-content-block">
+				<h4 class="viz-title">Today's Matchups</h4>
+				<ol class="viz-legend">
+					<li class="viz-legend-item viz-graphic"><span class="viz-legend-text viz-detail">Graphic</span></li>
+					<li class="viz-legend-item viz-interactive"><span class="viz-legend-text viz-detail">Interactive</span></li>
+					<li class="viz-legend-item viz-product"><span class="viz-legend-text viz-detail">Product</span></li>
+					<li class="viz-legend-item viz-architecture"><span class="viz-legend-text viz-detail">Architecture</span></li>
+				</ol>
+			</header>
+			<section class="viz-content-block">
+				<div class="ss-form">
+					<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" =></iframe>
+					<form class="viz-form" action="assigned in chart.js" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+						<div role="list" class="viz-quiz-wrapper">
+							<input type="hidden" name="draftResponse" value="[,,&quot;-5650032754554128450&quot;]">
+							<input type="hidden" name="pageHistory" value="0">
+							<input type="hidden" name="fromEmail" value="false">
+							<input type="hidden" name="fbzx" value="-5650032754554128450">
+						</div>
+					</form>
+				</div>
+			</section>
+
+
+
+
+		<!-- Templates for Questions -->
+		<script type="text/template" class="viz-quiz-template-first">
+			<ul class="ss-choices viz-choices-group" role="radiogroup" aria-label="Who is the better designer?  ">
+				<li class="ss-choice-item viz-choice-item">
+					<label>
+						<span class="ss-choice-item-control goog-inline-block">
+							<input disabled type="radio" name="<%= input_name %>" value="<%= name %>" id="<%= input_id %>" role="radio" class="ss-q-radio viz-radio" aria-label="<%= name %>">
+						</span>
+					</label>
+					<div class="viz-header-wrapper">
+						<div class="viz-headshot-wrap">
+							<img src="/headshots.png" class="viz-headshot <%= division %>" style="right:<%= 40 * original_index %>px"/>
+						</div>
+						<div class="viz-designer-header-mod">
+							<p class="ss-choice-label viz-designer-name"><%= name %></p>
+							<p class="ss-choice-label viz-designer-job">(<%= rank %>) <%= job %></p>
+						</div>
+						<span class="viz-quiz-target">&nbsp;</span>
+					</div>
+					<p class="viz-designer-description"><%= description %></p>
+				</li>
+		</script>
+		<script type="text/template" class="viz-quiz-template-second">
+				<li class="ss-choice-item viz-choice-item">
+					<label>
+						<span class="ss-choice-item-control goog-inline-block">
+							<input disabled type="radio" name="<%= input_name %>" value="<%= name %>" id="<%= input_id %>" role="radio" class="ss-q-radio viz-radio" aria-label="<%= name %>">
+						</span>
+					</label>
+					<div class="viz-header-wrapper">
+						<span class="viz-vs">vs</span>
+						<div class="viz-headshot-wrap">
+							<img src="/headshots.png" class="viz-headshot <%= division %>" style="right:<%= 40 * original_index %>px"/>
+						</div>
+						<div class="viz-designer-header-mod">
+							<p class="ss-choice-label viz-designer-name"><%= name %></p>
+							<p class="ss-choice-label viz-designer-job">(<%= rank %>) <%= job %></p>
+						</div>
+						<span class="viz-quiz-target">&nbsp;</span>
+					</div>
+					<p class="viz-designer-description"><%= description %></p>
+				</li>
+				<p class="viz-submitted-alert">Submitted!</p>
+			</ul>
+		</script>
+
+		<script type="text/javascript" src="js/chart.js"></script>
+
+	</article>
+
+</body>
+
+</html>

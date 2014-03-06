@@ -1,0 +1,344 @@
+// ============================================= 
+
+//  Base SCSS                
+
+// ============================================= 
+
+
+//  Imports            
+// =============================================
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+@import "partials/mixins";
+@import "partials/type";
+@import "partials/variables";
+
+
+//  FOR DEMO PAGE ONLY           
+// =============================================
+
+*, *:before, *:after { -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; box-sizing: border-box;
+ }
+
+body {
+	margin: 0;
+	padding: 10px 20px; 
+}
+
+
+// Keyed colors
+// =============================================
+
+.viz-graphic, .Graphic {
+	background-color: $bground-15;
+	color: $bground-15;
+	fill: $bground-15;
+}
+
+.viz-interactive, .Interactive {
+	background-color: $bground-11;
+	color: $bground-11;
+	fill: $bground-11;
+}
+
+.viz-product, .Product {
+	background-color: $bground-9;
+	color: $bground-9;
+	fill: $bground-9;
+}
+
+.viz-architecture, .Architecture {
+	background-color: $bground-13;
+	color: $bground-13;
+	fill: $bground-13;
+}
+
+
+.requests, .fulfilled, .connectors {
+	stroke: white;
+	& rect, polygon {
+		@include trans(0.2s, opacity, ease-in-out);
+	}
+}
+
+
+//  Base styles            
+// =============================================
+
+.viz-article {
+	margin: 0 auto;
+	max-width: 634px;
+	height: 100%;
+	color: $txt-black;
+	font-size: 13px;
+	font-family: $sans;
+	text-rendering: optimizeLegibility;
+}
+
+.viz-container {
+	position: relative;
+	background-color: $bground;
+}
+
+.viz-detail {
+    color: $med-gray;
+    text-transform: uppercase;
+	letter-spacing: .5px;
+    font-weight: 300;
+    font-size: 11px;
+	line-height: 80%;
+}
+
+.viz-overline {
+	margin: 0 0 5px;
+	padding-bottom: 3px;
+	border-bottom: 1px solid $light-gray;
+	color: $med-gray;
+	font-weight: 300;
+	font-size: 11px;
+}
+
+.viz-title {
+	margin: 0 0 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px dashed $black-30;
+	font-weight: 500;
+	font-size: 32px;
+	font-family: $slab;
+	line-height: 90%;
+	@media (min-width: $small) {
+		font-size: 32px;
+	}
+}
+
+.viz-copy {
+	color: $dark-gray;
+	font-weight: 300;
+	line-height: 140%;
+}
+
+.viz-byline {
+	letter-spacing: .5px;
+	line-height: 90%;
+}
+
+.viz-content-block {
+	margin: 0 0 15px;
+}
+
+.viz-subhed {
+	margin: 0 0 10px;
+	padding-bottom: 3px;
+	border-bottom: 1px solid $light-gray;
+	font-weight: 500;
+	font-size: 13px;
+}
+
+.viz-subhed-select {
+	padding-bottom: 7px;
+}
+
+.viz-legend {
+	margin: 0 0 0 4px;
+	padding: 0;
+	list-style-position: inside;
+}
+
+.viz-legend-item {
+	@include inline-block;
+	@include trans(0.2s, opacity, ease-in-out);
+	margin: 0 15px 5px 0;
+	background-color: $bground;
+	font-size: 36px;
+	line-height: 40%;
+	&:before {
+		margin-left: -5px;
+		padding-right: 2px;
+		content: "\002022";
+	}
+}
+
+.viz-legend-text {
+	vertical-align: middle;
+}
+
+
+
+
+// Text Quiz
+
+.ss-secondary-text {
+	margin-bottom: 10px;
+	color: $med-gray;
+	font-weight: 300;
+}
+
+.ss-q-short {
+	margin-bottom: 10px;
+	padding: 5px;
+	width: 100%;
+	height: 25px;
+}
+
+#ss-submit {
+	margin: 0;
+}
+
+.ss-form-entry {
+	padding: 0;
+}
+
+#navigation-table {
+	border-spacing: 0;
+	border-color: white;
+}
+
+.viz-quiz-wrapper {
+	@include pie-clearfix;
+	@include column-count(2);
+	@include column-gap(10px);
+}
+
+.viz-choices-group {
+	@include trans(0.2s, width, ease-in-out);
+	margin: 0 0 15px;
+	margin-bottom: 10px;
+	padding: 0;
+	list-style-type: none;
+	vertical-align: top;
+	@media (min-width: 550px) {
+		display: inline-block;
+		// max-width: 48%;
+		width: 100%;
+		// float: left;
+		&:nth-of-type(2n) {
+			// float: right;
+		}
+	}
+}
+
+.viz-choice-item {
+	padding: 5px;
+	width: 100%;
+	border: 1px solid $light-gray;
+	cursor: pointer;
+	&:nth-child(2n) {
+		border-top: 0px;
+	}
+}
+
+.viz-header-wrapper {
+	@include pie-clearfix;
+	position: relative;
+}
+
+.viz-quiz-target {
+	@include absolute(8px 5px n n);
+	width: 25px;
+	height: 25px;
+	background: url('/choice_targets.png') no-repeat;
+	background-position: 0 0;
+	background-size: 25px;
+}
+
+.viz-designer-description {
+	display: none;
+	margin: 0px;
+	padding: 10px;
+	color: $med-gray;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 140%;
+}
+
+.viz-submitted-alert {
+	display: none;
+	margin: 0;
+	padding: 5px;
+	border-right: 1px solid $light-gray;
+	border-bottom: 1px solid $light-gray;
+	border-left: 1px solid $light-gray;
+	color: $light-gray;
+	text-align: center;
+	font-weight: 300;
+	font-size: 11px;
+}
+
+.viz-choice-winner {
+	& .viz-quiz-target {
+		background-position: 0 -50px;
+	}
+	& .viz-designer-name {
+		font-weight: 500;
+	}
+}
+
+.viz-choice-loser {
+	& .viz-quiz-target {
+		background-position: 0 -25px;
+	}
+	& .viz-designer-name {
+		color: $med-gray;
+	}
+	& .viz-headshot {
+		opacity: .5;
+	}
+}
+
+.viz-headshot-wrap {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	width: 40px;
+	height: 40px;
+}
+
+// Supercute img tag sprites hack
+.viz-headshot {
+	position: relative;
+	width: 1280px;
+	height: 40px;
+}
+
+.viz-designer-name {
+	display: block;
+	margin: 0 0 2px;
+	font-weight: 300;
+	font-size: 15px;
+}
+
+.viz-designer-job {
+	display: block;
+	margin: 0;
+	color: $med-gray;
+	font-weight: 300;
+	font-size: 11px;
+}
+
+.viz-designer-header-mod {
+	@extend %vertical-align;
+	left: 47px;
+	padding-right: 35px;
+}
+
+.viz-vs {
+	@include absolute(-15px 8px n n);
+	z-index: 1;
+	padding: 3px;
+	width: 20px;
+	height: 20px;
+	border: 1px solid $light-gray;
+    border-radius: 50%;
+	background-color: white;
+	color: $light-gray;
+	text-align: center;
+	font-weight: 300;
+	font-size: 10px;
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+
