@@ -65,7 +65,6 @@ $('.viz-quiz-wrapper').on("click", '.viz-quiz-target', function() {
 		winnerInput.attr("disabled", true);
 
 	}, 2000);
-
 	
 });
 
@@ -119,6 +118,7 @@ function filterData(data, desiredIndices) {
 	return filteredArray;
 
 }
+
 
 
 

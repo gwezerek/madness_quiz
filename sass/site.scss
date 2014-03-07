@@ -27,8 +27,11 @@ body {
 }
 
 
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
 // Keyed colors
-// =============================================
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 .viz-graphic, .Graphic {
 	background-color: $bground-15;
@@ -63,8 +66,11 @@ body {
 }
 
 
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
 //  Base styles            
-// =============================================
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 .viz-article {
 	margin: 0 auto;
@@ -164,9 +170,11 @@ body {
 }
 
 
-
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 // Text Quiz
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 .ss-secondary-text {
 	margin-bottom: 10px;
@@ -195,9 +203,11 @@ body {
 }
 
 .viz-quiz-wrapper {
-	@include pie-clearfix;
-	@include column-count(2);
-	@include column-gap(10px);
+	@media (min-width: 550px) {
+		@include pie-clearfix;
+		@include column-count(2);
+		@include column-gap(10px);
+	}
 }
 
 .viz-choices-group {
@@ -209,12 +219,7 @@ body {
 	vertical-align: top;
 	@media (min-width: 550px) {
 		display: inline-block;
-		// max-width: 48%;
 		width: 100%;
-		// float: left;
-		&:nth-of-type(2n) {
-			// float: right;
-		}
 	}
 }
 
@@ -233,15 +238,6 @@ body {
 	position: relative;
 }
 
-.viz-quiz-target {
-	@include absolute(8px 5px n n);
-	width: 25px;
-	height: 25px;
-	background: url('/choice_targets.png') no-repeat;
-	background-position: 0 0;
-	background-size: 25px;
-}
-
 .viz-designer-description {
 	display: none;
 	margin: 0px;
@@ -250,40 +246,6 @@ body {
 	font-weight: 300;
 	font-size: 12px;
 	line-height: 140%;
-}
-
-.viz-submitted-alert {
-	display: none;
-	margin: 0;
-	padding: 5px;
-	border-right: 1px solid $light-gray;
-	border-bottom: 1px solid $light-gray;
-	border-left: 1px solid $light-gray;
-	color: $light-gray;
-	text-align: center;
-	font-weight: 300;
-	font-size: 11px;
-}
-
-.viz-choice-winner {
-	& .viz-quiz-target {
-		background-position: 0 -50px;
-	}
-	& .viz-designer-name {
-		font-weight: 500;
-	}
-}
-
-.viz-choice-loser {
-	& .viz-quiz-target {
-		background-position: 0 -25px;
-	}
-	& .viz-designer-name {
-		color: $med-gray;
-	}
-	& .viz-headshot {
-		opacity: .5;
-	}
 }
 
 .viz-headshot-wrap {
@@ -337,8 +299,69 @@ body {
 	font-size: 10px;
 }
 
-input[type="radio"] {
+
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+// Quiz specific
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+
+.viz-radio {
     display:none;
 }
+
+.viz-quiz-target {
+	@include absolute(8px 5px n n);
+	width: 25px;
+	height: 25px;
+	background: url('/choice_targets.png') no-repeat;
+	background-position: 0 0;
+	background-size: 25px;
+}
+
+.viz-submitted-alert {
+	display: none;
+	margin: 0;
+	padding: 5px;
+	border-right: 1px solid $light-gray;
+	border-bottom: 1px solid $light-gray;
+	border-left: 1px solid $light-gray;
+	color: $light-gray;
+	text-align: center;
+	font-weight: 300;
+	font-size: 11px;
+}
+
+.viz-choice-winner {
+	& .viz-quiz-target {
+		background-position: 0 -50px;
+	}
+	& .viz-designer-name {
+		font-weight: 500;
+	}
+}
+
+.viz-choice-loser {
+	& .viz-quiz-target {
+		background-position: 0 -25px;
+	}
+	& .viz-designer-name {
+		color: $med-gray;
+	}
+	& .viz-headshot {
+		opacity: .5;
+	}
+}
+
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+// Rankings specific
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+
 
 
