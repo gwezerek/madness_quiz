@@ -519,8 +519,7 @@ body {
   -moz-transition: width 0.2s ease-in-out;
   -o-transition: width 0.2s ease-in-out;
   transition: width 0.2s ease-in-out;
-  margin: 0 0 15px;
-  margin-bottom: 10px;
+  margin: 0;
   padding: 0;
   list-style-type: none;
   vertical-align: top;
@@ -533,19 +532,24 @@ body {
   }
 }
 
-/* line 226, ../sass/site.scss */
+/* line 225, ../sass/site.scss */
 .viz-choice-item {
   padding: 5px;
   width: 100%;
   border: 1px solid #ccc6b9;
   cursor: pointer;
 }
-/* line 231, ../sass/site.scss */
+/* line 230, ../sass/site.scss */
 .viz-choice-item:nth-child(2n) {
+  margin-bottom: 10px;
   border-top: 0px;
 }
+/* line 233, ../sass/site.scss */
+.viz-choice-item:nth-child(2n) .viz-vs {
+  display: block;
+}
 
-/* line 236, ../sass/site.scss */
+/* line 239, ../sass/site.scss */
 .viz-header-wrapper {
   *zoom: 1;
   position: relative;
@@ -557,7 +561,7 @@ body {
   clear: both;
 }
 
-/* line 241, ../sass/site.scss */
+/* line 244, ../sass/site.scss */
 .viz-designer-description {
   display: none;
   margin: 0px;
@@ -568,7 +572,7 @@ body {
   line-height: 140%;
 }
 
-/* line 251, ../sass/site.scss */
+/* line 254, ../sass/site.scss */
 .viz-headshot-wrap {
   position: relative;
   float: left;
@@ -577,14 +581,14 @@ body {
   height: 40px;
 }
 
-/* line 260, ../sass/site.scss */
+/* line 263, ../sass/site.scss */
 .viz-headshot {
   position: relative;
   width: 1280px;
   height: 40px;
 }
 
-/* line 266, ../sass/site.scss */
+/* line 269, ../sass/site.scss */
 .viz-designer-name {
   display: block;
   margin: 0 0 2px;
@@ -592,7 +596,7 @@ body {
   font-size: 15px;
 }
 
-/* line 273, ../sass/site.scss */
+/* line 276, ../sass/site.scss */
 .viz-designer-job {
   display: block;
   margin: 0;
@@ -601,18 +605,19 @@ body {
   font-size: 11px;
 }
 
-/* line 281, ../sass/site.scss */
+/* line 284, ../sass/site.scss */
 .viz-designer-header-mod {
   left: 47px;
   padding-right: 35px;
 }
 
-/* line 287, ../sass/site.scss */
+/* line 290, ../sass/site.scss */
 .viz-vs {
   position: absolute;
   top: -15px;
   right: 8px;
   z-index: 1;
+  display: none;
   padding: 3px;
   width: 20px;
   height: 20px;
@@ -625,55 +630,62 @@ body {
   font-size: 10px;
 }
 
-/* line 311, ../sass/site.scss */
+/* line 318, ../sass/site.scss */
 .viz-radio {
   display: none;
 }
 
-/* line 315, ../sass/site.scss */
+/* line 322, ../sass/site.scss */
 .viz-quiz-target {
   position: absolute;
   top: 8px;
   right: 5px;
   width: 25px;
   height: 25px;
-  background: url("/choice_targets.png") no-repeat;
+  background: url("http://www.guswezerek.com/projects/bracket_madness/choice_targets.png") no-repeat;
   background-position: 0 0;
   background-size: 25px;
 }
 
-/* line 324, ../sass/site.scss */
+/* line 331, ../sass/site.scss */
 .viz-submitted-alert {
   display: none;
-  margin: 0;
+  margin: -10px 0 10px;
   padding: 5px;
-  border-right: 1px solid #ccc6b9;
-  border-bottom: 1px solid #ccc6b9;
-  border-left: 1px solid #ccc6b9;
-  color: #ccc6b9;
   text-align: center;
   font-weight: 300;
   font-size: 11px;
+  color: #ccc6b9;
 }
 
-/* line 338, ../sass/site.scss */
+/* line 342, ../sass/site.scss */
 .viz-choice-winner .viz-quiz-target {
   background-position: 0 -50px;
 }
-/* line 341, ../sass/site.scss */
+/* line 345, ../sass/site.scss */
 .viz-choice-winner .viz-designer-name {
   font-weight: 500;
 }
 
-/* line 347, ../sass/site.scss */
+/* line 351, ../sass/site.scss */
 .viz-choice-loser .viz-quiz-target {
   background-position: 0 -25px;
 }
-/* line 350, ../sass/site.scss */
+/* line 354, ../sass/site.scss */
 .viz-choice-loser .viz-designer-name {
   color: #99948a;
 }
-/* line 353, ../sass/site.scss */
+/* line 357, ../sass/site.scss */
 .viz-choice-loser .viz-headshot {
   opacity: .5;
+}
+
+/* line 373, ../sass/site.scss */
+.viz-division-finals {
+  display: none;
+}
+
+/* line 377, ../sass/site.scss */
+.viz-division-winner {
+  display: none;
 }

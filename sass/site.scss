@@ -212,8 +212,7 @@ body {
 
 .viz-choices-group {
 	@include trans(0.2s, width, ease-in-out);
-	margin: 0 0 15px;
-	margin-bottom: 10px;
+	margin: 0;
 	padding: 0;
 	list-style-type: none;
 	vertical-align: top;
@@ -229,7 +228,11 @@ body {
 	border: 1px solid $light-gray;
 	cursor: pointer;
 	&:nth-child(2n) {
+		margin-bottom: 10px;
 		border-top: 0px;
+		.viz-vs {
+			display: block;
+		}
 	}
 }
 
@@ -287,6 +290,7 @@ body {
 .viz-vs {
 	@include absolute(-15px 8px n n);
 	z-index: 1;
+	display: none;
 	padding: 3px;
 	width: 20px;
 	height: 20px;
@@ -307,6 +311,9 @@ body {
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
+.viz-quiz {
+	// Set to display: none after voting ends
+}
 
 .viz-radio {
     display:none;
@@ -316,22 +323,19 @@ body {
 	@include absolute(8px 5px n n);
 	width: 25px;
 	height: 25px;
-	background: url('/choice_targets.png') no-repeat;
+	background: url('http://www.guswezerek.com/projects/bracket_madness/choice_targets.png') no-repeat;
 	background-position: 0 0;
 	background-size: 25px;
 }
 
 .viz-submitted-alert {
 	display: none;
-	margin: 0;
+	margin: -10px 0 10px;
 	padding: 5px;
-	border-right: 1px solid $light-gray;
-	border-bottom: 1px solid $light-gray;
-	border-left: 1px solid $light-gray;
-	color: $light-gray;
 	text-align: center;
 	font-weight: 300;
 	font-size: 11px;
+	color: $light-gray;
 }
 
 .viz-choice-winner {
@@ -362,6 +366,16 @@ body {
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
+.viz-rankings {
+	// display: none;
+}
 
+.viz-division-finals {
+	display: none; // Switch to display: block when appropriate
+}
+
+.viz-division-winner {
+	display: none; // Switch to display: block on the final day
+}
 
 
