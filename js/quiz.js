@@ -1,6 +1,7 @@
 
 // SETUP VARIABLES
 
+var vizEven = false; 
 var submitted=false;
 var data = "";
 var formURL = "https://docs.google.com/forms/d/1cV-mVthjntVQGz7eK_PE80gPAKZbJ4SN9qLnXg3B--w/formResponse"; // Example: "https://docs.google.com/forms/d/KEYGOESHERE/formResponse"
@@ -85,20 +86,21 @@ $('.viz-quiz-wrapper').on("click", '.viz-choice-item .viz-quiz-target', function
 
 function populateQuiz(data) {
 	var firstTemplate = _.template(
-	    $( ".viz-quiz-template-first" ).html()
+	    $( ".viz-quiz-template" ).html()
 	);
 	var secondTemplate = _.template(
-	    $( ".viz-quiz-template-second" ).html()
+	    $( ".viz-quiz-template" ).html()
 	);
 
 	var toAppendString = "";
 
 	for (i = 0; i < data.designers.length; i++) {
 		if( i % 2 ) {
-		  toAppendString += secondTemplate(data.designers[i]);
+			vizEven = true;
 		} else {
-		  toAppendString += firstTemplate(data.designers[i]);
+			vizEven = false;
 		}
+		toAppendString += secondTemplate(data.designers[i]);
 	}  
 
 	$(".viz-quiz-wrapper").prepend(

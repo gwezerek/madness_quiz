@@ -126,8 +126,10 @@
 
 
 		<!-- Templates for Questions -->
-		<script type="text/template" class="viz-quiz-template-first">
-			<ul class="ss-choices viz-choices-group" role="radiogroup" aria-label="Who is the better designer?  ">
+		<script type="text/template" class="viz-quiz-template">
+			<% if (vizEven == false) { %>
+				<ul class="ss-choices viz-choices-group" role="radiogroup" aria-label="Who is the better designer?  ">
+			<% } %>
 				<li class="ss-choice-item viz-choice-item">
 					<label>
 						<span class="ss-choice-item-control goog-inline-block">
@@ -135,6 +137,9 @@
 						</span>
 					</label>
 					<div class="viz-header-wrapper">
+						<% if (vizEven == true) { %>
+							<span class="viz-vs">vs</span>
+						<% } %>
 						<div class="viz-headshot-wrap">
 							<img src="/headshots.png" class="viz-headshot <%= division %>" style="right:<%= 40 * original_index %>px"/>
 						</div>
@@ -146,29 +151,10 @@
 					</div>
 					<p class="viz-designer-description"><%= description %></p>
 				</li>
-		</script>
-		<script type="text/template" class="viz-quiz-template-second">
-				<li class="ss-choice-item viz-choice-item">
-					<label>
-						<span class="ss-choice-item-control goog-inline-block">
-							<input disabled type="radio" name="<%= input_name %>" value="<%= name %>" id="<%= input_id %>" role="radio" class="ss-q-radio viz-radio" aria-label="<%= name %>">
-						</span>
-					</label>
-					<div class="viz-header-wrapper">
-						<span class="viz-vs">vs</span>
-						<div class="viz-headshot-wrap">
-							<img src="/headshots.png" class="viz-headshot <%= division %>" style="right:<%= 40 * original_index %>px"/>
-						</div>
-						<div class="viz-designer-header-mod">
-							<p class="ss-choice-label viz-designer-name"><%= name %></p>
-							<p class="ss-choice-label viz-designer-job">(<%= rank %>) <%= job %></p>
-						</div>
-						<span class="viz-quiz-target">&nbsp;</span>
-					</div>
-					<p class="viz-designer-description"><%= description %></p>
-				</li>
-				<p class="viz-submitted-alert">Submitted!</p>
-			</ul>
+				<% if (vizEven == true) { %>
+					<p class="viz-submitted-alert">Submitted!</p>
+				</ul>
+			<% } %>
 		</script>
 
 		<script type="text/javascript" src="js/quiz.js"></script>
