@@ -66,7 +66,7 @@ $('.viz-form').attr("action", formURL);
 // =============================================
 
 d3.csv(spreadsheetURL, function(error, data) {
-	// populateQuiz(data);
+	populateQuiz(data);
 	populateRankings(data);
 });
 
@@ -84,7 +84,7 @@ $('.viz-quiz-wrapper').on("click", '.viz-quiz-target', function() {
 	var winnerInput = winner.find('.viz-radio');
 	var loser = $this.closest('.viz-choice-item').siblings('.viz-choice-item');
 	var loserTarget = loser.find('.viz-quiz-target');
-	var submittedAlert = winner.siblings('.viz-submitted-alert');
+	var submittedAlert = $this.closest('.viz-choices-group').next('.viz-submitted-alert');
 
 	// Add classes
 	loser.addClass('viz-choice-loser');
@@ -115,13 +115,13 @@ $('.viz-quiz-wrapper').on("click", '.viz-quiz-target', function() {
 });
 
 // Show/hide the description
-$('.viz-quiz-wrapper').on("click", '.viz-choice-item', function() {
+$('.viz-container').on("click", '.viz-choice-item', function() {
 	var $this = $(this);
 	$this.find('.viz-designer-description').slideToggle(200);
 });
 
 // Stops voting from showing the description the first time
-$('.viz-quiz-wrapper').on("click", '.viz-choice-item .viz-quiz-target', function(e) {
+$('.viz-container').on("click", '.viz-choice-item .viz-quiz-target', function(e) {
 	e.stopPropagation();
 });
 
@@ -184,7 +184,7 @@ function populateRankings(data, container) {
 		}  
 
 		// Append the list
-		$this.find(".viz-division-list").append(toAppendString);
+		$this.find(".viz-division-designers-list").append(toAppendString);
 
 	});
 }

@@ -23,47 +23,11 @@
 
 body {
 	margin: 0;
-	padding: 10px 20px; 
+	padding: 20px 20px; 
 }
 
 
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
-// Keyed colors
-
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-
-.viz-graphic, .Graphic {
-	background-color: $bground-15;
-	color: $bground-15;
-	fill: $bground-15;
-}
-
-.viz-interactive, .Interactive {
-	background-color: $bground-11;
-	color: $bground-11;
-	fill: $bground-11;
-}
-
-.viz-product, .Product {
-	background-color: $bground-9;
-	color: $bground-9;
-	fill: $bground-9;
-}
-
-.viz-architecture, .Architecture {
-	background-color: $bground-13;
-	color: $bground-13;
-	fill: $bground-13;
-}
-
-
-.requests, .fulfilled, .connectors {
-	stroke: white;
-	& rect, polygon {
-		@include trans(0.2s, opacity, ease-in-out);
-	}
-}
 
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -106,16 +70,22 @@ body {
 }
 
 .viz-title {
-	margin: 0 0 10px;
+	margin: 0 0 5px;
 	padding-bottom: 10px;
-	border-bottom: 1px dashed $black-30;
-	font-weight: 500;
+	border-bottom: 2px solid $txt-black;
+	font-weight: 600;
 	font-size: 32px;
 	font-family: $slab;
 	line-height: 90%;
 	@media (min-width: $small) {
-		font-size: 32px;
+		font-size: 42px;
 	}
+}
+
+.viz-underline {
+	margin-top: 0;
+	color: $med-gray;
+	font-weight: 300;
 }
 
 .viz-copy {
@@ -130,7 +100,7 @@ body {
 }
 
 .viz-content-block {
-	margin: 0 0 15px;
+	margin: 0 0 25px;
 }
 
 .viz-subhed {
@@ -170,69 +140,48 @@ body {
 }
 
 
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-
-// Text Quiz
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
-.ss-secondary-text {
-	margin-bottom: 10px;
-	color: $med-gray;
-	font-weight: 300;
-}
+// Designer Mod
 
-.ss-q-short {
-	margin-bottom: 10px;
-	padding: 5px;
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+.viz-choice-item {
+	padding: 5px 0;
 	width: 100%;
-	height: 25px;
-}
-
-#ss-submit {
-	margin: 0;
-}
-
-.ss-form-entry {
-	padding: 0;
-}
-
-#navigation-table {
-	border-spacing: 0;
-	border-color: white;
-}
-
-.viz-quiz-wrapper {
-	@media (min-width: 550px) {
-		@include pie-clearfix;
-		@include column-count(2);
-		@include column-gap(10px);
+	border-bottom: 1px solid $light-gray;
+	cursor: pointer;
+	-webkit-column-break-inside:avoid;
+	-webkit-backface-visibility:hidden;
+	&:nth-child(2n) {
+		margin-bottom: 10px;
+		border-bottom: 0px;
+		.viz-vs {
+			display: block;
+		}
+	}
+	&:first-of-type {
+		padding-top: 0;
+	}
+	&:last-of-type {
+		padding-bottom: 0;
 	}
 }
 
 .viz-choices-group {
 	@include trans(0.2s, width, ease-in-out);
-	margin: 0;
-	padding: 0;
+	margin: 0 0 20px;
+	padding: 0 0 0 10px;
+	border-left: 1px solid $light-gray;
 	list-style-type: none;
 	vertical-align: top;
-	@media (min-width: 550px) {
+	@media (min-width: $small) {
 		display: inline-block;
 		width: 100%;
 	}
-}
-
-.viz-choice-item {
-	padding: 5px;
-	width: 100%;
-	border: 1px solid $light-gray;
-	cursor: pointer;
-	&:nth-child(2n) {
-		margin-bottom: 10px;
-		border-top: 0px;
-		.viz-vs {
-			display: block;
-		}
+	& .viz-choice-item {
+		margin-bottom: 0;
 	}
 }
 
@@ -269,7 +218,7 @@ body {
 .viz-designer-name {
 	display: block;
 	margin: 0 0 2px;
-	font-weight: 300;
+	font-weight: 500;
 	font-size: 15px;
 }
 
@@ -288,14 +237,13 @@ body {
 }
 
 .viz-vs {
-	@include absolute(-15px 8px n n);
+	@include absolute(-13px 0px n n);
 	z-index: 1;
 	display: none;
-	padding: 3px;
-	width: 20px;
-	height: 20px;
+	padding: 0;
+	width: 25px;
+	height: 15px;
 	border: 1px solid $light-gray;
-    border-radius: 50%;
 	background-color: white;
 	color: $light-gray;
 	text-align: center;
@@ -311,6 +259,14 @@ body {
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
+.viz-quiz-wrapper {
+	@media (min-width: $small) {
+		@include pie-clearfix;
+		@include column-count(2);
+		@include column-gap(30px);
+	}
+}
+
 .viz-quiz {
 	// Set to display: none after voting ends
 }
@@ -320,30 +276,32 @@ body {
 }
 
 .viz-quiz-target {
-	@include absolute(8px 5px n n);
+	@include trans(0.2s, opacity, ease-in-out);
+	@include absolute(8px 0px n n);
 	width: 25px;
 	height: 25px;
-	background: url('http://www.guswezerek.com/projects/bracket_madness/choice_targets.png') no-repeat;
+	background: url('/choice_targets.png') no-repeat;
 	background-position: 0 0;
 	background-size: 25px;
+	opacity: 0.5;
+	&:hover {
+		opacity: 1;
+	}
 }
 
 .viz-submitted-alert {
 	display: none;
-	margin: -10px 0 10px;
+	margin: -25px 0 10px;
 	padding: 5px;
+	color: $light-gray;
 	text-align: center;
 	font-weight: 300;
 	font-size: 11px;
-	color: $light-gray;
 }
 
 .viz-choice-winner {
 	& .viz-quiz-target {
 		background-position: 0 -50px;
-	}
-	& .viz-designer-name {
-		font-weight: 500;
 	}
 }
 
@@ -353,9 +311,10 @@ body {
 	}
 	& .viz-designer-name {
 		color: $med-gray;
+		font-weight: 300;
 	}
 	& .viz-headshot {
-		opacity: .5;
+		opacity: .3;
 	}
 }
 
@@ -367,7 +326,116 @@ body {
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 .viz-rankings {
+	height: 2150px;
+	@media (min-width: $small) {
+		height: 1100px;
+	}
 	// display: none;
+}
+
+.viz-division-wrapper {
+	@media (min-width: $small) {
+		@include pie-clearfix;
+		@include column-count(2);
+		@include column-gap(30px);
+	}
+}
+
+.viz-division-list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+
+
+// Nav
+.viz-nav-anchor-list {
+	padding: 0;
+	list-style-type: none;
+}
+
+.viz-nav-anchor-item {
+
+}
+
+
+// Topper
+.viz-division-topper {
+	position: relative;
+	margin-bottom: 10px;
+	padding: 10px 0px;
+	border-bottom: 2px solid $txt-black;
+	-webkit-column-break-inside:avoid;
+	-webkit-backface-visibility:hidden;
+}
+
+.viz-division-title {
+	@include inline-block;
+	margin: 0;
+	width: 100%;
+	color: $med-gray;
+	text-align: center;
+	font-size: 11px;
+	line-height: 80%;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.viz-division-bull {
+	margin-left: -5px;
+	padding-right: 2px;
+	vertical-align: middle;
+	font-size: 36px;
+}
+
+.viz-division-button {
+
+	@include trans(0.2s, opacity, ease-in-out);
+	position: absolute;
+	top: 10px;
+	height: 20px;
+	width: 20px;
+	cursor: pointer;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	opacity: 0.5;
+	&:hover {
+		opacity: 1;
+	}
+	&:focus {
+		outline: none;
+	}
+}
+
+.viz-prev {
+	left: 0px;
+	background-image: url('/btn-prev.png');
+}
+
+.viz-next {
+	right: 0px;
+	background-image: url('/btn-next.png');
+}
+
+.viz-division-button-img {
+	width: 20px;
+	margin: 0;
+}
+
+.viz-division-name {
+	color: $txt-black;
+	vertical-align: sub;
+	font-size: 15px;
+	font-family: $slab;
+	letter-spacing: 0.5px;
+}
+
+
+// Divison lists
+.viz-division {
+	@include inline-block;
+	width: 100%;
 }
 
 .viz-division-finals {
@@ -378,4 +446,50 @@ body {
 	display: none; // Switch to display: block on the final day
 }
 
+.viz-division-designers-list {
+	margin: 0 0 25px;
+	padding: 0 0 0 10px;
+	border-left: 1px solid $light-gray;
+	list-style-type: none;
+}
+
+
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+// Keyed colors
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+.viz-graphic-text {
+	color: $bground-15;
+}
+
+.viz-interactive-text {
+	color: $bground-11;
+}
+
+.viz-product-text {
+	color: $bground-9;
+}
+
+.viz-architecture-text {
+	color: $bground-13;
+}
+
+.viz-graphic-img {
+	background-color: $bground-15;
+}
+
+.viz-interactive-img {
+	background-color: $bground-11;
+}
+
+.viz-product-img {
+	background-color: $bground-9;
+}
+
+.viz-architecture-img {
+	background-color: $bground-13;
+}
 
