@@ -84,8 +84,9 @@ body {
 
 .viz-underline {
 	margin-top: 0;
-	color: $med-gray;
+	color: $txt-black;
 	font-weight: 300;
+	line-height: 140%;
 }
 
 .viz-copy {
@@ -219,7 +220,7 @@ body {
 	display: block;
 	margin: 0 0 2px;
 	font-weight: 500;
-	font-size: 15px;
+	font-size: 14px;
 }
 
 .viz-designer-job {
@@ -280,7 +281,7 @@ body {
 	@include absolute(8px 0px n n);
 	width: 25px;
 	height: 25px;
-	background: url('/choice_targets.png') no-repeat;
+	background: url('http://www.guswezerek.com/projects/bracket_madness/choice_targets.png') no-repeat;
 	background-position: 0 0;
 	background-size: 25px;
 	opacity: 0.5;
@@ -363,43 +364,42 @@ body {
 // Topper
 .viz-division-topper {
 	position: relative;
-	margin-bottom: 10px;
-	padding: 10px 0px;
-	border-bottom: 2px solid $txt-black;
-	-webkit-column-break-inside:avoid;
-	-webkit-backface-visibility:hidden;
+	margin: 0 auto 15px;
+	padding: 0;	
+	border: 1px solid $light-gray;
+	-webkit-column-break-inside: avoid;
+	-webkit-backface-visibility: hidden;
 }
 
 .viz-division-title {
-	@include inline-block;
-	margin: 0;
+	display: inline-block;
+	margin: -3px 0 0;
 	width: 100%;
-	color: $med-gray;
+	color: $txt-black;
 	text-align: center;
+	text-transform: uppercase;
+	font-weight: 300;
 	font-size: 11px;
 	line-height: 80%;
-	text-transform: uppercase;
-	font-weight: 600;
 }
 
 .viz-division-bull {
-	margin-left: -5px;
-	padding-right: 2px;
+	margin-left: 4px;
+	padding-right: 4px;
 	vertical-align: middle;
 	font-size: 36px;
 }
 
 .viz-division-button {
-
 	@include trans(0.2s, opacity, ease-in-out);
 	position: absolute;
 	top: 10px;
-	height: 20px;
 	width: 20px;
-	cursor: pointer;
+	height: 20px;
 	background-size: 100%;
 	background-repeat: no-repeat;
 	opacity: 0.5;
+	cursor: pointer;
 	&:hover {
 		opacity: 1;
 	}
@@ -409,26 +409,34 @@ body {
 }
 
 .viz-prev {
-	left: 0px;
-	background-image: url('/btn-prev.png');
+	left: 10px;
+	background-image: url('http://www.guswezerek.com/projects/bracket_madness/btn-prev.png');
 }
 
 .viz-next {
-	right: 0px;
-	background-image: url('/btn-next.png');
+	right: 10px;
+	background-image: url('http://www.guswezerek.com/projects/bracket_madness/btn-next.png');
 }
 
 .viz-division-button-img {
-	width: 20px;
 	margin: 0;
+	width: 20px;
 }
 
 .viz-division-name {
+	margin-top: 0;
+	padding: 0 5px;
+	text-align: center;
+	background-color: $bground;
+}
+
+.viz-division-round {
 	color: $txt-black;
-	vertical-align: sub;
+	letter-spacing: 0.5px;
 	font-size: 15px;
 	font-family: $slab;
-	letter-spacing: 0.5px;
+	margin: 10px 0 16px;
+	font-weight: 600;
 }
 
 
@@ -448,8 +456,7 @@ body {
 
 .viz-division-designers-list {
 	margin: 0 0 25px;
-	padding: 0 0 0 10px;
-	border-left: 1px solid $light-gray;
+	padding: 0 10px;
 	list-style-type: none;
 }
 

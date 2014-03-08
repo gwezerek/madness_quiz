@@ -3,7 +3,7 @@
 // =============================================
 
 var data = "";
-// Plz don't be messing with the form if you happen to be checking out the guts of this guy :)
+// Plz don't be messing with the form if you happen to be checking out the guts of this page :)
 var formURL = "https://docs.google.com/forms/d/1cV-mVthjntVQGz7eK_PE80gPAKZbJ4SN9qLnXg3B--w/formResponse"; // Example: "https://docs.google.com/forms/d/KEYGOESHERE/formResponse"
 var spreadsheetURL = "https://docs.google.com/spreadsheet/pub?key=0AmqQKSPoegtOdEcyWldpLWpKY0txU0NRNzBDdW5wZlE&single=true&gid=0&output=csv"; // Example: "https://docs.google.com/spreadsheet/pub?key=KEYGOESHERE&single=true&gid=0&output=csv"
 
@@ -56,7 +56,12 @@ var division6Round1 = [2];
 // SETUP
 // =============================================
 
+// Set the form url
 $('.viz-form').attr("action", formURL);
+
+// Set each rankings division's round to the latest we've defined above
+updateRounds();
+
 
 
 
@@ -117,7 +122,10 @@ $('.viz-quiz-wrapper').on("click", '.viz-quiz-target', function() {
 // Show/hide the description
 $('.viz-container').on("click", '.viz-choice-item', function() {
 	var $this = $(this);
-	$this.find('.viz-designer-description').slideToggle(200);
+	var selectedDescription = $this.find('.viz-designer-description');
+
+	$(".viz-designer-description").not(selectedDescription).slideUp(200);
+	selectedDescription.slideToggle(200);
 });
 
 // Stops voting from showing the description the first time
@@ -198,6 +206,17 @@ function filterData(data, desiredIndices) {
 	return filteredArray;
 }
 
+function updateRounds() {
+	var divisions = $(".viz-division");
+	divisions.each(function() {
+		var $this = $(this);
+		var roundNumber = eval($this.attr("id") + "Round");
 
+		$this.data("round", roundNumber);
+		$this.find(".viz-division-round").text("Round " + roundNumber);
+	});
+}
 
+function updateTopper() {
 
+}

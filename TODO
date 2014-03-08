@@ -1,6 +1,3 @@
-Wrap every pair in a UL
-Give overriding class to losers
-
 
 
 SETUP
@@ -16,6 +13,7 @@ Find <ol class="viz-division-list">
 Get id ("division1")
 Filter data to that round's variable
 Run template and append
+
 
 UPDATE
 On nav click
