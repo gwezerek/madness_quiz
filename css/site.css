@@ -648,47 +648,37 @@ body {
   opacity: .3;
 }
 
-/* line 340, ../sass/site.scss */
-.viz-division-wrapper {
-  height: 2100px;
-}
 @media (min-width: 620px) {
   /* line 340, ../sass/site.scss */
-  .viz-division-wrapper {
-    height: 1070px;
-    *zoom: 1;
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    -ms-column-count: 2;
-    -o-column-count: 2;
-    column-count: 2;
-    -webkit-column-gap: 15px;
-    -moz-column-gap: 15px;
-    -ms-column-gap: 15px;
-    -o-column-gap: 15px;
-    column-gap: 15px;
-  }
-  /* line 38, ../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-  .viz-division-wrapper:after {
-    content: "";
-    display: table;
-    clear: both;
+  .viz-column-1 {
+    width: 48%;
+    float: left;
   }
 }
 
 @media (min-width: 620px) {
-  /* line 351, ../sass/site.scss */
+  /* line 347, ../sass/site.scss */
   .viz-column-2 {
-    padding-left: 14px;
+    width: 49%;
+    padding-left: 17px;
+    margin-left: 15px;
     border-left: 1px dotted #ccc6b9;
+    float: right;
   }
 }
 
-/* line 358, ../sass/site.scss */
+/* line 357, ../sass/site.scss */
 .viz-division-list {
+  *zoom: 1;
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+/* line 38, ../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.viz-division-list:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* line 367, ../sass/site.scss */

@@ -337,25 +337,25 @@ body {
 	// display: none;
 }
 
-.viz-division-wrapper {
-	height: 2100px;
+.viz-column-1 {
 	@media (min-width: $small) {
-		height: 1070px;
-		@include pie-clearfix;
-		@include column-count(2);
-		@include column-gap(15px);
-
+		width: 48%;
+		float: left;
 	}
 }
 
 .viz-column-2 {
 	@media (min-width: $small) {
-		padding-left: 14px;
+		width: 49%;
+		padding-left: 17px;
+		margin-left: 15px;
 		border-left: 1px dotted $light-gray;
+		float: right;
 	}
 }
 
 .viz-division-list {
+	@include pie-clearfix;
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
