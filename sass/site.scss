@@ -23,7 +23,10 @@
 
 body {
 	margin: 0;
-	padding: 20px 20px; 
+	padding: 15px 20px; 
+	@media (min-width: $small) {
+		padding: 30px 20px; 
+	}
 }
 
 
@@ -74,7 +77,7 @@ body {
 	padding-bottom: 10px;
 	border-bottom: 2px solid $txt-black;
 	font-weight: 600;
-	font-size: 32px;
+	font-size: 42px;
 	font-family: $slab;
 	line-height: 90%;
 	@media (min-width: $small) {
@@ -102,6 +105,10 @@ body {
 
 .viz-content-block {
 	margin: 0 0 25px;
+}
+
+.viz-content-header {
+	margin: 0 0 30px;
 }
 
 .viz-subhed {
@@ -194,7 +201,7 @@ body {
 .viz-designer-description {
 	display: none;
 	margin: 0px;
-	padding: 10px;
+	padding: 10px 0;
 	color: $med-gray;
 	font-weight: 300;
 	font-size: 12px;
@@ -327,18 +334,24 @@ body {
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 .viz-rankings {
-	height: 2150px;
-	@media (min-width: $small) {
-		height: 1100px;
-	}
 	// display: none;
 }
 
 .viz-division-wrapper {
+	height: 2100px;
 	@media (min-width: $small) {
+		height: 1070px;
 		@include pie-clearfix;
 		@include column-count(2);
-		@include column-gap(30px);
+		@include column-gap(15px);
+
+	}
+}
+
+.viz-column-2 {
+	@media (min-width: $small) {
+		padding-left: 14px;
+		border-left: 1px dotted $light-gray;
 	}
 }
 
@@ -444,6 +457,11 @@ body {
 .viz-division {
 	@include inline-block;
 	width: 100%;
+	@media (min-width: $small) {
+		&:last-of-type .viz-division-designers-list, .viz-choice-item:last-of-type {
+			margin-bottom: 0;
+		}
+	}
 }
 
 .viz-division-finals {
@@ -455,7 +473,7 @@ body {
 }
 
 .viz-division-designers-list {
-	margin: 0 0 25px;
+	margin: 0 0 35px;
 	padding: 0 10px;
 	list-style-type: none;
 }
