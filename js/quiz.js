@@ -19,7 +19,7 @@ var indicesRound1 = [0,7,1,6,2,5,3,4,8,15,9,14,10,13,11,12,16,23,17,22,18,21,19,
 var indicesRound2 = [16,23,17,22,18,21,19,20,24,31,25,30,26,29,27,28];
 var indicesRound3 = [16,23,17,22,18,21,19,20];
 var indicesRound4 = [16,23,17,22];
-var indicesRound5 = [16,23];
+var indicesRound5  = [16,23];
 
 // For rankings
 var divisions = {
