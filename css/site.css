@@ -294,67 +294,33 @@
 /* line 24, ../sass/site.scss */
 body {
   margin: 0;
-  padding: 10px 20px;
+  padding: 15px 20px;
+}
+@media (min-width: 620px) {
+  /* line 24, ../sass/site.scss */
+  body {
+    padding: 30px 20px;
+  }
 }
 
-/* line 33, ../sass/site.scss */
-.viz-graphic, .Graphic {
-  background-color: #ff8a80;
-  color: #ff8a80;
-  fill: #ff8a80;
-}
-
-/* line 39, ../sass/site.scss */
-.viz-interactive, .Interactive {
-  background-color: #b781ff;
-  color: #b781ff;
-  fill: #b781ff;
-}
-
-/* line 45, ../sass/site.scss */
-.viz-product, .Product {
-  background-color: #819fff;
-  color: #819fff;
-  fill: #819fff;
-}
-
-/* line 51, ../sass/site.scss */
-.viz-architecture, .Architecture {
-  background-color: #ff81f4;
-  color: #ff81f4;
-  fill: #ff81f4;
-}
-
-/* line 58, ../sass/site.scss */
-.requests, .fulfilled, .connectors {
-  stroke: white;
-}
-/* line 60, ../sass/site.scss */
-.requests rect, .requests polygon, .fulfilled rect, .fulfilled polygon, .connectors rect, .connectors polygon {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-}
-
-/* line 69, ../sass/site.scss */
+/* line 42, ../sass/site.scss */
 .viz-article {
   margin: 0 auto;
   max-width: 634px;
   height: 100%;
   color: #33312e;
-  font-size: 13px;
+  font-size: 15px;
   font-family: "MuseoSans", Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
 }
 
-/* line 79, ../sass/site.scss */
+/* line 52, ../sass/site.scss */
 .viz-container {
   position: relative;
   background-color: white;
 }
 
-/* line 84, ../sass/site.scss */
+/* line 57, ../sass/site.scss */
 .viz-detail {
   color: #99948a;
   text-transform: uppercase;
@@ -364,7 +330,7 @@ body {
   line-height: 80%;
 }
 
-/* line 93, ../sass/site.scss */
+/* line 66, ../sass/site.scss */
 .viz-overline {
   margin: 0 0 5px;
   padding-bottom: 3px;
@@ -374,42 +340,55 @@ body {
   font-size: 11px;
 }
 
-/* line 102, ../sass/site.scss */
+/* line 75, ../sass/site.scss */
 .viz-title {
-  margin: 0 0 10px;
+  margin: 0 0 5px;
   padding-bottom: 10px;
-  border-bottom: 1px dashed #ccc6b9;
-  font-weight: 500;
-  font-size: 32px;
+  border-bottom: 2px solid #33312e;
+  font-weight: 600;
+  font-size: 42px;
   font-family: "FCZizouSlab", Georgia, Times, Times New Roman, serif;
   line-height: 90%;
 }
-@media (min-width: 420px) {
-  /* line 102, ../sass/site.scss */
+@media (min-width: 620px) {
+  /* line 75, ../sass/site.scss */
   .viz-title {
-    font-size: 32px;
+    font-size: 42px;
   }
 }
 
-/* line 115, ../sass/site.scss */
+/* line 88, ../sass/site.scss */
+.viz-underline {
+  margin-top: 0;
+  color: #33312e;
+  font-weight: 300;
+  line-height: 140%;
+}
+
+/* line 95, ../sass/site.scss */
 .viz-copy {
   color: #66635d;
   font-weight: 300;
   line-height: 140%;
 }
 
-/* line 121, ../sass/site.scss */
+/* line 101, ../sass/site.scss */
 .viz-byline {
   letter-spacing: .5px;
   line-height: 90%;
 }
 
-/* line 126, ../sass/site.scss */
+/* line 106, ../sass/site.scss */
 .viz-content-block {
-  margin: 0 0 15px;
+  margin: 0 0 40px;
 }
 
-/* line 130, ../sass/site.scss */
+/* line 110, ../sass/site.scss */
+.viz-content-header {
+  margin: 0 0 30px;
+}
+
+/* line 114, ../sass/site.scss */
 .viz-subhed {
   margin: 0 0 10px;
   padding-bottom: 3px;
@@ -418,19 +397,19 @@ body {
   font-size: 13px;
 }
 
-/* line 138, ../sass/site.scss */
+/* line 122, ../sass/site.scss */
 .viz-subhed-select {
   padding-bottom: 7px;
 }
 
-/* line 142, ../sass/site.scss */
+/* line 126, ../sass/site.scss */
 .viz-legend {
   margin: 0 0 0 4px;
   padding: 0;
   list-style-position: inside;
 }
 
-/* line 148, ../sass/site.scss */
+/* line 132, ../sass/site.scss */
 .viz-legend-item {
   display: -moz-inline-stack;
   display: inline-block;
@@ -447,103 +426,70 @@ body {
   font-size: 36px;
   line-height: 40%;
 }
-/* line 155, ../sass/site.scss */
+/* line 139, ../sass/site.scss */
 .viz-legend-item:before {
   margin-left: -5px;
   padding-right: 2px;
   content: "\002022";
 }
 
-/* line 162, ../sass/site.scss */
+/* line 146, ../sass/site.scss */
 .viz-legend-text {
   vertical-align: middle;
 }
 
-/* line 171, ../sass/site.scss */
-.ss-secondary-text {
-  margin-bottom: 10px;
-  color: #99948a;
-  font-weight: 300;
-}
-
-/* line 177, ../sass/site.scss */
-.ss-q-short {
-  margin-bottom: 10px;
-  padding: 5px;
+/* line 158, ../sass/site.scss */
+.viz-choice-item {
+  padding: 5px 0;
   width: 100%;
-  height: 25px;
+  border-bottom: 1px solid #ccc6b9;
+  cursor: pointer;
+  -webkit-column-break-inside: avoid;
+  -webkit-backface-visibility: hidden;
+}
+/* line 165, ../sass/site.scss */
+.viz-choice-item:nth-child(2n) {
+  margin-bottom: 10px;
+  border-bottom: 0px;
+}
+/* line 168, ../sass/site.scss */
+.viz-choice-item:nth-child(2n) .viz-vs {
+  display: block;
+}
+/* line 172, ../sass/site.scss */
+.viz-choice-item:first-of-type {
+  padding-top: 0;
+}
+/* line 175, ../sass/site.scss */
+.viz-choice-item:last-of-type {
+  padding-bottom: 0;
 }
 
-/* line 184, ../sass/site.scss */
-#ss-submit {
-  margin: 0;
-}
-
-/* line 188, ../sass/site.scss */
-.ss-form-entry {
-  padding: 0;
-}
-
-/* line 192, ../sass/site.scss */
-#navigation-table {
-  border-spacing: 0;
-  border-color: white;
-}
-
-/* line 197, ../sass/site.scss */
-.viz-quiz-wrapper {
-  *zoom: 1;
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  -ms-column-count: 2;
-  -o-column-count: 2;
-  column-count: 2;
-  -webkit-column-gap: 10px;
-  -moz-column-gap: 10px;
-  -ms-column-gap: 10px;
-  -o-column-gap: 10px;
-  column-gap: 10px;
-}
-/* line 38, ../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-.viz-quiz-wrapper:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* line 203, ../sass/site.scss */
+/* line 180, ../sass/site.scss */
 .viz-choices-group {
   -webkit-transition: width 0.2s ease-in-out;
   -moz-transition: width 0.2s ease-in-out;
   -o-transition: width 0.2s ease-in-out;
   transition: width 0.2s ease-in-out;
-  margin: 0 0 15px;
-  margin-bottom: 10px;
-  padding: 0;
+  margin: 0 0 20px;
+  padding: 0 0 0 10px;
+  border-left: 1px solid #ccc6b9;
   list-style-type: none;
   vertical-align: top;
 }
-@media (min-width: 550px) {
-  /* line 203, ../sass/site.scss */
+@media (min-width: 620px) {
+  /* line 180, ../sass/site.scss */
   .viz-choices-group {
     display: inline-block;
     width: 100%;
   }
 }
-
-/* line 221, ../sass/site.scss */
-.viz-choice-item {
-  padding: 5px;
-  width: 100%;
-  border: 1px solid #ccc6b9;
-  cursor: pointer;
-}
-/* line 226, ../sass/site.scss */
-.viz-choice-item:nth-child(2n) {
-  border-top: 0px;
+/* line 191, ../sass/site.scss */
+.viz-choices-group .viz-choice-item {
+  margin-bottom: 0;
 }
 
-/* line 231, ../sass/site.scss */
+/* line 196, ../sass/site.scss */
 .viz-header-wrapper {
   *zoom: 1;
   position: relative;
@@ -555,66 +501,18 @@ body {
   clear: both;
 }
 
-/* line 236, ../sass/site.scss */
-.viz-quiz-target {
-  position: absolute;
-  top: 8px;
-  right: 5px;
-  width: 25px;
-  height: 25px;
-  background: url("/choice_targets.png") no-repeat;
-  background-position: 0 0;
-  background-size: 25px;
-}
-
-/* line 245, ../sass/site.scss */
+/* line 201, ../sass/site.scss */
 .viz-designer-description {
   display: none;
   margin: 0px;
-  padding: 10px;
+  padding: 10px 0;
   color: #99948a;
   font-weight: 300;
   font-size: 12px;
   line-height: 140%;
 }
 
-/* line 255, ../sass/site.scss */
-.viz-submitted-alert {
-  display: none;
-  margin: 0;
-  padding: 5px;
-  border-right: 1px solid #ccc6b9;
-  border-bottom: 1px solid #ccc6b9;
-  border-left: 1px solid #ccc6b9;
-  color: #ccc6b9;
-  text-align: center;
-  font-weight: 300;
-  font-size: 11px;
-}
-
-/* line 269, ../sass/site.scss */
-.viz-choice-winner .viz-quiz-target {
-  background-position: 0 -50px;
-}
-/* line 272, ../sass/site.scss */
-.viz-choice-winner .viz-designer-name {
-  font-weight: 500;
-}
-
-/* line 278, ../sass/site.scss */
-.viz-choice-loser .viz-quiz-target {
-  background-position: 0 -25px;
-}
-/* line 281, ../sass/site.scss */
-.viz-choice-loser .viz-designer-name {
-  color: #99948a;
-}
-/* line 284, ../sass/site.scss */
-.viz-choice-loser .viz-headshot {
-  opacity: .5;
-}
-
-/* line 289, ../sass/site.scss */
+/* line 211, ../sass/site.scss */
 .viz-headshot-wrap {
   position: relative;
   float: left;
@@ -623,22 +521,22 @@ body {
   height: 40px;
 }
 
-/* line 298, ../sass/site.scss */
+/* line 220, ../sass/site.scss */
 .viz-headshot {
   position: relative;
   width: 1280px;
   height: 40px;
 }
 
-/* line 304, ../sass/site.scss */
+/* line 226, ../sass/site.scss */
 .viz-designer-name {
   display: block;
   margin: 0 0 2px;
-  font-weight: 300;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 14px;
 }
 
-/* line 311, ../sass/site.scss */
+/* line 233, ../sass/site.scss */
 .viz-designer-job {
   display: block;
   margin: 0;
@@ -647,23 +545,23 @@ body {
   font-size: 11px;
 }
 
-/* line 319, ../sass/site.scss */
+/* line 241, ../sass/site.scss */
 .viz-designer-header-mod {
   left: 47px;
   padding-right: 35px;
 }
 
-/* line 325, ../sass/site.scss */
+/* line 247, ../sass/site.scss */
 .viz-vs {
   position: absolute;
-  top: -15px;
-  right: 8px;
+  top: -13px;
+  right: 0px;
   z-index: 1;
-  padding: 3px;
-  width: 20px;
-  height: 20px;
+  display: none;
+  padding: 0;
+  width: 25px;
+  height: 15px;
   border: 1px solid #ccc6b9;
-  border-radius: 50%;
   background-color: white;
   color: #ccc6b9;
   text-align: center;
@@ -671,7 +569,285 @@ body {
   font-size: 10px;
 }
 
-/* line 340, ../sass/site.scss */
-input[type="radio"] {
+@media (min-width: 620px) {
+  /* line 270, ../sass/site.scss */
+  .viz-quiz-wrapper {
+    *zoom: 1;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -ms-column-count: 2;
+    -o-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    -ms-column-gap: 30px;
+    -o-column-gap: 30px;
+    column-gap: 30px;
+  }
+  /* line 38, ../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .viz-quiz-wrapper:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/* line 282, ../sass/site.scss */
+.viz-radio {
   display: none;
+}
+
+/* line 286, ../sass/site.scss */
+.viz-quiz-target {
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  position: absolute;
+  top: 8px;
+  right: 0px;
+  width: 25px;
+  height: 25px;
+  background: url("http://www.guswezerek.com/projects/bracket_madness/choice_targets.png") no-repeat;
+  background-position: 0 0;
+  background-size: 25px;
+  opacity: 0.5;
+}
+/* line 295, ../sass/site.scss */
+.viz-quiz-target:hover {
+  opacity: 1;
+}
+
+/* line 300, ../sass/site.scss */
+.viz-submitted-alert {
+  display: none;
+  margin: -25px 0 10px;
+  padding: 5px;
+  color: #ccc6b9;
+  text-align: center;
+  font-weight: 300;
+  font-size: 11px;
+}
+
+/* line 311, ../sass/site.scss */
+.viz-choice-winner .viz-quiz-target {
+  background-position: 0 -50px;
+}
+
+/* line 317, ../sass/site.scss */
+.viz-choice-loser .viz-quiz-target {
+  background-position: 0 -25px;
+}
+/* line 320, ../sass/site.scss */
+.viz-choice-loser .viz-designer-name {
+  color: #99948a;
+  font-weight: 300;
+}
+/* line 324, ../sass/site.scss */
+.viz-choice-loser .viz-headshot {
+  opacity: .3;
+}
+
+@media (min-width: 620px) {
+  /* line 340, ../sass/site.scss */
+  .viz-column-1 {
+    width: 48%;
+    float: left;
+  }
+}
+
+@media (min-width: 620px) {
+  /* line 347, ../sass/site.scss */
+  .viz-column-2 {
+    width: 49%;
+    padding-left: 17px;
+    margin-left: 15px;
+    border-left: 1px dotted #ccc6b9;
+    float: right;
+  }
+}
+
+/* line 357, ../sass/site.scss */
+.viz-division-list {
+  *zoom: 1;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+/* line 38, ../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.viz-division-list:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 367, ../sass/site.scss */
+.viz-nav-anchor-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+/* line 378, ../sass/site.scss */
+.viz-division-topper {
+  position: relative;
+  margin: 0 auto 15px;
+  padding: 0;
+  border: 1px solid #ccc6b9;
+  -webkit-column-break-inside: avoid;
+  -webkit-backface-visibility: hidden;
+}
+
+/* line 387, ../sass/site.scss */
+.viz-division-title {
+  display: inline-block;
+  margin: -3px 0 0;
+  width: 100%;
+  color: #33312e;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 80%;
+}
+
+/* line 399, ../sass/site.scss */
+.viz-division-bull {
+  margin-left: 4px;
+  padding-right: 4px;
+  vertical-align: middle;
+  font-size: 36px;
+}
+
+/* line 406, ../sass/site.scss */
+.viz-division-button {
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  position: absolute;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  cursor: pointer;
+}
+/* line 416, ../sass/site.scss */
+.viz-division-button:hover {
+  opacity: 1;
+}
+/* line 419, ../sass/site.scss */
+.viz-division-button:focus {
+  outline: none;
+}
+
+/* line 424, ../sass/site.scss */
+.viz-prev {
+  left: 10px;
+  background-image: url("http://www.guswezerek.com/projects/bracket_madness/btn-prev.png");
+}
+
+/* line 429, ../sass/site.scss */
+.viz-next {
+  right: 10px;
+  background-image: url("http://www.guswezerek.com/projects/bracket_madness/btn-next.png");
+}
+
+/* line 434, ../sass/site.scss */
+.viz-division-button-img {
+  margin: 0;
+  width: 20px;
+}
+
+/* line 439, ../sass/site.scss */
+.viz-division-name {
+  margin-top: 0;
+  padding: 0 5px;
+  text-align: center;
+  background-color: white;
+}
+
+/* line 446, ../sass/site.scss */
+.viz-division-round {
+  color: #33312e;
+  letter-spacing: 0.5px;
+  font-size: 15px;
+  font-family: "FCZizouSlab", Georgia, Times, Times New Roman, serif;
+  margin: 10px 0 16px;
+  font-weight: 600;
+}
+
+/* line 457, ../sass/site.scss */
+.viz-division {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  width: 100%;
+}
+@media (min-width: 620px) {
+  /* line 461, ../sass/site.scss */
+  .viz-division:last-of-type .viz-division-designers-list, .viz-division .viz-choice-item:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+/* line 467, ../sass/site.scss */
+.viz-division-finals {
+  display: none;
+}
+
+/* line 471, ../sass/site.scss */
+.viz-division-winner {
+  display: none;
+}
+
+/* line 475, ../sass/site.scss */
+.viz-division-designers-list {
+  margin: 0 0 35px;
+  padding: 0 10px;
+  list-style-type: none;
+}
+
+/* line 489, ../sass/site.scss */
+.viz-graphic-text {
+  color: #ff8a80;
+}
+
+/* line 493, ../sass/site.scss */
+.viz-interactive-text {
+  color: #b781ff;
+}
+
+/* line 497, ../sass/site.scss */
+.viz-product-text {
+  color: #819fff;
+}
+
+/* line 501, ../sass/site.scss */
+.viz-architecture-text {
+  color: #ff81f4;
+}
+
+/* line 505, ../sass/site.scss */
+.viz-graphic-img {
+  background-color: #ff8a80;
+}
+
+/* line 509, ../sass/site.scss */
+.viz-interactive-img {
+  background-color: #b781ff;
+}
+
+/* line 513, ../sass/site.scss */
+.viz-product-img {
+  background-color: #819fff;
+}
+
+/* line 517, ../sass/site.scss */
+.viz-architecture-img {
+  background-color: #ff81f4;
 }
