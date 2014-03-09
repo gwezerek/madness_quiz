@@ -65,6 +65,7 @@ var divisions = {
 }
 
 
+
 // SETUP
 // =============================================
 
@@ -91,8 +92,9 @@ d3.csv(spreadsheetURL, function(error, data) {
 
 
 
-// // HANDLERS
-// // =============================================
+
+// HANDLERS
+// =============================================
 
 // Vote functionality
 $('.viz-quiz-wrapper').on("click", '.viz-quiz-target', function() {
@@ -173,8 +175,8 @@ $(".viz-division-button").on("click", function() {
 
 
 
-// // HELPERS
-// // =============================================
+// HELPERS
+// =============================================
 
 function populateQuiz(data) {
 	var myObj = {};
