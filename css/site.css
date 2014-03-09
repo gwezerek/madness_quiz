@@ -309,7 +309,7 @@ body {
   max-width: 634px;
   height: 100%;
   color: #33312e;
-  font-size: 13px;
+  font-size: 15px;
   font-family: "MuseoSans", Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
 }
@@ -380,7 +380,7 @@ body {
 
 /* line 106, ../sass/site.scss */
 .viz-content-block {
-  margin: 0 0 25px;
+  margin: 0 0 40px;
 }
 
 /* line 110, ../sass/site.scss */

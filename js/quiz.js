@@ -1,4 +1,4 @@
-
+ 
 // SETUP VARIABLES
 // =============================================
 
@@ -23,12 +23,19 @@ var indicesRound5 = [16,23,17,22];
 var indicesRound6 = [16,23];
 
 // For rankings
-var division1Round = 1;
-var division2Round = 1;
-var division3Round = 1;
-var division4Round = 1;
-var division5Round = 1;
-var division6Round = 1;
+var division1RoundNumber = 1;
+var division2RoundNumber = 1;
+var division3RoundNumber = 1;
+var division4RoundNumber = 1;
+var division5RoundNumber = 1;
+var division6RoundNumber = 1;
+
+var division1RoundArray = [1];
+var division2RoundArray = [1];
+var division3RoundArray = [1,2];
+var division4RoundArray = [1];
+var division5RoundArray = [1];
+var division6RoundArray = [1];
 
 var division1Round1 = [0,7,1,6,2,5,3,4];
 var division1Round2 = [0,7,1,6,2,5,3,4];
@@ -60,7 +67,7 @@ var division6Round1 = [2];
 $('.viz-form').attr("action", formURL);
 
 // Set each rankings division's round to the latest we've defined above
-updateRounds();
+populateRounds();
 
 
 
@@ -133,6 +140,32 @@ $('.viz-container').on("click", '.viz-choice-item .viz-quiz-target', function(e)
 	e.stopPropagation();
 });
 
+// Iterating through rounds
+$(".viz-division-button").on("click", function() {
+	var $this = $(this);
+	var division = $this.closest(".viz-division");
+	var divisionID = division.attr("id");
+	var oldRoundNumber = eval(divisionID + "RoundNumber");
+	var divisionRoundArray = eval(divisionID + "RoundArray");
+	var addRound = false;
+	var subRound = false;
+
+	if ($this.hasClass("viz-next")) {
+		addRound = true
+	} else {
+		subRound = true
+	}
+
+	var currentDivisionRound = updateRoundNumber(oldRoundNumber, addRound, subRound);
+
+	updateTopperText(division, currentDivisionRound);
+	console.log(division3RoundNumber);
+	eval(divisionID + "RoundNumber" + " = " + currentDivisionRound);
+	console.log(division3RoundNumber);
+	setButtons(currentDivisionRound, divisionRoundArray, division);
+
+});
+
 
 
 
@@ -176,7 +209,8 @@ function populateRankings(data, container) {
 		var myObj = {};
 		var $this = $(this);
 		var divisionID = $this.attr("id");
-		var divisionRound = $this.data("round");
+		var divisionRound = eval(divisionID + "RoundNumber");
+		var divisionRoundArray = eval(divisionID + "RoundArray");
 		var desiredIndices = eval(divisionID + "Round" + divisionRound);
 
 		// Get and order only the division's designers
@@ -194,6 +228,9 @@ function populateRankings(data, container) {
 		// Append the list
 		$this.find(".viz-division-designers-list").append(toAppendString);
 
+		// Show and hide the right buttons
+		setButtons(divisionRound, divisionRoundArray, $this);
+
 	});
 }
 
@@ -206,17 +243,41 @@ function filterData(data, desiredIndices) {
 	return filteredArray;
 }
 
-function updateRounds() {
+function populateRounds() {
 	var divisions = $(".viz-division");
 	divisions.each(function() {
 		var $this = $(this);
-		var roundNumber = eval($this.attr("id") + "Round");
+		var roundNumber = eval($this.attr("id") + "RoundNumber");
 
-		$this.data("round", roundNumber);
-		$this.find(".viz-division-round").text("Round " + roundNumber);
+		updateTopperText($this, roundNumber);
 	});
 }
 
-function updateTopper() {
+function setButtons(roundNumber, roundArray, container) {
+	var prevButton = container.find(".viz-prev");
+	var nextButton = container.find(".viz-next");
 
+	if (roundNumber == roundArray[0]) {
+		prevButton.hide();
+	} else {
+		prevButton.show();
+	}
+
+	if (roundNumber == roundArray[roundArray.length - 1]) {
+		nextButton.hide();
+	} else {
+		nextButton.show();
+	}
 }
+
+function updateRoundNumber(oldRoundNumber, addRound, subRound) {
+	return oldRoundNumber + addRound - subRound;
+}
+
+function updateTopperText(container, roundNumber) {
+	container.find(".viz-division-round").text("Round " + roundNumber);
+}
+
+
+
+

@@ -1,5 +1,56 @@
 
 
+var division1RoundNumber = 1;
+var division2RoundNumber = 1;
+var division3RoundNumber = 1;
+var division4RoundNumber = 1;
+var division5RoundNumber = 1;
+var division6RoundNumber = 1;
+
+var division1RoundArray = [1];
+var division2RoundArray = [1];
+var division3RoundArray = [1];
+var division4RoundArray = [1];
+var division5RoundArray = [1];
+var division6RoundArray = [1];
+
+
+Setup
+setButtons(roundNumber, roundArray);
+
+On viz-division-button click
+	var addRound = false;
+	var subRound = false;
+
+	If button hasClass viz-next
+		addRound = true
+	else
+		subRound = true
+
+	updateRoundNumber(addRound, subRound);
+	setButtons();
+}
+
+function setButtons(roundNumber, roundArray) {
+	If roundNumber is first in roundArray
+		hide prev button;
+	else 
+		show prev button
+
+	If roundNumber is last in roundArray
+		hide next button;
+	else 
+		show next button; 
+}
+
+
+function updateRoundNumber(addRound, subRound) {
+	roundNumber = roundNumber + addRound - subRound;
+}
+
+
+
+
 SETUP
 Set each <li class="viz-division"> data-round = to correct var
 Run set nav function
