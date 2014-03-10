@@ -156,6 +156,7 @@ body {
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 .viz-choice-item {
+	@include trans(0.2s, padding, ease-in-out);
 	padding: 5px 0;
 	width: 100%;
 	border-bottom: 1px solid $light-gray;
@@ -218,12 +219,14 @@ body {
 
 // Supercute img tag sprites hack
 .viz-headshot {
+	@include trans(0.2s, opacity, ease-in-out);
 	position: relative;
 	width: 1280px;
 	height: 40px;
 }
 
 .viz-designer-name {
+	@include trans(0.2s, color, ease-in-out);
 	display: block;
 	margin: 0 0 2px;
 	font-weight: 500;
