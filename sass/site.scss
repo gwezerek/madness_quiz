@@ -479,6 +479,17 @@ body {
 }
 
 
+// Loser conditional styling
+.viz-division .viz-choice-loser {
+	margin-bottom: 0;
+	padding: 5px 0 0;
+	border-bottom: none;
+	& .viz-vs {
+		display: none;
+	}
+}
+
+
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 

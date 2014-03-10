@@ -24,7 +24,7 @@ var indicesRound5  = [16,23];
 // For rankings
 var divisions = {
 	division1: {
-		roundNumber: 1,
+		roundNumber: 2,
 		roundArray: [1,2],
 		round1: [0,7,1,6,2,5,3,4],
 		round2: [0,7,1,6,2,5,3,4],
@@ -32,28 +32,28 @@ var divisions = {
 	},
 	division2: {
 		roundNumber: 1,
-		roundArray: [1,2],
+		roundArray: [1],
 		round1: [8,15,9,14,10,13,11,12],
 		round2: [8,15,9,14,10,13,11,12],
 		round3: [8,15,9,14,10,13,11,12]
 	},
 	division3: {
-		roundNumber: 1,
-		roundArray: [1,2],
+		roundNumber: 3,
+		roundArray: [1,2,3],
 		round1: [16,23,17,22,18,21,19,20],
 		round2: [16,23,17,22,18,21,19,20],
 		round3: [16,23,17,22,18,21,19,20]
 	},
 	division4: {
 		roundNumber: 1,
-		roundArray: [1,2],
+		roundArray: [1],
 		round1: [24,31,25,30,26,29,27,28],
 		round2: [24,31,25,30,26,29,27,28],
 		round3: [24,31,25,30,26,29,27,28]
 	},
 	division5: {
 		roundNumber: 1,
-		roundArray: [1,2],
+		roundArray: [1],
 		round1: [0,1,2,3],
 		round2: [2,3,1,0]
 	},
@@ -167,9 +167,13 @@ $(".viz-division-button").on("click", function() {
 
 	updateTopperText(division, currentDivisionRound);
 	divisions[divisionID]['roundNumber'] = currentDivisionRound;
+	setLosers(currentDivisionRound, division);
 	setButtons(currentDivisionRound, divisionRoundArray, division);
 
 });
+
+
+
 
 
 
@@ -233,6 +237,9 @@ function populateRankings(data, container) {
 		// Append the list
 		$this.find(".viz-division-designers-list").append(toAppendString);
 
+		// Fade out the losers
+		setLosers(divisionRound, $this);
+
 		// Show and hide the right buttons
 		setButtons(divisionRound, divisionRoundArray, $this);
 
@@ -281,6 +288,22 @@ function updateRoundNumber(oldRoundNumber, addRound, subRound) {
 
 function updateTopperText(container, roundNumber) {
 	container.find(".viz-division-round").text("Round " + roundNumber);
+}
+
+function setLosers(roundNumber, container) {
+
+	var designers = container.find(".viz-choice-item");
+
+	// Reset losers
+	designers.removeClass("viz-choice-loser");
+
+	if (roundNumber == 2) {
+		console.log("meow");
+		designers.slice(-4).addClass("viz-choice-loser");
+	} else if (roundNumber == 3) {
+		designers.slice(-6).addClass("viz-choice-loser");
+	}
+	
 }
 
 

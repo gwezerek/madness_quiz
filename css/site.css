@@ -812,42 +812,53 @@ body {
   list-style-type: none;
 }
 
-/* line 489, ../sass/site.scss */
+/* line 483, ../sass/site.scss */
+.viz-division .viz-choice-loser {
+  margin-bottom: 0;
+  padding: 5px 0 0;
+  border-bottom: none;
+}
+/* line 487, ../sass/site.scss */
+.viz-division .viz-choice-loser .viz-vs {
+  display: none;
+}
+
+/* line 500, ../sass/site.scss */
 .viz-graphic-text {
   color: #ff8a80;
 }
 
-/* line 493, ../sass/site.scss */
+/* line 504, ../sass/site.scss */
 .viz-interactive-text {
   color: #b781ff;
 }
 
-/* line 497, ../sass/site.scss */
+/* line 508, ../sass/site.scss */
 .viz-product-text {
   color: #819fff;
 }
 
-/* line 501, ../sass/site.scss */
+/* line 512, ../sass/site.scss */
 .viz-architecture-text {
   color: #ff81f4;
 }
 
-/* line 505, ../sass/site.scss */
+/* line 516, ../sass/site.scss */
 .viz-graphic-img {
   background-color: #ff8a80;
 }
 
-/* line 509, ../sass/site.scss */
+/* line 520, ../sass/site.scss */
 .viz-interactive-img {
   background-color: #b781ff;
 }
 
-/* line 513, ../sass/site.scss */
+/* line 524, ../sass/site.scss */
 .viz-product-img {
   background-color: #819fff;
 }
 
-/* line 517, ../sass/site.scss */
+/* line 528, ../sass/site.scss */
 .viz-architecture-img {
   background-color: #ff81f4;
 }
