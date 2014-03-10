@@ -1,10 +1,5 @@
 
 UPDATE FUNCTION
-Change topper title with new round
-Form jquery collection of viz-choice-items within
-Create new empty string
-Iterate over rakings array of var division+id+round+roundVar
-Concat lis with matching data-index to empty string
 
 Prepend that string to the <li class="viz-division">
 But make that string visbility: hidden
@@ -12,9 +7,5 @@ Get position of each li in that string
 Hide that string
 Animate original elements to those positions // https://forum.jquery.com/topic/offset-with-animate
 Replace original elements with new string
-
-
-
-
 
 

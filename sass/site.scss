@@ -159,13 +159,12 @@ body {
 	@include trans(0.2s, padding, ease-in-out);
 	padding: 5px 0;
 	width: 100%;
-	border-bottom: 1px solid $light-gray;
 	cursor: pointer;
 	-webkit-column-break-inside:avoid;
 	-webkit-backface-visibility:hidden;
 	&:nth-child(2n) {
 		margin-bottom: 10px;
-		border-bottom: 0px;
+		border-top: 1px solid $light-gray;
 		.viz-vs {
 			display: block;
 		}
@@ -279,6 +278,7 @@ body {
 }
 
 .viz-quiz {
+	margin-bottom: 20px;
 	// Set to display: none after voting ends
 }
 
@@ -337,7 +337,7 @@ body {
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 .viz-rankings {
-	// display: none;
+	display: none;
 }
 
 .viz-column-1 {
@@ -364,16 +364,17 @@ body {
 	list-style-type: none;
 }
 
+.viz-hidden {
+	display: none;
+	// visibility: hidden;
+}
+
 
 
 // Nav
 .viz-nav-anchor-list {
 	padding: 0;
 	list-style-type: none;
-}
-
-.viz-nav-anchor-item {
-
 }
 
 
@@ -387,6 +388,14 @@ body {
 	-webkit-backface-visibility: hidden;
 }
 
+.viz-division-final-topper {
+	border-width: 2px;
+	border-color: $txt-black;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
 .viz-division-title {
 	display: inline-block;
 	margin: -3px 0 0;
@@ -397,6 +406,12 @@ body {
 	font-weight: 300;
 	font-size: 11px;
 	line-height: 80%;
+}
+
+.viz-division-title-final {
+	margin: -3px 0 0;
+	text-align: center;
+	text-transform: uppercase;
 }
 
 .viz-division-bull {
@@ -455,6 +470,11 @@ body {
 	font-weight: 600;
 }
 
+.viz-division-final-round {
+	letter-spacing: 0.5px;
+	font-size: 15px;
+	margin: 0 0 5px;
+}
 
 // Divison lists
 .viz-division {
@@ -468,10 +488,20 @@ body {
 }
 
 .viz-division-finals {
+	margin-bottom: 35px;
 	display: none; // Switch to display: block when appropriate
 }
 
 .viz-division-winner {
+	color: $txt-black;
+	letter-spacing: 0.5px;
+	font-size: 15px;
+	font-family: $slab;
+	margin: 10px 0 10px;
+	font-weight: 600;
+	border-top: none;
+	border-left: none;
+	border-right: none;
 	display: none; // Switch to display: block on the final day
 }
 
