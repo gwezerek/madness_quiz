@@ -24,10 +24,10 @@ var indicesRound5  = [16,23];
 // For rankings
 var divisions = {
 	division1: {
-		roundNumber: 2,
+		roundNumber: 1,
 		roundArray: [1,2],
 		round1: [0,7,1,6,2,5,3,4],
-		round2: [0,7,1,6,2,5,3,4],
+		round2: [2,7,1,6,0,5,3,4],
 		round3: [0,7,1,6,2,5,3,4]
 	},
 	division2: {
@@ -149,6 +149,7 @@ $('.viz-container').on("click", '.viz-choice-item .viz-quiz-target', function(e)
 
 // Iterating through rounds
 $(".viz-division-button").on("click", function() {
+	var toAppendString = "";
 	var $this = $(this);
 	var division = $this.closest(".viz-division");
 	var divisionID = division.attr("id");
@@ -164,11 +165,17 @@ $(".viz-division-button").on("click", function() {
 	}
 
 	var currentDivisionRound = updateRoundNumber(oldRoundNumber, addRound, subRound);
+	var desiredIndices = divisions[divisionID]['round' + currentDivisionRound];
 
 	updateTopperText(division, currentDivisionRound);
 	divisions[divisionID]['roundNumber'] = currentDivisionRound;
-	setLosers(currentDivisionRound, division);
 	setButtons(currentDivisionRound, divisionRoundArray, division);
+
+	// Reorder elements
+	toAppendString = refilterData(division, desiredIndices);
+	division.find(".viz-division-designers-list").html(toAppendString);
+
+	setLosers(currentDivisionRound, division);
 
 });
 
@@ -255,6 +262,16 @@ function filterData(data, desiredIndices) {
 	return filteredArray;
 }
 
+function refilterData(container, desiredIndices) {
+	var filteredArray = [];
+
+	for (i = 0; i < desiredIndices.length; i++) {
+		var desiredElement = container.find("[data-originalIndex='" + desiredIndices[i] + "']");
+		filteredArray.push(desiredElement[0]);
+	}  
+	return filteredArray;
+}
+
 function populateRounds() {
 	var divisionElements = $(".viz-division");
 	divisionElements.each(function() {
@@ -298,7 +315,6 @@ function setLosers(roundNumber, container) {
 	designers.removeClass("viz-choice-loser");
 
 	if (roundNumber == 2) {
-		console.log("meow");
 		designers.slice(-4).addClass("viz-choice-loser");
 	} else if (roundNumber == 3) {
 		designers.slice(-6).addClass("viz-choice-loser");

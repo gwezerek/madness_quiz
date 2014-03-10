@@ -48,7 +48,7 @@
 				</nav> -->
 				<div class="viz-division-wrapper">
 					<ol class="viz-division-list">
-						<li data-round="1" class="viz-division viz-division-winner" id="division6">
+						<li class="viz-division viz-division-winner" id="division6">
 							<div class="viz-division-topper">
 								<h5 class="viz-division-title">
 									<span class="viz-division-name viz-detail">Winner</span>
@@ -57,7 +57,7 @@
 							<ol class="viz-division-designers-list">
 							</ol>
 						</li>
-						<li data-round="1" class="viz-division viz-division-finals" id="division5">
+						<li class="viz-division viz-division-finals" id="division5">
 							<div class="viz-division-topper">
 								<a href="#0" src="http://www.guswezerek.com/projects/bracket_madness/btn-prev.png" class="viz-division-button viz-prev"></a>
 									<h5 class="viz-division-title">
@@ -70,7 +70,7 @@
 							</ol>
 						</li>
 						<div class="viz-column-1">
-							<li data-round="1" class="viz-division" id="division1">
+							<li class="viz-division" id="division1">
 								<div class="viz-division-topper">
 									<a href="#0" src="http://www.guswezerek.com/projects/bracket_madness/btn-prev.png" class="viz-division-button viz-prev"></a>
 										<h5 class="viz-division-title">
@@ -82,7 +82,7 @@
 								<ol class="viz-division-designers-list">
 								</ol>
 							</li>
-							<li data-round="1" class="viz-division" id="division2">
+							<li class="viz-division" id="division2">
 								<div class="viz-division-topper">
 									<a href="#0" src="http://www.guswezerek.com/projects/bracket_madness/btn-prev.png" class="viz-division-button viz-prev"></a>
 										<h5 class="viz-division-title">
@@ -96,7 +96,7 @@
 							</li>
 						</div>
 						<div class="viz-column-2">
-							<li data-round="1" class="viz-division" id="division3">
+							<li class="viz-division" id="division3">
 								<div class="viz-division-topper">
 									<a href="#0" src="http://www.guswezerek.com/projects/bracket_madness/btn-prev.png" class="viz-division-button viz-prev"></a>
 										<h5 class="viz-division-title">
@@ -108,7 +108,7 @@
 								<ol class="viz-division-designers-list">
 								</ol>
 							</li>
-							<li data-round="1" class="viz-division" id="division4">
+							<li class="viz-division" id="division4">
 								<div class="viz-division-topper">
 									<a href="#0" src="http://www.guswezerek.com/projects/bracket_madness/btn-prev.png" class="viz-division-button viz-prev"></a>
 										<h5 class="viz-division-title">
@@ -156,9 +156,9 @@
 		<!-- Templates for Questions -->
 		<script type="text/template" class="viz-designer-template">
 			<% if (vizEven == false && vizQuiz == true) { %>
-				<ul class="ss-choices viz-choices-group" role="radiogroup" aria-label="Who is the better designer?  ">
+				<ul class="ss-choices viz-choices-group" role="radiogroup" aria-label="Who is the better designer?">
 			<% } %>
-				<li class="ss-choice-item viz-choice-item">
+				<li data-originalIndex="<%= original_index %>" class="ss-choice-item viz-choice-item">
 					<label>
 						<span class="ss-choice-item-control goog-inline-block">
 							<input disabled type="radio" name="<%= input_name %>" value="<%= name %>" id="<%= input_id %>" role="radio" class="ss-q-radio viz-radio" aria-label="<%= name %>">

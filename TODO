@@ -1,77 +1,4 @@
 
-
-var division1RoundNumber = 1;
-var division2RoundNumber = 1;
-var division3RoundNumber = 1;
-var division4RoundNumber = 1;
-var division5RoundNumber = 1;
-var division6RoundNumber = 1;
-
-var division1RoundArray = [1];
-var division2RoundArray = [1];
-var division3RoundArray = [1];
-var division4RoundArray = [1];
-var division5RoundArray = [1];
-var division6RoundArray = [1];
-
-
-Setup
-setButtons(roundNumber, roundArray);
-
-On viz-division-button click
-	var addRound = false;
-	var subRound = false;
-
-	If button hasClass viz-next
-		addRound = true
-	else
-		subRound = true
-
-	updateRoundNumber(addRound, subRound);
-	setButtons();
-}
-
-function setButtons(roundNumber, roundArray) {
-	If roundNumber is first in roundArray
-		hide prev button;
-	else 
-		show prev button
-
-	If roundNumber is last in roundArray
-		hide next button;
-	else 
-		show next button; 
-}
-
-
-function updateRoundNumber(addRound, subRound) {
-	roundNumber = roundNumber + addRound - subRound;
-}
-
-
-
-
-SETUP
-Set each <li class="viz-division"> data-round = to correct var
-Run set nav function
-
-POPULATE
-Get all <li class="viz-division">
-Run populate function on each
-
-POPULATE RANKINGS FUNCTION
-Find <ol class="viz-division-list">
-Get id ("division1")
-Filter data to that round's variable
-Run template and append
-
-
-UPDATE
-On nav click
-Get the parent id of <li class="viz-division">
-Take current round and -1/+1, update the data-round
-Run update function 
-
 UPDATE FUNCTION
 Change topper title with new round
 Form jquery collection of viz-choice-items within
@@ -86,9 +13,8 @@ Hide that string
 Animate original elements to those positions // https://forum.jquery.com/topic/offset-with-animate
 Replace original elements with new string
 
-Remove all viz-choice-loser classes
-If statements based on round add viz-choice-loser class to n-6/4/0
 
 
-SET NAV FUNCTION
-Conditional hides nav buttons if not applicable
+
+
+
