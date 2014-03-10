@@ -1,0 +1,92 @@
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+// Bracket specific
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+
+.viz-bracket {
+	max-width: 940px;
+	margin: 0 auto;
+}
+
+
+.viz-legend {
+	@include absolute(23px 0px n n);
+	display: inline-block;
+	margin: 0 0 0 4px;
+	padding: 0;
+	list-style-position: inside;
+}
+
+.viz-legend-item {
+	@include inline-block;
+	@include trans(0.2s, opacity, ease-in-out);
+	margin: 0 15px 5px 0;
+	background-color: $bground;
+	font-size: 36px;
+	line-height: 40%;
+	&:before {
+		margin-left: -5px;
+		padding-right: 2px;
+		content: "\002022";
+	}
+	&:last-of-type {
+		margin-right: 0;
+	}
+}
+
+.viz-legend-text {
+	vertical-align: middle;
+}
+
+.viz-bracket-date-list {
+	position: relative;
+	padding: 0;
+	list-style-type: none;
+	margin: 0 0 35px;
+}
+
+.viz-bracket-date {
+	position: absolute;
+	@include inline-block;
+	padding: 0;
+	color: $med-gray;
+	font-weight: 300;
+	font-size: 11px;
+	text-transform: uppercase;
+	&:nth-of-type(1){
+		left: 0%;
+	}
+	&:nth-of-type(2){
+		left: 15%;
+	}
+	&:nth-of-type(3){
+		left: 25%;
+	}
+	&:nth-of-type(4){
+		left: 35%;
+	}
+	&:nth-of-type(5){
+		left: 48%;
+	}
+	&:nth-of-type(6){
+		right: 35%;
+	}
+	&:nth-of-type(7){
+		right: 25%;
+	}
+	&:nth-of-type(8){
+		right: 15%;
+	}
+	&:nth-of-type(9){
+		right: 0;
+	}
+}
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+/*
+Syntax error: Invalid CSS after "...e(10px 0px n n)": expected "}", was "display: inline..."
+        on line 98 of /Users/SenorGustav/Dropbox/projects_web/madness_quiz/sass/partials/_base.scss
+        from line 19 of /Users/SenorGustav/Dropbox/projects_web/madness_quiz/sass/site.scss
+
+Backtrace:
+/Users/SenorGustav/Dropbox/projects_web/madness_quiz/sass/partials/_base.scss:98
+/Users/SenorGustav/Dropbox/projects_web/madness_quiz/sass/site.scss:19
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/scss/parser.rb:1148:in `expected'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/scss/parser.rb:1084:in `expected'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/scss/parser.rb:1079:in `tok!'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/scss/parser.rb:536:in `block'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/scss/parser.rb:529:in `ruleset'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/scss/parser.rb:553:in `block_child'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/scss/parser.rb:546:in `block_contents'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/scss/parser.rb:82:in `stylesheet'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/scss/parser.rb:27:in `parse'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/engine.rb:342:in `_to_tree'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/engine.rb:274:in `to_tree'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/perform.rb:225:in `visit_import'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/perform.rb:100:in `visit'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/base.rb:53:in `map'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/perform.rb:109:in `visit_children'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/perform.rb:121:in `with_environment'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/perform.rb:108:in `visit_children'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/perform.rb:128:in `visit_root'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/perform.rb:100:in `visit'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/perform.rb:7:in `send'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/visitors/perform.rb:7:in `visit'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/tree/root_node.rb:20:in `render'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/engine.rb:315:in `_render'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/sass/lib/sass/../sass/engine.rb:262:in `render'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/compiler.rb:140:in `compile'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/compiler.rb:126:in `timed'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/compiler.rb:139:in `compile'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/logger.rb:45:in `red'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/compiler.rb:138:in `compile'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/compiler.rb:118:in `compile_if_required'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/compiler.rb:103:in `run'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/compiler.rb:101:in `each'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/compiler.rb:101:in `run'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/compiler.rb:126:in `timed'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/compiler.rb:100:in `run'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/commands/update_project.rb:45:in `perform'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/commands/base.rb:18:in `execute'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/commands/project_base.rb:19:in `execute'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/bin/compass:30
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/bin/compass:44:in `call'
+/Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/bin/compass:44
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"...e(10px 0px n n)\": expected \"}\", was \"display: inline...\"\A         on line 98 of /Users/SenorGustav/Dropbox/projects_web/madness_quiz/sass/partials/_base.scss\A         from line 19 of /Users/SenorGustav/Dropbox/projects_web/madness_quiz/sass/site.scss"; }

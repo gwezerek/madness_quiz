@@ -13,7 +13,9 @@
 }
 
 .viz-quiz {
-	margin-bottom: 20px;
+	max-width: 634px;
+	margin: 0 auto 20px;
+	display: none;
 	// Set to display: none after voting ends
 }
 

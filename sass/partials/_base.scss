@@ -6,7 +6,6 @@
 
 .viz-article {
 	margin: 0 auto;
-	max-width: 634px;
 	height: 100%;
 	color: $txt-black;
 	font-size: 15px;
@@ -38,9 +37,8 @@
 }
 
 .viz-title {
-	margin: 0 0 5px;
-	padding-bottom: 10px;
-	border-bottom: 2px solid $txt-black;
+	@include inline-block;
+	margin: 0;
 	font-weight: 600;
 	font-size: 42px;
 	font-family: $slab;
@@ -76,6 +74,13 @@
 	margin: 0 0 30px;
 }
 
+.viz-overline-wrapper {
+	position: relative;
+	margin: 0 0 5px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid $txt-black;
+}
+
 .viz-subhed {
 	margin: 0 0 10px;
 	padding-bottom: 3px;
@@ -89,6 +94,8 @@
 }
 
 .viz-legend {
+	@include absolute(23px 0px n n);
+	display: inline-block;
 	margin: 0 0 0 4px;
 	padding: 0;
 	list-style-position: inside;
@@ -105,6 +112,9 @@
 		margin-left: -5px;
 		padding-right: 2px;
 		content: "\002022";
+	}
+	&:last-of-type {
+		margin-right: 0;
 	}
 }
 
