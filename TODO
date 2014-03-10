@@ -9,3 +9,17 @@ Animate original elements to those positions // https://forum.jquery.com/topic/o
 Replace original elements with new string
 
 
+
+In division object
+ oldPos: [182, 10, 192, 10, etc]
+ newPos: []
+
+for each li
+ $(this).animate({
+      'top': division[division].oldPos[i],
+      'left': divLocation.left
+}, 200);
+
+
+
+find 
