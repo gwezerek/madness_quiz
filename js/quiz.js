@@ -84,7 +84,7 @@ populateRounds();
 // =============================================
 
 d3.csv(spreadsheetURL, function(error, data) {
-	buildBracket(data);
+	buildBracket(data, 0);
 	populateQuiz(data);
 	populateRankings(data);
 });
@@ -330,6 +330,7 @@ function setLosers(roundNumber, container) {
 
 
 // THE D3 BITS
+// =============================================
 
 var margin = {top: 10, right: 100, bottom: 0, left: 0},
     width = 500 - margin.left - margin.right,
@@ -346,10 +347,12 @@ var svg = d3.select(".viz-bracket-right").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-function buildBracket(data) {
+
+function buildBracket(data, leftRightIndex) {
 	d3.json("treeData.json", function(json) {
 
-	  var nodes = tree.nodes(json);
+	  // console.log(json["parents"][0]);
+	  var nodes = tree.nodes(json["parents"][leftRightIndex]);
 
 	  var link = svg.selectAll(".link")
 	      .data(tree.links(nodes))
@@ -366,7 +369,6 @@ function buildBracket(data) {
 	  var text = node.append("text")
 	      .attr("class", function(d) {
 	      	if (d.lost == "true") {
-		      	console.log(d.lost);
 	      		return "viz-designer-name viz-designer-loser"; 
 	      	} else {
 	      		return "viz-designer-name"; 
