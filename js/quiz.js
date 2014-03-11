@@ -351,7 +351,6 @@ var svg = d3.select(".viz-bracket-right").append("svg")
 function buildBracket(data, leftRightIndex) {
 	d3.json("treeData.json", function(json) {
 
-	  // console.log(json["parents"][0]);
 	  var nodes = tree.nodes(json["parents"][leftRightIndex]);
 
 	  var link = svg.selectAll(".link")
