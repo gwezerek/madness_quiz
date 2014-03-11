@@ -1039,24 +1039,31 @@
 /* line 149, ../sass/partials/_bracket.scss */
 .viz-info-initiated {
   top: 300px;
-  left: 325px;
-  width: 290px;
+  left: 340px;
+  width: 260px;
   height: auto;
 }
 
-/* line 159, ../sass/partials/_bracket.scss */
+/* line 156, ../sass/partials/_bracket.scss */
 .viz-info-instructions {
   font-size: 11px;
   text-align: center;
   margin: 0;
 }
 
-/* line 165, ../sass/partials/_bracket.scss */
+/* line 162, ../sass/partials/_bracket.scss */
 .viz-info-designer-wrapper {
   display: none;
 }
 
-/* line 169, ../sass/partials/_bracket.scss */
+/* line 166, ../sass/partials/_bracket.scss */
+.viz-info-designer-header-mod {
+  position: absolute;
+  top: 5px;
+  left: 47px;
+}
+
+/* line 172, ../sass/partials/_bracket.scss */
 .viz-bracket-designer-description {
   margin: 0px;
   padding: 10px 0 0;
@@ -1066,26 +1073,81 @@
   line-height: 140%;
 }
 
-/* line 179, ../sass/partials/_bracket.scss */
+/* line 181, ../sass/partials/_bracket.scss */
+.viz-bracket-winner-mod {
+  position: absolute;
+  top: 120px;
+  left: 419px;
+  text-align: center;
+  width: 100px;
+}
+
+/* line 187, ../sass/partials/_bracket.scss */
+.viz-champion-headshot-wrap {
+  float: none;
+  margin: 0 auto 10px;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #99948a;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/* line 198, ../sass/partials/_bracket.scss */
+.viz-champion-headshot {
+  display: none;
+}
+
+/* line 202, ../sass/partials/_bracket.scss */
+.viz-champion-info-wrap {
+  border-top: 1px solid #99948a;
+  padding: 10px 0 0;
+}
+
+/* line 207, ../sass/partials/_bracket.scss */
+.viz-champion-seed {
+  margin: 0;
+  color: #99948a;
+  font-family: "FCKaiserCond", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+/* line 215, ../sass/partials/_bracket.scss */
+.viz-champion-name {
+  display: none;
+  padding: 0;
+  margin: 0 0 5px;
+  font-size: 12px;
+}
+
+/* line 222, ../sass/partials/_bracket.scss */
+.viz-champion-label {
+  margin: 0;
+  font-size: 10px;
+}
+
+/* line 230, ../sass/partials/_bracket.scss */
 .viz-bracket-elbow {
   fill: none;
   stroke-width: 1;
   stroke: #99948a;
 }
 
-/* line 185, ../sass/partials/_bracket.scss */
+/* line 236, ../sass/partials/_bracket.scss */
 .viz-bracket-designer-name {
   font-size: 11px;
   cursor: pointer;
 }
 
-/* line 190, ../sass/partials/_bracket.scss */
+/* line 241, ../sass/partials/_bracket.scss */
 .viz-bracket-designer-loser {
   text-decoration: line-through;
   fill: #99948a;
 }
 
-/* line 195, ../sass/partials/_bracket.scss */
+/* line 246, ../sass/partials/_bracket.scss */
 .viz-bracket-seed {
   font-weight: 300;
   font-family: "FCKaiserCond", Helvetica, Arial, sans-serif;
