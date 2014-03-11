@@ -418,19 +418,19 @@ function buildBracket(data, leftRightIndex, target) {
       if (leftRightIndex == 0) {
       	node.attr("transform", function(d) { return "translate(" + (width - d.y) + "," + d.x + ")"; })
 	  	link.attr("d", elbowRight);
-	  	adjustFinalsLeft();
 	    text.attr("text-anchor", "start").attr("x", 6);
-
-	    d3.selectAll(".viz-bracket-left .viz-leaf text").attr("x", 0);
-
 	  } else {
 	  	node.attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
 	    link.attr("d", elbowLeft);
 	    adjustFinalsRight();
 	  	text.attr("text-anchor", "end").attr("x", 94);
-
-	  	d3.selectAll(".viz-bracket-right .viz-leaf text").attr("x", 100);
 	  }
+
+	  	adjustFinalsLeft();
+	    adjustFinalsRight();
+	    d3.selectAll(".viz-bracket-left .viz-leaf text").attr("x", 0);
+	  	d3.selectAll(".viz-bracket-right .viz-leaf text").attr("x", 100);
+
 
 	});
 }
@@ -438,19 +438,19 @@ function buildBracket(data, leftRightIndex, target) {
 // Helpers for smelly code
 
 function adjustFinalsLeft() {
-	var elbows = $(".viz-bracket-elbow");
+	var elbows = $(".viz-bracket-left .viz-bracket-elbow");
 	elbows.eq(0).attr("d","M500,200H400V135")
 	elbows.eq(1).attr("d","M500,200H400V405")
 
-	$(".node").eq(0).attr("transform", "translate(0,200)");
+	$(".viz-bracket-left .node").eq(0).attr("transform", "translate(0,200)");
 }
 
 function adjustFinalsRight() {
-	var elbows = $(".viz-bracket-elbow");
+	var elbows = $(".viz-bracket-right .viz-bracket-elbow");
 	elbows.eq(0).attr("d","M0,340H100V135")
 	elbows.eq(1).attr("d","M0,340H100V405")
 
-	$(".node").eq(0).attr("transform", "translate(0,340)");
+	$(".viz-bracket-right .node").eq(0).attr("transform", "translate(0,340)");
 }
 
 function elbowLeft(d, i) {
