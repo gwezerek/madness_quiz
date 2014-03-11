@@ -84,7 +84,8 @@ populateRounds();
 // =============================================
 
 d3.csv(spreadsheetURL, function(error, data) {
-	buildBracket(data, 0);
+	buildBracket(data, 0, ".viz-bracket-left");
+	buildBracket(data, 1, ".viz-bracket-right");
 	populateQuiz(data);
 	populateRankings(data);
 });
@@ -333,22 +334,37 @@ function setLosers(roundNumber, container) {
 // =============================================
 
 var margin = {top: 10, right: 100, bottom: 0, left: 0},
-    width = 500 - margin.left - margin.right,
+	baseWidth = 500,
+    width = baseWidth - margin.left - margin.right,
     height = 550 - margin.top - margin.bottom;
 
+var orientations = {
+  "right-to-left": {
+    size: [height, width],
+    x: function(d) { return width - d.y; },
+    y: function(d) { return d.x; }
+  },
+  "left-to-right": {
+    size: [height, width],
+    x: function(d) { return d.y; },
+    y: function(d) { return d.x; }
+  }
+};
+
 var tree = d3.layout.tree()
-    .separation(function(a, b) { return a.parent === b.parent ? 1 : 2; })
+    .separation(function(a, b) { return a.parent === b.parent ? 1 : 1.5; })
     .children(function(d) { return d.parents; })
     .size([height, width]);
 
-var svg = d3.select(".viz-bracket-right").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+function buildBracket(data, leftRightIndex, target) {
 
-function buildBracket(data, leftRightIndex) {
+	var svg = d3.select(target).append("svg")
+	     .attr("width", width + margin.left + margin.right)
+	     .attr("height", height + margin.top + margin.bottom)
+	   .append("g")
+	     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
 	d3.json("treeData.json", function(json) {
 
 	  var nodes = tree.nodes(json["parents"][leftRightIndex]);
@@ -356,14 +372,18 @@ function buildBracket(data, leftRightIndex) {
 	  var link = svg.selectAll(".link")
 	      .data(tree.links(nodes))
 	    .enter().append("path")
-	      .attr("class", "viz-bracket-elbow")
-	      .attr("d", elbow);
+	      .attr("class", "viz-bracket-elbow");
 
 	  var node = svg.selectAll(".node")
 	      .data(nodes)
 	    .enter().append("g")
-	      .attr("class", "node")
-	      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+	      .attr("class", function(n) {
+            if (n.children) {
+              return "viz-inner viz-node"
+            } else {
+              return "viz-leaf viz-node"
+            }
+          });
 
 	  var text = node.append("text")
 	      .attr("class", function(d) {
@@ -373,8 +393,6 @@ function buildBracket(data, leftRightIndex) {
 	      		return "viz-designer-name"; 
 	      	}
 	      })
-	      .attr("text-anchor", "end")
-	      .attr("x", 94)
 	      .attr("y", -6);
 
 	   var seed = text.append("tspan")
@@ -385,7 +403,7 @@ function buildBracket(data, leftRightIndex) {
 	      	}
 	      });
 
-	   var seed = text.append("tspan")
+	   var designer = text.append("tspan")
 		  .attr("class", "viz-bracket-designer-name")
 		  .attr("dx","3")
 	      .text(function(d) {
@@ -394,12 +412,40 @@ function buildBracket(data, leftRightIndex) {
 	      	}
 	      });
 
-	    adjustFinals();
+
+	  // Smelly code
+
+      if (leftRightIndex == 0) {
+      	node.attr("transform", function(d) { return "translate(" + (width - d.y) + "," + d.x + ")"; })
+	  	link.attr("d", elbowRight);
+	  	adjustFinalsLeft();
+	    text.attr("text-anchor", "start").attr("x", 6);
+
+	    d3.selectAll(".viz-bracket-left .viz-leaf text").attr("x", 0);
+
+	  } else {
+	  	node.attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+	    link.attr("d", elbowLeft);
+	    adjustFinalsRight();
+	  	text.attr("text-anchor", "end").attr("x", 94);
+
+	  	d3.selectAll(".viz-bracket-right .viz-leaf text").attr("x", 100);
+	  }
 
 	});
 }
 
-function adjustFinals() {
+// Helpers for smelly code
+
+function adjustFinalsLeft() {
+	var elbows = $(".viz-bracket-elbow");
+	elbows.eq(0).attr("d","M500,200H400V135")
+	elbows.eq(1).attr("d","M500,200H400V405")
+
+	$(".node").eq(0).attr("transform", "translate(0,200)");
+}
+
+function adjustFinalsRight() {
 	var elbows = $(".viz-bracket-elbow");
 	elbows.eq(0).attr("d","M0,340H100V135")
 	elbows.eq(1).attr("d","M0,340H100V405")
@@ -407,11 +453,20 @@ function adjustFinals() {
 	$(".node").eq(0).attr("transform", "translate(0,340)");
 }
 
-function elbow(d, i) {
+function elbowLeft(d, i) {
   return "M" + d.source.y + "," + d.source.x
        + "H" + d.target.y + "V" + d.target.x
-       + (d.target.children ? "" : "h" + margin.right);
+       + (d.target.children ? "" : "h" + 100);
 }
+
+function elbowRight(d, i) {
+  return "M" + (baseWidth - d.source.y) + "," + d.source.x
+       + "H" + (baseWidth - d.target.y) + "V" + d.target.x
+       + (d.target.children ? "" : "h" + (-100));
+}
+
+
+
 
 
 
