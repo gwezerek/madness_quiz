@@ -1,5 +1,41 @@
 
-UPDATE FUNCTION
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ENCHANCEMENT: ANIMATE ON NAV ROUND
+// If you don't get to this, remove the temp wrapper divs
 
 Prepend that string to the <li class="viz-division">
 But make that string visbility: hidden
@@ -22,4 +58,3 @@ for each li
 
 
 
-find 

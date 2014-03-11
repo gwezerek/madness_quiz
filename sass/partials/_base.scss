@@ -93,35 +93,6 @@
 	padding-bottom: 7px;
 }
 
-.viz-legend {
-	@include absolute(23px 0px n n);
-	display: inline-block;
-	margin: 0 0 0 4px;
-	padding: 0;
-	list-style-position: inside;
-}
-
-.viz-legend-item {
-	@include inline-block;
-	@include trans(0.2s, opacity, ease-in-out);
-	margin: 0 15px 5px 0;
-	background-color: $bground;
-	font-size: 36px;
-	line-height: 40%;
-	&:before {
-		margin-left: -5px;
-		padding-right: 2px;
-		content: "\002022";
-	}
-	&:last-of-type {
-		margin-right: 0;
-	}
-}
-
-.viz-legend-text {
-	vertical-align: middle;
-}
-
 
 
 

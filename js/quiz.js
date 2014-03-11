@@ -84,6 +84,7 @@ populateRounds();
 // =============================================
 
 d3.csv(spreadsheetURL, function(error, data) {
+	buildBracket(data);
 	populateQuiz(data);
 	populateRankings(data);
 });
@@ -320,6 +321,95 @@ function setLosers(roundNumber, container) {
 		designers.slice(-6).addClass("viz-choice-loser");
 	}
 	
+}
+
+
+
+
+
+
+
+// THE D3 BITS
+
+var margin = {top: 10, right: 100, bottom: 0, left: 0},
+    width = 500 - margin.left - margin.right,
+    height = 550 - margin.top - margin.bottom;
+
+var tree = d3.layout.tree()
+    .separation(function(a, b) { return a.parent === b.parent ? 1 : 2; })
+    .children(function(d) { return d.parents; })
+    .size([height, width]);
+
+var svg = d3.select(".viz-bracket-right").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+function buildBracket(data) {
+	d3.json("treeData.json", function(json) {
+
+	  var nodes = tree.nodes(json);
+
+	  var link = svg.selectAll(".link")
+	      .data(tree.links(nodes))
+	    .enter().append("path")
+	      .attr("class", "viz-bracket-elbow")
+	      .attr("d", elbow);
+
+	  var node = svg.selectAll(".node")
+	      .data(nodes)
+	    .enter().append("g")
+	      .attr("class", "node")
+	      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+
+	  var text = node.append("text")
+	      .attr("class", function(d) {
+	      	if (d.lost == "true") {
+		      	console.log(d.lost);
+	      		return "viz-designer-name viz-designer-loser"; 
+	      	} else {
+	      		return "viz-designer-name"; 
+	      	}
+	      })
+	      .attr("text-anchor", "end")
+	      .attr("x", 94)
+	      .attr("y", -6);
+
+	   var seed = text.append("tspan")
+		  .attr("class", "viz-bracket-seed")
+	      .text(function(d) {
+	      	if (data[d.competitorIndex] && data[d.competitorIndex]['rank']) {
+	      		return data[d.competitorIndex]['rank']; 
+	      	}
+	      });
+
+	   var seed = text.append("tspan")
+		  .attr("class", "viz-bracket-designer-name")
+		  .attr("dx","3")
+	      .text(function(d) {
+	      	if (data[d.competitorIndex] && data[d.competitorIndex]['name']) {
+	      		return data[d.competitorIndex]['name']; 
+	      	}
+	      });
+
+	    adjustFinals();
+
+	});
+}
+
+function adjustFinals() {
+	var elbows = $(".viz-bracket-elbow");
+	elbows.eq(0).attr("d","M0,340H100V135")
+	elbows.eq(1).attr("d","M0,340H100V405")
+
+	$(".node").eq(0).attr("transform", "translate(0,340)");
+}
+
+function elbow(d, i) {
+  return "M" + d.source.y + "," + d.source.x
+       + "H" + d.target.y + "V" + d.target.x
+       + (d.target.children ? "" : "h" + margin.right);
 }
 
 
