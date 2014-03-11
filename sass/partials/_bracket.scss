@@ -6,9 +6,13 @@
 
 
 .viz-bracket {
+	display: none;
 	position: relative;
-	margin: 0 auto;
+	margin: 0 auto 25px;
 	max-width: 940px;
+	@media (min-width: $large) {
+		display: block;
+	}
 }
 
 .viz-bracket-left {
@@ -70,7 +74,7 @@
 	font-weight: 300;
 	font-size: 11px;
 	&:nth-of-type(1){
-		left: 10px;
+		left: 0px;
 	}
 	&:nth-of-type(2){
 		left: 13%;
@@ -94,7 +98,7 @@
 		right: 13%;
 	}
 	&:nth-of-type(9){
-		right: 10px;
+		right: 0px;
 	}
 }
 
@@ -108,28 +112,68 @@
 	height: 245px;
 }
 
-.viz-bracket {
-	.viz-graphic-img {
-		top: 100px;
-		left: 0;
-	}
+.viz-graphic-border {
+	background-color: $bground-15;
+	top: 100px;
+	left: 0;
+}
 
-	.viz-interactive-img {
-		top: 370px;
-		left: 0;
-	}
+.viz-interactive-border {
+	background-color: $bground-11;
+	top: 370px;
+	left: 0;
+}
 
-	.viz-product-img {
-		top: 100px;
-		right: 0;
-	}
+.viz-product-border {
+	background-color: $bground-9;
+	top: 100px;
+	right: 0;
+}
 
-	.viz-architecture-img {
-		top: 370px;
-		right: 0;
+.viz-architecture-border {
+	background-color: $bground-13;
+	top: 370px;
+	right: 0;
+}
+
+.viz-bracket-info-mod {
+	@include transition(0.3s max-height ease-in-out, 0.3s top ease-in-out, 0.3s left ease-in-out, 0.3s width ease-in-out);
+	@include absolute(330px n n 395px);
+	padding: 15px;
+	background: $bground;
+	border: 1px solid $med-gray;
+	width: 150px;
+	height: 71px;
+}
+
+.viz-info-initiated {
+	top: 300px;
+	left: 325px;
+	width: 290px;
+	height: auto;
+	.viz-info-designer-wrapper {
+		// display: block;
 	}
 }
 
+.viz-info-instructions {
+	font-size: 11px;
+	text-align: center;
+	margin: 0;
+}
+
+.viz-info-designer-wrapper {
+	display: none;
+}
+
+.viz-bracket-designer-description {
+	margin: 0px;
+	padding: 10px 0 0;
+	color: $med-gray;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 140%;
+}
 
 // SVG
 .viz-bracket-elbow {
@@ -138,12 +182,12 @@
 	stroke: $med-gray;
 }
 
-.viz-designer-name {
+.viz-bracket-designer-name {
 	font-size: 11px;
-	cursor: default;
+	cursor: pointer;
 }
 
-.viz-designer-loser {
+.viz-bracket-designer-loser {
 	text-decoration: line-through;
 	fill: $med-gray;
 }

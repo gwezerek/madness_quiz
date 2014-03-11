@@ -14,6 +14,9 @@ var quizTemplate = _.template(
     $( ".viz-designer-template" ).html()
 );
 
+// For bracket
+var divisionColor = ["rgb(255,138,128)","rgb(183,129,255)","rgb(129,159,255)","rgb(255,129,244)"];
+
 // For quiz
 var indicesRound1 = [0,7,1,6,2,5,3,4,8,15,9,14,10,13,11,12,16,23,17,22,18,21,19,20,24,31,25,30,26,29,27,28];
 var indicesRound2 = [16,23,17,22,18,21,19,20,24,31,25,30,26,29,27,28];
@@ -83,12 +86,125 @@ populateRounds();
 // LOAD DAT DATA
 // =============================================
 
-d3.csv(spreadsheetURL, function(error, data) {
-	buildBracket(data, 0, ".viz-bracket-left");
-	buildBracket(data, 1, ".viz-bracket-right");
-	populateQuiz(data);
-	populateRankings(data);
+d3.csv(spreadsheetURL, function(error, myData) {
+	data = myData;
+	buildBracket(myData, 0, ".viz-bracket-left");
+	buildBracket(myData, 1, ".viz-bracket-right");
+	populateQuiz(myData);
+	populateRankings(myData);
 });
+
+
+
+
+
+
+
+
+// THE D3 BITS
+// =============================================
+
+var margin = {top: 10, right: 100, bottom: 0, left: 0},
+	baseWidth = 500,
+    width = baseWidth - margin.left - margin.right,
+    height = 550 - margin.top - margin.bottom;
+
+var orientations = {
+  "right-to-left": {
+    size: [height, width],
+    x: function(d) { return width - d.y; },
+    y: function(d) { return d.x; }
+  },
+  "left-to-right": {
+    size: [height, width],
+    x: function(d) { return d.y; },
+    y: function(d) { return d.x; }
+  }
+};
+
+var tree = d3.layout.tree()
+    .separation(function(a, b) { return a.parent === b.parent ? 1 : 1.5; })
+    .children(function(d) { return d.parents; })
+    .size([height, width]);
+
+
+function buildBracket(data, leftRightIndex, target) {
+
+	var svg = d3.select(target).append("svg")
+	     .attr("width", width + margin.left + margin.right)
+	     .attr("height", height + margin.top + margin.bottom)
+	   .append("g")
+	     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+	// d3.json("http://www.guswezerek.com/projects/bracket_madness/treeData.json", function(json) {
+	d3.json("treeData.json", function(json) {
+
+	  var nodes = tree.nodes(json["parents"][leftRightIndex]);
+
+	  var link = svg.selectAll(".link")
+	      .data(tree.links(nodes))
+	    .enter().append("path")
+	      .attr("class", "viz-bracket-elbow");
+
+	  var node = svg.selectAll(".node")
+	      .data(nodes)
+	    .enter().append("g")
+	      .attr("class", function(n) {
+            if (n.children) {
+              return "viz-inner viz-node"
+            } else {
+              return "viz-leaf viz-node"
+            }
+          });
+
+	  var text = node.append("text")
+	      .attr("class", function(d) {
+	      	if (d.lost == "true") {
+	      		return "viz-bracket-designer-name viz-bracket-designer-loser"; 
+	      	} else {
+	      		return "viz-bracket-designer-name"; 
+	      	}
+	      })
+	      .attr("id", function(d) { return d.competitorIndex; })
+	      .attr("y", -6);
+
+	   var seed = text.append("tspan")
+		  .attr("class", "viz-bracket-seed")
+	      .text(function(d) {
+	      	if (data[d.competitorIndex] && data[d.competitorIndex]['rank']) {
+	      		return data[d.competitorIndex]['rank']; 
+	      	}
+	      });
+
+	   var designer = text.append("tspan")
+		  .attr("dx","3")
+	      .text(function(d) {
+	      	if (data[d.competitorIndex] && data[d.competitorIndex]['name']) {
+	      		return data[d.competitorIndex]['name']; 
+	      	}
+	      });
+
+
+	  // Smelly code
+
+      if (leftRightIndex == 0) {
+      	node.attr("transform", function(d) { return "translate(" + (width - d.y) + "," + d.x + ")"; })
+	  	link.attr("d", elbowRight);
+	    text.attr("text-anchor", "start").attr("x", 6);
+	  } else {
+	  	node.attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+	    link.attr("d", elbowLeft);
+	    adjustFinalsRight();
+	  	text.attr("text-anchor", "end").attr("x", 94);
+	  }
+
+	  	adjustFinalsLeft();
+	    adjustFinalsRight();
+	    d3.selectAll(".viz-bracket-left .viz-leaf text").attr("x", 0);
+	  	d3.selectAll(".viz-bracket-right .viz-leaf text").attr("x", 100);
+	});
+}
+
 
 
 
@@ -180,6 +296,31 @@ $(".viz-division-button").on("click", function() {
 	setLosers(currentDivisionRound, division);
 
 });
+
+// Iterating through rounds
+$(".viz-bracket").on("click", ".viz-bracket-designer-name", function() {
+	var $this = $(this);
+	var originalIndex = $this.attr("id");
+	var divisionObj = data[originalIndex];
+	var infoMod = $(".viz-bracket-info-mod");
+	var colorsIndex = Math.floor(originalIndex / (data.length / 4));
+
+	infoMod.find(".viz-info-instructions").fadeOut(200);
+	window.setTimeout(function(){
+		infoMod.addClass("viz-info-initiated");
+		infoMod.find(".viz-headshot").css({
+		 	"right": 40 * originalIndex + "px",
+			"background-color": divisionColor[colorsIndex]
+		});
+		infoMod.find(".viz-designer-name").text(divisionObj['name']);
+		infoMod.find(".viz-designer-job").text( "(" + divisionObj['rank'] + ") " + divisionObj['job']);
+		infoMod.find(".viz-bracket-designer-description").text(divisionObj['description']);
+		infoMod.find(".viz-info-designer-wrapper").fadeIn(1000);
+	}, 200);
+
+});
+
+
 
 
 
@@ -326,114 +467,7 @@ function setLosers(roundNumber, container) {
 
 
 
-
-
-
-
-// THE D3 BITS
-// =============================================
-
-var margin = {top: 10, right: 100, bottom: 0, left: 0},
-	baseWidth = 500,
-    width = baseWidth - margin.left - margin.right,
-    height = 550 - margin.top - margin.bottom;
-
-var orientations = {
-  "right-to-left": {
-    size: [height, width],
-    x: function(d) { return width - d.y; },
-    y: function(d) { return d.x; }
-  },
-  "left-to-right": {
-    size: [height, width],
-    x: function(d) { return d.y; },
-    y: function(d) { return d.x; }
-  }
-};
-
-var tree = d3.layout.tree()
-    .separation(function(a, b) { return a.parent === b.parent ? 1 : 1.5; })
-    .children(function(d) { return d.parents; })
-    .size([height, width]);
-
-
-function buildBracket(data, leftRightIndex, target) {
-
-	var svg = d3.select(target).append("svg")
-	     .attr("width", width + margin.left + margin.right)
-	     .attr("height", height + margin.top + margin.bottom)
-	   .append("g")
-	     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-	d3.json("treeData.json", function(json) {
-
-	  var nodes = tree.nodes(json["parents"][leftRightIndex]);
-
-	  var link = svg.selectAll(".link")
-	      .data(tree.links(nodes))
-	    .enter().append("path")
-	      .attr("class", "viz-bracket-elbow");
-
-	  var node = svg.selectAll(".node")
-	      .data(nodes)
-	    .enter().append("g")
-	      .attr("class", function(n) {
-            if (n.children) {
-              return "viz-inner viz-node"
-            } else {
-              return "viz-leaf viz-node"
-            }
-          });
-
-	  var text = node.append("text")
-	      .attr("class", function(d) {
-	      	if (d.lost == "true") {
-	      		return "viz-designer-name viz-designer-loser"; 
-	      	} else {
-	      		return "viz-designer-name"; 
-	      	}
-	      })
-	      .attr("y", -6);
-
-	   var seed = text.append("tspan")
-		  .attr("class", "viz-bracket-seed")
-	      .text(function(d) {
-	      	if (data[d.competitorIndex] && data[d.competitorIndex]['rank']) {
-	      		return data[d.competitorIndex]['rank']; 
-	      	}
-	      });
-
-	   var designer = text.append("tspan")
-		  .attr("class", "viz-bracket-designer-name")
-		  .attr("dx","3")
-	      .text(function(d) {
-	      	if (data[d.competitorIndex] && data[d.competitorIndex]['name']) {
-	      		return data[d.competitorIndex]['name']; 
-	      	}
-	      });
-
-
-	  // Smelly code
-
-      if (leftRightIndex == 0) {
-      	node.attr("transform", function(d) { return "translate(" + (width - d.y) + "," + d.x + ")"; })
-	  	link.attr("d", elbowRight);
-	    text.attr("text-anchor", "start").attr("x", 6);
-	  } else {
-	  	node.attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
-	    link.attr("d", elbowLeft);
-	    adjustFinalsRight();
-	  	text.attr("text-anchor", "end").attr("x", 94);
-	  }
-
-	  	adjustFinalsLeft();
-	    adjustFinalsRight();
-	    d3.selectAll(".viz-bracket-left .viz-leaf text").attr("x", 0);
-	  	d3.selectAll(".viz-bracket-right .viz-leaf text").attr("x", 100);
-	});
-}
-
-// Helpers for smelly code
+// D3 HELPERS
 
 function adjustFinalsLeft() {
 	var elbows = $(".viz-bracket-left .viz-bracket-elbow");
@@ -462,6 +496,7 @@ function elbowRight(d, i) {
        + "H" + (baseWidth - d.target.y) + "V" + d.target.x
        + (d.target.children ? "" : "h" + (-100));
 }
+
 
 
 

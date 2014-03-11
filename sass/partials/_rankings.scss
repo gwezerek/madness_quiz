@@ -5,9 +5,11 @@
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 .viz-rankings {
-	display: none;
 	max-width: 634px;
-	margin: 0 auto;
+	margin: 0 auto 35px;
+	@media (min-width: $large) {
+		display: none;
+	}
 }
 
 .viz-column-1 {

@@ -168,7 +168,7 @@
 
 // Supercute img tag sprites hack
 .viz-headshot {
-	@include trans(0.2s, opacity, ease-in-out);
+	@include transition(0.2s opacity ease-in-out, 0.3s right ease-in-out, 0.3s background-color ease-in-out);
 	position: relative;
 	width: 1280px;
 	height: 40px;

@@ -482,10 +482,10 @@
 
 /* line 170, ../sass/partials/_base.scss */
 .viz-headshot {
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
+  -webkit-transition: 0.2s opacity ease-in-out, 0.3s right ease-in-out, 0.3s background-color ease-in-out;
+  -moz-transition: 0.2s opacity ease-in-out, 0.3s right ease-in-out, 0.3s background-color ease-in-out;
+  -o-transition: 0.2s opacity ease-in-out, 0.3s right ease-in-out, 0.3s background-color ease-in-out;
+  transition: 0.2s opacity ease-in-out, 0.3s right ease-in-out, 0.3s background-color ease-in-out;
   position: relative;
   width: 1280px;
   height: 40px;
@@ -563,7 +563,6 @@
 .viz-quiz {
   max-width: 634px;
   margin: 0 auto 20px;
-  display: none;
 }
 
 /* line 22, ../sass/partials/_quiz.scss */
@@ -624,13 +623,18 @@
 
 /* line 7, ../sass/partials/_rankings.scss */
 .viz-rankings {
-  display: none;
   max-width: 634px;
-  margin: 0 auto;
+  margin: 0 auto 35px;
+}
+@media (min-width: 990px) {
+  /* line 7, ../sass/partials/_rankings.scss */
+  .viz-rankings {
+    display: none;
+  }
 }
 
 @media (min-width: 620px) {
-  /* line 13, ../sass/partials/_rankings.scss */
+  /* line 15, ../sass/partials/_rankings.scss */
   .viz-column-1 {
     width: 48%;
     float: left;
@@ -638,7 +642,7 @@
 }
 
 @media (min-width: 620px) {
-  /* line 20, ../sass/partials/_rankings.scss */
+  /* line 22, ../sass/partials/_rankings.scss */
   .viz-column-2 {
     width: 49%;
     padding-left: 17px;
@@ -648,7 +652,7 @@
   }
 }
 
-/* line 30, ../sass/partials/_rankings.scss */
+/* line 32, ../sass/partials/_rankings.scss */
 .viz-division-list {
   *zoom: 1;
   margin: 0;
@@ -662,18 +666,18 @@
   clear: both;
 }
 
-/* line 37, ../sass/partials/_rankings.scss */
+/* line 39, ../sass/partials/_rankings.scss */
 .viz-hidden {
   display: none;
 }
 
-/* line 45, ../sass/partials/_rankings.scss */
+/* line 47, ../sass/partials/_rankings.scss */
 .viz-nav-anchor-list {
   padding: 0;
   list-style-type: none;
 }
 
-/* line 52, ../sass/partials/_rankings.scss */
+/* line 54, ../sass/partials/_rankings.scss */
 .viz-division-topper {
   position: relative;
   margin: 0 auto 15px;
@@ -683,7 +687,7 @@
   -webkit-backface-visibility: hidden;
 }
 
-/* line 61, ../sass/partials/_rankings.scss */
+/* line 63, ../sass/partials/_rankings.scss */
 .viz-division-final-topper {
   border-width: 2px;
   border-color: #33312e;
@@ -692,7 +696,7 @@
   border-right: none;
 }
 
-/* line 69, ../sass/partials/_rankings.scss */
+/* line 71, ../sass/partials/_rankings.scss */
 .viz-division-title {
   display: inline-block;
   margin: -3px 0 0;
@@ -705,14 +709,14 @@
   line-height: 80%;
 }
 
-/* line 81, ../sass/partials/_rankings.scss */
+/* line 83, ../sass/partials/_rankings.scss */
 .viz-division-title-final {
   margin: -3px 0 0;
   text-align: center;
   text-transform: uppercase;
 }
 
-/* line 87, ../sass/partials/_rankings.scss */
+/* line 89, ../sass/partials/_rankings.scss */
 .viz-division-bull {
   margin-left: 4px;
   padding-right: 4px;
@@ -720,7 +724,7 @@
   font-size: 36px;
 }
 
-/* line 94, ../sass/partials/_rankings.scss */
+/* line 96, ../sass/partials/_rankings.scss */
 .viz-division-button {
   -webkit-transition: opacity 0.2s ease-in-out;
   -moz-transition: opacity 0.2s ease-in-out;
@@ -735,34 +739,34 @@
   opacity: 0.5;
   cursor: pointer;
 }
-/* line 104, ../sass/partials/_rankings.scss */
+/* line 106, ../sass/partials/_rankings.scss */
 .viz-division-button:hover {
   opacity: 1;
 }
-/* line 107, ../sass/partials/_rankings.scss */
+/* line 109, ../sass/partials/_rankings.scss */
 .viz-division-button:focus {
   outline: none;
 }
 
-/* line 112, ../sass/partials/_rankings.scss */
+/* line 114, ../sass/partials/_rankings.scss */
 .viz-prev {
   left: 10px;
   background-image: url("http://www.guswezerek.com/projects/bracket_madness/btn-prev.png");
 }
 
-/* line 117, ../sass/partials/_rankings.scss */
+/* line 119, ../sass/partials/_rankings.scss */
 .viz-next {
   right: 10px;
   background-image: url("http://www.guswezerek.com/projects/bracket_madness/btn-next.png");
 }
 
-/* line 122, ../sass/partials/_rankings.scss */
+/* line 124, ../sass/partials/_rankings.scss */
 .viz-division-button-img {
   margin: 0;
   width: 20px;
 }
 
-/* line 127, ../sass/partials/_rankings.scss */
+/* line 129, ../sass/partials/_rankings.scss */
 .viz-division-name {
   margin-top: 0;
   padding: 0 5px;
@@ -770,7 +774,7 @@
   background-color: white;
 }
 
-/* line 134, ../sass/partials/_rankings.scss */
+/* line 136, ../sass/partials/_rankings.scss */
 .viz-division-round {
   color: #33312e;
   letter-spacing: 0.5px;
@@ -780,14 +784,14 @@
   font-weight: 600;
 }
 
-/* line 143, ../sass/partials/_rankings.scss */
+/* line 145, ../sass/partials/_rankings.scss */
 .viz-division-final-round {
   letter-spacing: 0.5px;
   font-size: 15px;
   margin: 0 0 5px;
 }
 
-/* line 150, ../sass/partials/_rankings.scss */
+/* line 152, ../sass/partials/_rankings.scss */
 .viz-division {
   display: -moz-inline-stack;
   display: inline-block;
@@ -798,19 +802,19 @@
   width: 100%;
 }
 @media (min-width: 620px) {
-  /* line 154, ../sass/partials/_rankings.scss */
+  /* line 156, ../sass/partials/_rankings.scss */
   .viz-division:last-of-type .viz-division-designers-list, .viz-division .viz-choice-item:last-of-type {
     margin-bottom: 0;
   }
 }
 
-/* line 160, ../sass/partials/_rankings.scss */
+/* line 162, ../sass/partials/_rankings.scss */
 .viz-division-finals {
   margin-bottom: 35px;
   display: none;
 }
 
-/* line 165, ../sass/partials/_rankings.scss */
+/* line 167, ../sass/partials/_rankings.scss */
 .viz-division-winner {
   color: #33312e;
   letter-spacing: 0.5px;
@@ -824,39 +828,46 @@
   display: none;
 }
 
-/* line 178, ../sass/partials/_rankings.scss */
+/* line 180, ../sass/partials/_rankings.scss */
 .viz-division-designers-list {
   margin: 0 0 35px;
   padding: 0 10px;
   list-style-type: none;
 }
 
-/* line 186, ../sass/partials/_rankings.scss */
+/* line 188, ../sass/partials/_rankings.scss */
 .viz-division .viz-choice-loser {
   margin-bottom: 0;
   padding: 5px 0 0;
   border-bottom: none;
 }
-/* line 190, ../sass/partials/_rankings.scss */
+/* line 192, ../sass/partials/_rankings.scss */
 .viz-division .viz-choice-loser .viz-vs {
   display: none;
 }
 
 /* line 8, ../sass/partials/_bracket.scss */
 .viz-bracket {
+  display: none;
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto 25px;
   max-width: 940px;
 }
+@media (min-width: 990px) {
+  /* line 8, ../sass/partials/_bracket.scss */
+  .viz-bracket {
+    display: block;
+  }
+}
 
-/* line 14, ../sass/partials/_bracket.scss */
+/* line 18, ../sass/partials/_bracket.scss */
 .viz-bracket-left {
   margin-left: 10px;
   height: 550px;
   width: 500px;
 }
 
-/* line 20, ../sass/partials/_bracket.scss */
+/* line 24, ../sass/partials/_bracket.scss */
 .viz-bracket-right {
   position: absolute;
   top: 83px;
@@ -865,7 +876,7 @@
   height: 550px;
 }
 
-/* line 28, ../sass/partials/_bracket.scss */
+/* line 32, ../sass/partials/_bracket.scss */
 .viz-legend {
   position: absolute;
   top: 23px;
@@ -876,7 +887,7 @@
   list-style-position: inside;
 }
 
-/* line 36, ../sass/partials/_bracket.scss */
+/* line 40, ../sass/partials/_bracket.scss */
 .viz-legend-item {
   display: -moz-inline-stack;
   display: inline-block;
@@ -893,23 +904,23 @@
   font-size: 36px;
   line-height: 40%;
 }
-/* line 43, ../sass/partials/_bracket.scss */
+/* line 47, ../sass/partials/_bracket.scss */
 .viz-legend-item:before {
   margin-left: -5px;
   padding-right: 2px;
   content: "\002022";
 }
-/* line 48, ../sass/partials/_bracket.scss */
+/* line 52, ../sass/partials/_bracket.scss */
 .viz-legend-item:last-of-type {
   margin-right: 0;
 }
 
-/* line 53, ../sass/partials/_bracket.scss */
+/* line 57, ../sass/partials/_bracket.scss */
 .viz-legend-text {
   vertical-align: middle;
 }
 
-/* line 57, ../sass/partials/_bracket.scss */
+/* line 61, ../sass/partials/_bracket.scss */
 .viz-bracket-date-list {
   position: relative;
   margin: 0 0 35px;
@@ -917,7 +928,7 @@
   list-style-type: none;
 }
 
-/* line 64, ../sass/partials/_bracket.scss */
+/* line 68, ../sass/partials/_bracket.scss */
 .viz-bracket-date {
   display: -moz-inline-stack;
   display: inline-block;
@@ -932,96 +943,149 @@
   font-weight: 300;
   font-size: 11px;
 }
-/* line 72, ../sass/partials/_bracket.scss */
+/* line 76, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(1) {
-  left: 10px;
+  left: 0px;
 }
-/* line 75, ../sass/partials/_bracket.scss */
+/* line 79, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(2) {
   left: 13%;
 }
-/* line 78, ../sass/partials/_bracket.scss */
+/* line 82, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(3) {
   left: 24%;
 }
-/* line 81, ../sass/partials/_bracket.scss */
+/* line 85, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(4) {
   left: 36%;
 }
-/* line 84, ../sass/partials/_bracket.scss */
+/* line 88, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(5) {
   left: 47%;
 }
-/* line 87, ../sass/partials/_bracket.scss */
+/* line 91, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(6) {
   right: 36%;
 }
-/* line 90, ../sass/partials/_bracket.scss */
+/* line 94, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(7) {
   right: 24%;
 }
-/* line 93, ../sass/partials/_bracket.scss */
+/* line 97, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(8) {
   right: 13%;
 }
-/* line 96, ../sass/partials/_bracket.scss */
+/* line 100, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(9) {
-  right: 10px;
+  right: 0px;
 }
 
-/* line 101, ../sass/partials/_bracket.scss */
+/* line 105, ../sass/partials/_bracket.scss */
 .viz-date-finished {
   text-decoration: line-through;
 }
 
-/* line 105, ../sass/partials/_bracket.scss */
+/* line 109, ../sass/partials/_bracket.scss */
 .viz-bracket-division-border {
   position: absolute;
   width: 3px;
   height: 245px;
 }
 
-/* line 112, ../sass/partials/_bracket.scss */
-.viz-bracket .viz-graphic-img {
+/* line 115, ../sass/partials/_bracket.scss */
+.viz-graphic-border {
+  background-color: #ff8a80;
   top: 100px;
   left: 0;
 }
-/* line 117, ../sass/partials/_bracket.scss */
-.viz-bracket .viz-interactive-img {
+
+/* line 121, ../sass/partials/_bracket.scss */
+.viz-interactive-border {
+  background-color: #b781ff;
   top: 370px;
   left: 0;
 }
-/* line 122, ../sass/partials/_bracket.scss */
-.viz-bracket .viz-product-img {
+
+/* line 127, ../sass/partials/_bracket.scss */
+.viz-product-border {
+  background-color: #819fff;
   top: 100px;
   right: 0;
 }
-/* line 127, ../sass/partials/_bracket.scss */
-.viz-bracket .viz-architecture-img {
+
+/* line 133, ../sass/partials/_bracket.scss */
+.viz-architecture-border {
+  background-color: #ff81f4;
   top: 370px;
   right: 0;
 }
 
-/* line 135, ../sass/partials/_bracket.scss */
+/* line 139, ../sass/partials/_bracket.scss */
+.viz-bracket-info-mod {
+  -webkit-transition: 0.3s max-height ease-in-out, 0.3s top ease-in-out, 0.3s left ease-in-out, 0.3s width ease-in-out;
+  -moz-transition: 0.3s max-height ease-in-out, 0.3s top ease-in-out, 0.3s left ease-in-out, 0.3s width ease-in-out;
+  -o-transition: 0.3s max-height ease-in-out, 0.3s top ease-in-out, 0.3s left ease-in-out, 0.3s width ease-in-out;
+  transition: 0.3s max-height ease-in-out, 0.3s top ease-in-out, 0.3s left ease-in-out, 0.3s width ease-in-out;
+  position: absolute;
+  top: 330px;
+  left: 395px;
+  padding: 15px;
+  background: white;
+  border: 1px solid #99948a;
+  width: 150px;
+  height: 71px;
+}
+
+/* line 149, ../sass/partials/_bracket.scss */
+.viz-info-initiated {
+  top: 300px;
+  left: 325px;
+  width: 290px;
+  height: auto;
+}
+
+/* line 159, ../sass/partials/_bracket.scss */
+.viz-info-instructions {
+  font-size: 11px;
+  text-align: center;
+  margin: 0;
+}
+
+/* line 165, ../sass/partials/_bracket.scss */
+.viz-info-designer-wrapper {
+  display: none;
+}
+
+/* line 169, ../sass/partials/_bracket.scss */
+.viz-bracket-designer-description {
+  margin: 0px;
+  padding: 10px 0 0;
+  color: #99948a;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 140%;
+}
+
+/* line 179, ../sass/partials/_bracket.scss */
 .viz-bracket-elbow {
   fill: none;
   stroke-width: 1;
   stroke: #99948a;
 }
 
-/* line 141, ../sass/partials/_bracket.scss */
-.viz-designer-name {
+/* line 185, ../sass/partials/_bracket.scss */
+.viz-bracket-designer-name {
   font-size: 11px;
-  cursor: default;
+  cursor: pointer;
 }
 
-/* line 146, ../sass/partials/_bracket.scss */
-.viz-designer-loser {
+/* line 190, ../sass/partials/_bracket.scss */
+.viz-bracket-designer-loser {
   text-decoration: line-through;
   fill: #99948a;
 }
 
-/* line 151, ../sass/partials/_bracket.scss */
+/* line 195, ../sass/partials/_bracket.scss */
 .viz-bracket-seed {
   font-weight: 300;
   font-family: "FCKaiserCond", Helvetica, Arial, sans-serif;
