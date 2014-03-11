@@ -430,8 +430,6 @@ function buildBracket(data, leftRightIndex, target) {
 	    adjustFinalsRight();
 	    d3.selectAll(".viz-bracket-left .viz-leaf text").attr("x", 0);
 	  	d3.selectAll(".viz-bracket-right .viz-leaf text").attr("x", 100);
-
-
 	});
 }
 
@@ -439,18 +437,18 @@ function buildBracket(data, leftRightIndex, target) {
 
 function adjustFinalsLeft() {
 	var elbows = $(".viz-bracket-left .viz-bracket-elbow");
-	elbows.eq(0).attr("d","M500,200H400V135")
-	elbows.eq(1).attr("d","M500,200H400V405")
+	elbows.eq(0).attr("d","M500,168H400V135")
+	elbows.eq(1).attr("d","M500,168H400V405")
 
-	$(".viz-bracket-left .node").eq(0).attr("transform", "translate(0,200)");
+	$(".viz-bracket-left .node").eq(0).attr("transform", "translate(0,168)");
 }
 
 function adjustFinalsRight() {
 	var elbows = $(".viz-bracket-right .viz-bracket-elbow");
-	elbows.eq(0).attr("d","M0,340H100V135")
-	elbows.eq(1).attr("d","M0,340H100V405")
+	elbows.eq(0).attr("d","M0,372H100V135")
+	elbows.eq(1).attr("d","M0,372H100V405")
 
-	$(".viz-bracket-right .node").eq(0).attr("transform", "translate(0,340)");
+	$(".viz-bracket-right .node").eq(0).attr("transform", "translate(0,372)");
 }
 
 function elbowLeft(d, i) {

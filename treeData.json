@@ -114,7 +114,7 @@
 				                    "parents": [
 					                    {
 					                        "competitorIndex": "8",
-					                        "lost": "true",
+					                        "lost": "false",
 					                        "level": "32"
 					                    },
 					                    {
@@ -299,7 +299,7 @@
 				                    "parents": [
 					                    {
 					                        "competitorIndex": "24",
-					                        "lost": "true",
+					                        "lost": "false",
 					                        "level": "32"
 					                    },
 					                    {

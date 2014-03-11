@@ -14,7 +14,6 @@
 .viz-bracket-left {
 	margin-left: 10px;
 	height: 550px;
-	// border: 1px solid red;
 	width: 500px;
 }
 
@@ -23,7 +22,6 @@
 	top: 83px;
 	right: 10px;
 	width: 500px;
-	// border: 1px solid green;
 	height: 550px;
 }
 
@@ -104,7 +102,33 @@
 	text-decoration: line-through;
 }
 
+.viz-bracket-division-border {
+	position: absolute;
+	width: 3px;
+	height: 245px;
+}
 
+.viz-bracket {
+	.viz-graphic-img {
+		top: 100px;
+		left: 0;
+	}
+
+	.viz-interactive-img {
+		top: 370px;
+		left: 0;
+	}
+
+	.viz-product-img {
+		top: 100px;
+		right: 0;
+	}
+
+	.viz-architecture-img {
+		top: 370px;
+		right: 0;
+	}
+}
 
 
 // SVG
