@@ -153,9 +153,12 @@ function buildBracket(data, leftRightIndex, target) {
 				return "viz-bracket-designer-name"; 
 			}
 		  })
-		  .attr("id", function(d) { return d['competitorIndex'];})
 		  .attr("y", -6);
 
+	   // Storing data-originalIndex custom, namespaced attribute
+	   designerText.each(function(d,i) {
+	   		this.setAttributeNS("http://www.guswezerek.com", "data-originalIndex", d['competitorIndex'])
+	   });
 
 	   var seed = designerText.append("tspan")
 		  .attr("class", "viz-bracket-seed")
@@ -177,15 +180,24 @@ function buildBracket(data, leftRightIndex, target) {
 	  // We target the surrogate to get around the division-right overlapping division-left 
 	  // and making the division-left winner un-hoverable
 
-	  bindHover(designerText, data);
-	  bindHover($(".viz-bracket-left-finals-surrogate"), data);
-
-
+	  bindHover(designerText, data, 1);
+	  bindHover($(".viz-bracket-left-finals-surrogate"), data, 0);
 
 	  // For future: Move this helper to the helper section outside of this block.
-	  function bindHover(target, d) {
+	  function bindHover(target, d, svgFlag) {
 		target.on('mouseover', function(d){
-			var desiredIndex = this.id;
+
+			// The originalIndex is stored in the custom data-originalIndex attribute
+			// But we get those in different ways depending on whether "this" is an SVGElement or HTMLElement
+
+			if(svgFlag) {
+				var desiredIndex = this.getAttributeNS("http://www.guswezerek.com", "data-originalIndex");
+				console.log(desiredIndex);
+			} else {
+				var desiredIndex = this.dataset.originalindex;
+				console.log(desiredIndex);
+			}
+
 			var desiredTargets = link.filter(function(d, i) {
 				if (d['target']['competitorIndex'] == desiredIndex) {
 					return d;
@@ -230,6 +242,10 @@ function buildBracket(data, leftRightIndex, target) {
 
 	});
 }
+
+
+
+
 
 
 
@@ -507,7 +523,6 @@ function updateTopperText(container, roundNumber) {
 }
 
 function setLosers(roundNumber, container) {
-
 	var designers = container.find(".viz-choice-item");
 
 	// Reset losers
