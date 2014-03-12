@@ -181,16 +181,16 @@
 }
 
 .viz-bracket-winner-mod {
-	@include absolute(115px n n 419px);
+	@include absolute(120px n n 419px);
 	text-align: center;
 	width: 100px;
 }
 
 .viz-champion-headshot-wrap {
 	float: none;
-	margin: 0 auto 5px;
-	width: 40px;
-	height: 40px;
+	margin: 0 auto 10px;
+	width: 60px;
+	height: 60px;
 	border: 1px solid $med-gray;
 	-webkit-border-radius: 50%;
      -moz-border-radius: 50%;

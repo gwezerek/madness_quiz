@@ -9,7 +9,7 @@
 
 1. To view the project at http://localhost:8000/index.html, you'll need to do a python -m SimpleHTTPServer from the project directory.
 
-## Update the following after each round:
+## Update the following after each round
 * treeData.json, moving the winners up a level by filling in the competitorIndex property and setting the loser flag to "true" on the losers
 * Update divisions js object
 * Update indicesRoundX
@@ -23,7 +23,7 @@
 
 ## To Set Quiz Up
 **This section needs work. Will revisit after project to detail how to extend the work.**
-Create Google Spreadsheet from template
-Have editor fill in column headers and populate rows
-Run GOOGLE APP SERVICE that transforms that spreadsheet into a Google quiz
-Get the url of that quiz and put it into the url spots in the formulas for the first three columns (A1, B1, C1)
+* Create Google Spreadsheet from template
+* Have editor fill in column headers and populate rows
+* Run GOOGLE APP SERVICE that transforms that spreadsheet into a Google quiz
+* Get the url of that quiz and put it into the url spots in the formulas for the first three columns (A1, B1, C1)

@@ -29,7 +29,7 @@ var indicesRound5  = [16,23];
 var divisions = {
 	division1: {
 		roundNumber: 1,
-		roundArray: [1],
+		roundArray: [1,2],
 		round1: [0,7,1,6,2,5,3,4],
 		round2: [2,7,1,6,0,5,3,4],
 		round3: [0,7,1,6,2,5,3,4]
