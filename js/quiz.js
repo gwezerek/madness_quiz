@@ -110,19 +110,6 @@ var margin = {top: 10, right: 100, bottom: 0, left: 0},
 	width = baseWidth - margin.left - margin.right,
 	height = 550 - margin.top - margin.bottom;
 
-var orientations = {
-  "right-to-left": {
-	size: [height, width],
-	x: function(d) { return width - d.y; },
-	y: function(d) { return d.x; }
-  },
-  "left-to-right": {
-	size: [height, width],
-	x: function(d) { return d.y; },
-	y: function(d) { return d.x; }
-  }
-};
-
 var tree = d3.layout.tree()
 	.separation(function(a, b) { return a.parent === b.parent ? 1 : 1.5; })
 	.children(function(d) { return d.parents; })
@@ -186,13 +173,18 @@ function buildBracket(data, leftRightIndex, target) {
 			}
 		  });
 
+	  // Binds the handler that shows the winners' paths on hover
+	  // We target the surrogate to get around the division-right overlapping division-left 
+	  // and making the division-left winner un-hoverable
+
 	  bindHover(designerText, data);
 	  bindHover($(".viz-bracket-left-finals-surrogate"), data);
 
-	  // Smelly handler
+
+
+	  // For future: Move this helper to the helper section outside of this block.
 	  function bindHover(target, d) {
 		target.on('mouseover', function(d){
-			console.log("me");
 			var desiredIndex = this.id;
 			var desiredTargets = link.filter(function(d, i) {
 				if (d['target']['competitorIndex'] == desiredIndex) {
@@ -215,7 +207,11 @@ function buildBracket(data, leftRightIndex, target) {
 		});
 	  }
 
-	  // More smelly code
+	  
+	  // The following moves the finals connector elbows out of the center
+	  // and removes the padding for leaf nodes
+	  // We could probably refactor, but this works well for this instance.
+
 	  if (leftRightIndex == 0) {
 		node.attr("transform", function(d) { return "translate(" + (width - d.y) + "," + d.x + ")"; })
 		link.attr("d", elbowRight);
@@ -231,6 +227,7 @@ function buildBracket(data, leftRightIndex, target) {
 		adjustFinalsRight();
 		d3.selectAll(".viz-bracket-left .viz-leaf text").attr("x", 0);
 		d3.selectAll(".viz-bracket-right .viz-leaf text").attr("x", 100);
+
 	});
 }
 

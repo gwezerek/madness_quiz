@@ -1078,7 +1078,7 @@
 /* line 183, ../sass/partials/_bracket.scss */
 .viz-bracket-winner-mod {
   position: absolute;
-  top: 120px;
+  top: 115px;
   left: 419px;
   text-align: center;
   width: 100px;
@@ -1087,9 +1087,9 @@
 /* line 189, ../sass/partials/_bracket.scss */
 .viz-champion-headshot-wrap {
   float: none;
-  margin: 0 auto 10px;
-  width: 60px;
-  height: 60px;
+  margin: 0 auto 5px;
+  width: 40px;
+  height: 40px;
   border: 1px solid #99948a;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1172,6 +1172,7 @@
 
 /* line 261, ../sass/partials/_bracket.scss */
 .viz-bracket-left-finals-surrogate {
+  display: none;
   position: absolute;
   width: 100px;
   top: 245px;
