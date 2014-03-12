@@ -192,10 +192,8 @@ function buildBracket(data, leftRightIndex, target) {
 
 			if(svgFlag) {
 				var desiredIndex = this.getAttributeNS("http://www.guswezerek.com", "data-originalIndex");
-				console.log(desiredIndex);
 			} else {
 				var desiredIndex = this.dataset.originalindex;
-				console.log(desiredIndex);
 			}
 
 			var desiredTargets = link.filter(function(d, i) {

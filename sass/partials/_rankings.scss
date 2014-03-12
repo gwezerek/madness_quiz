@@ -94,6 +94,7 @@
 }
 
 .viz-division-button {
+	display: none;
 	@include trans(0.2s, opacity, ease-in-out);
 	position: absolute;
 	top: 10px;

@@ -726,6 +726,7 @@
 
 /* line 96, ../sass/partials/_rankings.scss */
 .viz-division-button {
+  display: none;
   -webkit-transition: opacity 0.2s ease-in-out;
   -moz-transition: opacity 0.2s ease-in-out;
   -o-transition: opacity 0.2s ease-in-out;
@@ -739,34 +740,34 @@
   opacity: 0.5;
   cursor: pointer;
 }
-/* line 106, ../sass/partials/_rankings.scss */
+/* line 107, ../sass/partials/_rankings.scss */
 .viz-division-button:hover {
   opacity: 1;
 }
-/* line 109, ../sass/partials/_rankings.scss */
+/* line 110, ../sass/partials/_rankings.scss */
 .viz-division-button:focus {
   outline: none;
 }
 
-/* line 114, ../sass/partials/_rankings.scss */
+/* line 115, ../sass/partials/_rankings.scss */
 .viz-prev {
   left: 10px;
   background-image: url("http://www.guswezerek.com/projects/bracket_madness/btn-prev.png");
 }
 
-/* line 119, ../sass/partials/_rankings.scss */
+/* line 120, ../sass/partials/_rankings.scss */
 .viz-next {
   right: 10px;
   background-image: url("http://www.guswezerek.com/projects/bracket_madness/btn-next.png");
 }
 
-/* line 124, ../sass/partials/_rankings.scss */
+/* line 125, ../sass/partials/_rankings.scss */
 .viz-division-button-img {
   margin: 0;
   width: 20px;
 }
 
-/* line 129, ../sass/partials/_rankings.scss */
+/* line 130, ../sass/partials/_rankings.scss */
 .viz-division-name {
   margin-top: 0;
   padding: 0 5px;
@@ -774,7 +775,7 @@
   background-color: white;
 }
 
-/* line 136, ../sass/partials/_rankings.scss */
+/* line 137, ../sass/partials/_rankings.scss */
 .viz-division-round {
   color: #33312e;
   letter-spacing: 0.5px;
@@ -784,14 +785,14 @@
   font-weight: 600;
 }
 
-/* line 145, ../sass/partials/_rankings.scss */
+/* line 146, ../sass/partials/_rankings.scss */
 .viz-division-final-round {
   letter-spacing: 0.5px;
   font-size: 15px;
   margin: 0 0 5px;
 }
 
-/* line 152, ../sass/partials/_rankings.scss */
+/* line 153, ../sass/partials/_rankings.scss */
 .viz-division {
   display: -moz-inline-stack;
   display: inline-block;
@@ -802,19 +803,19 @@
   width: 100%;
 }
 @media (min-width: 620px) {
-  /* line 156, ../sass/partials/_rankings.scss */
+  /* line 157, ../sass/partials/_rankings.scss */
   .viz-division:last-of-type .viz-division-designers-list, .viz-division .viz-choice-item:last-of-type {
     margin-bottom: 0;
   }
 }
 
-/* line 162, ../sass/partials/_rankings.scss */
+/* line 163, ../sass/partials/_rankings.scss */
 .viz-division-finals {
   margin-bottom: 35px;
   display: none;
 }
 
-/* line 167, ../sass/partials/_rankings.scss */
+/* line 168, ../sass/partials/_rankings.scss */
 .viz-division-winner {
   color: #33312e;
   letter-spacing: 0.5px;
@@ -828,20 +829,20 @@
   display: none;
 }
 
-/* line 180, ../sass/partials/_rankings.scss */
+/* line 181, ../sass/partials/_rankings.scss */
 .viz-division-designers-list {
   margin: 0 0 35px;
   padding: 0 10px;
   list-style-type: none;
 }
 
-/* line 188, ../sass/partials/_rankings.scss */
+/* line 189, ../sass/partials/_rankings.scss */
 .viz-division .viz-choice-loser {
   margin-bottom: 0;
   padding: 5px 0 0;
   border-bottom: none;
 }
-/* line 192, ../sass/partials/_rankings.scss */
+/* line 193, ../sass/partials/_rankings.scss */
 .viz-division .viz-choice-loser .viz-vs {
   display: none;
 }
