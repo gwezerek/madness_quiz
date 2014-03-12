@@ -11,11 +11,12 @@ var spreadsheetURL = "https://docs.google.com/spreadsheet/pub?key=0AmqQKSPoegtOd
 var vizEven = false; 
 var vizQuiz = false;
 var quizTemplate = _.template(
-    $( ".viz-designer-template" ).html()
+	$( ".viz-designer-template" ).html()
 );
 
 // For bracket
 var divisionColor = ["rgb(255,138,128)","rgb(183,129,255)","rgb(129,159,255)","rgb(255,129,244)"];
+var designerText = "";
 
 // For quiz
 var indicesRound1 = [0,7,1,6,2,5,3,4,8,15,9,14,10,13,11,12,16,23,17,22,18,21,19,20,24,31,25,30,26,29,27,28];
@@ -106,35 +107,35 @@ d3.csv(spreadsheetURL, function(error, myData) {
 
 var margin = {top: 10, right: 100, bottom: 0, left: 0},
 	baseWidth = 500,
-    width = baseWidth - margin.left - margin.right,
-    height = 550 - margin.top - margin.bottom;
+	width = baseWidth - margin.left - margin.right,
+	height = 550 - margin.top - margin.bottom;
 
 var orientations = {
   "right-to-left": {
-    size: [height, width],
-    x: function(d) { return width - d.y; },
-    y: function(d) { return d.x; }
+	size: [height, width],
+	x: function(d) { return width - d.y; },
+	y: function(d) { return d.x; }
   },
   "left-to-right": {
-    size: [height, width],
-    x: function(d) { return d.y; },
-    y: function(d) { return d.x; }
+	size: [height, width],
+	x: function(d) { return d.y; },
+	y: function(d) { return d.x; }
   }
 };
 
 var tree = d3.layout.tree()
-    .separation(function(a, b) { return a.parent === b.parent ? 1 : 1.5; })
-    .children(function(d) { return d.parents; })
-    .size([height, width]);
+	.separation(function(a, b) { return a.parent === b.parent ? 1 : 1.5; })
+	.children(function(d) { return d.parents; })
+	.size([height, width]);
 
 
 function buildBracket(data, leftRightIndex, target) {
 
 	var svg = d3.select(target).append("svg")
-	     .attr("width", width + margin.left + margin.right)
-	     .attr("height", height + margin.top + margin.bottom)
+		 .attr("width", width + margin.left + margin.right)
+		 .attr("height", height + margin.top + margin.bottom)
 	   .append("g")
-	     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+		 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 	// d3.json("http://www.guswezerek.com/projects/bracket_madness/treeData.json", function(json) {
 	d3.json("treeData.json", function(json) {
@@ -142,68 +143,99 @@ function buildBracket(data, leftRightIndex, target) {
 	  var nodes = tree.nodes(json["parents"][leftRightIndex]);
 
 	  var link = svg.selectAll(".link")
-	      .data(tree.links(nodes))
-	    .enter().append("path")
-	      .attr("class", "viz-bracket-elbow");
+		  .data(tree.links(nodes))
+		.enter().append("path")
+		  .attr("class", "viz-bracket-elbow");
 
 	  var node = svg.selectAll(".node")
-	      .data(nodes)
-	    .enter().append("g")
-	      .attr("class", function(n) {
-            if (n.children) {
-              return "viz-inner viz-node"
-            } else {
-              return "viz-leaf viz-node"
-            }
-          });
+		  .data(nodes)
+		.enter().append("g")
+		  .attr("class", function(n) {
+			if (n.children) {
+			  return "viz-inner viz-node"
+			} else {
+			  return "viz-leaf viz-node"
+			}
+		  });
 
-	  var text = node.append("text")
-	      .attr("class", function(d) {
-	      	if (d.lost == "true") {
-	      		return "viz-bracket-designer-name viz-bracket-designer-loser"; 
-	      	} else {
-	      		return "viz-bracket-designer-name"; 
-	      	}
-	      })
-	      .attr("id", function(d) { return d.competitorIndex; })
-	      .attr("y", -6);
+	  designerText = node.append("text")
+		  .attr("class", function(d) {
+			if (d.lost == "true") {
+				return "viz-bracket-designer-name viz-bracket-designer-loser"; 
+			} else {
+				return "viz-bracket-designer-name"; 
+			}
+		  })
+		  .attr("id", function(d) { return d['competitorIndex'];})
+		  .attr("y", -6);
 
-	   var seed = text.append("tspan")
+
+	   var seed = designerText.append("tspan")
 		  .attr("class", "viz-bracket-seed")
-	      .text(function(d) {
-	      	if (data[d.competitorIndex] && data[d.competitorIndex]['rank']) {
-	      		return data[d.competitorIndex]['rank']; 
-	      	}
-	      });
+		  .text(function(d) {
+			if (data[d.competitorIndex] && data[d.competitorIndex]['rank']) {
+				return data[d.competitorIndex]['rank']; 
+			}
+		  });
 
-	   var designer = text.append("tspan")
+	   var designer = designerText.append("tspan")
 		  .attr("dx","3")
-	      .text(function(d) {
-	      	if (data[d.competitorIndex] && data[d.competitorIndex]['name']) {
-	      		return data[d.competitorIndex]['name']; 
-	      	}
-	      });
+		  .text(function(d) {
+			if (data[d.competitorIndex] && data[d.competitorIndex]['name']) {
+				return data[d.competitorIndex]['name']; 
+			}
+		  });
 
+	  bindHover(designerText, data);
+	  bindHover($(".viz-bracket-left-finals-surrogate"), data);
 
-	  // Smelly code
+	  // Smelly handler
+	  function bindHover(target, d) {
+		target.on('mouseover', function(d){
+			console.log("me");
+			var desiredIndex = this.id;
+			var desiredTargets = link.filter(function(d, i) {
+				if (d['target']['competitorIndex'] == desiredIndex) {
+					return d;
+				}
+			});
+			var desiredPaths = getDesired(desiredTargets);
+			
+			desiredTargets.moveToFront();
+			
+			for (var i = 0; i < desiredPaths.length; i++) {
+				desiredPaths[i].addClass("viz-active-path");
+			}
 
-      if (leftRightIndex == 0) {
-      	node.attr("transform", function(d) { return "translate(" + (width - d.y) + "," + d.x + ")"; })
-	  	link.attr("d", elbowRight);
-	    text.attr("text-anchor", "start").attr("x", 6);
-	  } else {
-	  	node.attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
-	    link.attr("d", elbowLeft);
-	    adjustFinalsRight();
-	  	text.attr("text-anchor", "end").attr("x", 94);
+		})
+		.on('mouseout', function(d){
+			link.each(function(d,i) {
+				$(this)[0].removeClass("viz-active-path");
+			});
+		});
 	  }
 
-	  	adjustFinalsLeft();
-	    adjustFinalsRight();
-	    d3.selectAll(".viz-bracket-left .viz-leaf text").attr("x", 0);
-	  	d3.selectAll(".viz-bracket-right .viz-leaf text").attr("x", 100);
+	  // More smelly code
+	  if (leftRightIndex == 0) {
+		node.attr("transform", function(d) { return "translate(" + (width - d.y) + "," + d.x + ")"; })
+		link.attr("d", elbowRight);
+		designerText.attr("text-anchor", "start").attr("x", 6);
+	  } else {
+		node.attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+		link.attr("d", elbowLeft);
+		adjustFinalsRight();
+		designerText.attr("text-anchor", "end").attr("x", 94);
+	  }
+
+		adjustFinalsLeft();
+		adjustFinalsRight();
+		d3.selectAll(".viz-bracket-left .viz-leaf text").attr("x", 0);
+		d3.selectAll(".viz-bracket-right .viz-leaf text").attr("x", 100);
 	});
 }
+
+
+
 
 
 
@@ -300,7 +332,7 @@ $(".viz-division-button").on("click", function() {
 // Iterating through rounds
 $(".viz-bracket").on("click", ".viz-bracket-designer-name", function() {
 	var $this = $(this);
-	var originalIndex = $this.attr("id");
+	var originalIndex = d3.select(this).datum()['competitorIndex'];
 	var divisionObj = data[originalIndex];
 	var infoMod = $(".viz-bracket-info-mod");
 	var colorsIndex = Math.floor(originalIndex / (data.length / 4));
@@ -309,7 +341,7 @@ $(".viz-bracket").on("click", ".viz-bracket-designer-name", function() {
 	window.setTimeout(function(){
 		infoMod.addClass("viz-info-initiated");
 		infoMod.find(".viz-headshot").css({
-		 	"right": 40 * originalIndex + "px",
+			"right": 40 * originalIndex + "px",
 			"background-color": divisionColor[colorsIndex]
 		});
 		infoMod.find(".viz-designer-name").text(divisionObj['name']);
@@ -331,6 +363,33 @@ $(".viz-bracket").on("click", ".viz-bracket-designer-name", function() {
 
 // HELPERS
 // =============================================
+
+// SVG godesend extension methods
+
+d3.selection.prototype.moveToFront = function() {
+  return this.each(function(){
+	this.parentNode.appendChild(this);
+  });
+};
+
+SVGElement.prototype.hasClass = function (className) {
+  return new RegExp('(\\s|^)' + className + '(\\s|$)').test(this.getAttribute('class'));
+};
+
+SVGElement.prototype.addClass = function (className) {
+  if (!this.hasClass(className)) {
+	this.setAttribute('class', this.getAttribute('class') + ' ' + className);
+  }
+};
+
+SVGElement.prototype.removeClass = function (className) {
+  var removedClass = this.getAttribute('class').replace(new RegExp('(\\s|^)' + className + '(\\s|$)', 'g'), '$2');
+  if (this.hasClass(className)) {
+	this.setAttribute('class', removedClass);
+  }
+};
+
+// Graphic-specific helpers
 
 function populateQuiz(data) {
 	var myObj = {};
@@ -474,7 +533,7 @@ function adjustFinalsLeft() {
 	elbows.eq(0).attr("d","M500,168H400V135")
 	elbows.eq(1).attr("d","M500,168H400V405")
 
-	$(".viz-bracket-left .node").eq(0).attr("transform", "translate(0,168)");
+	$(".viz-bracket-left .viz-node").eq(0).attr("transform", "translate(400,168)");
 }
 
 function adjustFinalsRight() {
@@ -482,19 +541,27 @@ function adjustFinalsRight() {
 	elbows.eq(0).attr("d","M0,372H100V135")
 	elbows.eq(1).attr("d","M0,372H100V405")
 
-	$(".viz-bracket-right .node").eq(0).attr("transform", "translate(0,372)");
+	$(".viz-bracket-right .viz-node").eq(0).attr("transform", "translate(0,372)");
 }
 
 function elbowLeft(d, i) {
   return "M" + d.source.y + "," + d.source.x
-       + "H" + d.target.y + "V" + d.target.x
-       + (d.target.children ? "" : "h" + 100);
+	   + "H" + d.target.y + "V" + d.target.x
+	   + (d.target.children ? "" : "h" + 100);
 }
 
 function elbowRight(d, i) {
   return "M" + (baseWidth - d.source.y) + "," + d.source.x
-       + "H" + (baseWidth - d.target.y) + "V" + d.target.x
-       + (d.target.children ? "" : "h" + (-100));
+	   + "H" + (baseWidth - d.target.y) + "V" + d.target.x
+	   + (d.target.children ? "" : "h" + (-100));
+}
+
+function getDesired(desiredTargets) {
+	if(desiredTargets[0].length == 4) {
+		return desiredTargets[0];
+	} else {
+		return desiredTargets[0].slice(1);
+	}
 }
 
 

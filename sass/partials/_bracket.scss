@@ -137,8 +137,9 @@
 }
 
 .viz-bracket-info-mod {
-	@include transition(0.3s max-height ease-in-out, 0.3s top ease-in-out, 0.3s left ease-in-out, 0.3s width ease-in-out);
-	@include absolute(330px n n 395px);
+	@include transition(0.3s top ease-in-out, 0.3s left ease-in-out, 0.3s width ease-in-out);
+	@include absolute(325px n n 395px);
+	z-index: 1;
 	padding: 15px;
 	background: $bground;
 	border: 1px solid $med-gray;
@@ -160,6 +161,7 @@
 }
 
 .viz-info-designer-wrapper {
+	position: relative;
 	display: none;
 }
 
@@ -228,6 +230,7 @@
 
 // SVG
 .viz-bracket-elbow {
+	@include transition(0.3s stroke-width ease-in, 0.2s stroke ease-in);
 	fill: none;
 	stroke-width: 1;
 	stroke: $med-gray;
@@ -247,6 +250,21 @@
 	font-weight: 300;
 	font-family: $condensed;
 	fill: $med-gray;
+}
+
+.viz-active-path {
+	@include transition(0.3s stroke-width ease-in, 0.2s stroke ease-in);
+	stroke-width: 2;
+	stroke: $txt-black;
+}
+
+.viz-bracket-left-finals-surrogate {
+	// display: none; // Reveal when we have a winner and you've set the ID
+	position: absolute;
+	width: 100px;
+	top: 245px;
+	left: 411px;
+	cursor: pointer;
 }
 
 
