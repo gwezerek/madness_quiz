@@ -581,17 +581,17 @@
   right: 0px;
   width: 25px;
   height: 25px;
-  background: url("http://www.guswezerek.com/projects/bracket_madness/choice_targets.png") no-repeat;
+  background: url("http://www.fastcodesign.com/asset_files/-/2014/03/12/choice_targets.png") no-repeat;
   background-position: 0 0;
   background-size: 25px;
   opacity: 0.5;
 }
-/* line 35, ../sass/partials/_quiz.scss */
+/* line 36, ../sass/partials/_quiz.scss */
 .viz-quiz-target:hover {
   opacity: 1;
 }
 
-/* line 40, ../sass/partials/_quiz.scss */
+/* line 41, ../sass/partials/_quiz.scss */
 .viz-submitted-alert {
   display: none;
   margin: -25px 0 10px;
@@ -602,21 +602,21 @@
   font-size: 11px;
 }
 
-/* line 51, ../sass/partials/_quiz.scss */
+/* line 52, ../sass/partials/_quiz.scss */
 .viz-choice-winner .viz-quiz-target {
   background-position: 0 -50px;
 }
 
-/* line 57, ../sass/partials/_quiz.scss */
+/* line 58, ../sass/partials/_quiz.scss */
 .viz-choice-loser .viz-quiz-target {
   background-position: 0 -25px;
 }
-/* line 60, ../sass/partials/_quiz.scss */
+/* line 61, ../sass/partials/_quiz.scss */
 .viz-choice-loser .viz-designer-name {
   color: #99948a;
   font-weight: 300;
 }
-/* line 64, ../sass/partials/_quiz.scss */
+/* line 65, ../sass/partials/_quiz.scss */
 .viz-choice-loser .viz-headshot {
   opacity: .3;
 }
@@ -752,22 +752,22 @@
 /* line 115, ../sass/partials/_rankings.scss */
 .viz-prev {
   left: 10px;
-  background-image: url("http://www.guswezerek.com/projects/bracket_madness/btn-prev.png");
+  background-image: url("http://www.fastcodesign.com/asset_files/-/2014/03/12/btn-next.png");
 }
 
-/* line 120, ../sass/partials/_rankings.scss */
+/* line 122, ../sass/partials/_rankings.scss */
 .viz-next {
   right: 10px;
-  background-image: url("http://www.guswezerek.com/projects/bracket_madness/btn-next.png");
+  background-image: url("http://www.fastcodesign.com/asset_files/-/2014/03/12/btn-prev.png");
 }
 
-/* line 125, ../sass/partials/_rankings.scss */
+/* line 128, ../sass/partials/_rankings.scss */
 .viz-division-button-img {
   margin: 0;
   width: 20px;
 }
 
-/* line 130, ../sass/partials/_rankings.scss */
+/* line 133, ../sass/partials/_rankings.scss */
 .viz-division-name {
   margin-top: 0;
   padding: 0 5px;
@@ -775,7 +775,7 @@
   background-color: white;
 }
 
-/* line 137, ../sass/partials/_rankings.scss */
+/* line 140, ../sass/partials/_rankings.scss */
 .viz-division-round {
   color: #33312e;
   letter-spacing: 0.5px;
@@ -785,14 +785,14 @@
   font-weight: 600;
 }
 
-/* line 146, ../sass/partials/_rankings.scss */
+/* line 149, ../sass/partials/_rankings.scss */
 .viz-division-final-round {
   letter-spacing: 0.5px;
   font-size: 15px;
   margin: 0 0 5px;
 }
 
-/* line 153, ../sass/partials/_rankings.scss */
+/* line 156, ../sass/partials/_rankings.scss */
 .viz-division {
   display: -moz-inline-stack;
   display: inline-block;
@@ -803,19 +803,19 @@
   width: 100%;
 }
 @media (min-width: 620px) {
-  /* line 157, ../sass/partials/_rankings.scss */
+  /* line 160, ../sass/partials/_rankings.scss */
   .viz-division:last-of-type .viz-division-designers-list, .viz-division .viz-choice-item:last-of-type {
     margin-bottom: 0;
   }
 }
 
-/* line 163, ../sass/partials/_rankings.scss */
+/* line 166, ../sass/partials/_rankings.scss */
 .viz-division-finals {
   margin-bottom: 35px;
   display: none;
 }
 
-/* line 168, ../sass/partials/_rankings.scss */
+/* line 171, ../sass/partials/_rankings.scss */
 .viz-division-winner {
   color: #33312e;
   letter-spacing: 0.5px;
@@ -829,20 +829,20 @@
   display: none;
 }
 
-/* line 181, ../sass/partials/_rankings.scss */
+/* line 184, ../sass/partials/_rankings.scss */
 .viz-division-designers-list {
   margin: 0 0 35px;
   padding: 0 10px;
   list-style-type: none;
 }
 
-/* line 189, ../sass/partials/_rankings.scss */
+/* line 192, ../sass/partials/_rankings.scss */
 .viz-division .viz-choice-loser {
   margin-bottom: 0;
   padding: 5px 0 0;
   border-bottom: none;
 }
-/* line 193, ../sass/partials/_rankings.scss */
+/* line 196, ../sass/partials/_rankings.scss */
 .viz-division .viz-choice-loser .viz-vs {
   display: none;
 }
