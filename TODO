@@ -1,27 +1,2 @@
 
 Illustrations
-
-ENCHANCEMENT: ANIMATE ON NAV ROUND
-// If you don't get to this, remove the temp wrapper divs
-
-Prepend that string to the <li class="viz-division">
-But make that string visbility: hidden
-Get position of each li in that string
-Hide that string
-Animate original elements to those positions // https://forum.jquery.com/topic/offset-with-animate
-Replace original elements with new string
-
-
-
-In division object
- oldPos: [182, 10, 192, 10, etc]
- newPos: []
-
-for each li
- $(this).animate({
-      'top': division[division].oldPos[i],
-      'left': divLocation.left
-}, 200);
-
-
-

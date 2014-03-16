@@ -592,7 +592,7 @@
   background: url("http://www.guswezerek.com/projects/bracket_madness/choice_targets.png") no-repeat;
   background-position: 0 0;
   background-size: 25px;
-  opacity: 0.5;
+  opacity: 0.25;
 }
 /* line 36, ../sass/partials/_quiz.scss */
 .viz-quiz-target:hover {
@@ -750,7 +750,7 @@
   height: 20px;
   background-size: 100%;
   background-repeat: no-repeat;
-  opacity: 0.5;
+  opacity: 0.3;
   cursor: pointer;
 }
 /* line 110, ../sass/partials/_rankings.scss */
