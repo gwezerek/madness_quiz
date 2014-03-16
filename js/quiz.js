@@ -27,9 +27,22 @@ var indicesRound5 = [16, 23];
 
 // For rankings
 var divisions = {
+
+    // We set these manually to reduce complexity in the rearrange on round change
+    // To compute, run the following inside the convertAbs() function:
+    // var topArray = [];
+    // designers.each(function() {
+    //     topArray.push($(this).position().top);
+    // });
+    // console.log(topArray);
+
+    topPosRound1: [0, 50, 111, 161, 222, 272, 333, 383],
+    topPosRound2: [0, 50, 111, 161, 222, 267, 312, 357],
+    topPosRound3: [0, 50, 111, 156, 201, 246, 291, 336],
+
     division1: {
         roundNumber: 1,
-        roundArray: [1, 2],
+        roundArray: [1, 2, 3],
         round1: [0, 7, 1, 6, 2, 5, 3, 4],
         round2: [2, 7, 1, 6, 0, 5, 3, 4],
         round3: [0, 7, 1, 6, 2, 5, 3, 4]
@@ -589,43 +602,85 @@ function getDesired(desiredTargets) {
 // TESTING
 
 function convertAbs() {
-    var items = $(".viz-division-designers-list").eq(1).find(".viz-choice-item");
-    var topArray = [];
-    var height = items.eq(1).innerHeight();
-    var height1Pad = parseInt(items.eq(1).css("padding-bottom").replace(/[^-\d\.]/g, ''));
-    var itemWidth = items.eq(0).innerWidth()
-    var top;
-    
-    items.each(function() {
-        var pos = $(this).position();
-        topArray.push(pos.top);
-    });
+    var roundNumber = 2;
+    var designers = $(".viz-division-designers-list").eq(1).find(".viz-choice-item");
+    var designer2 = designers.eq(1);
+    var designerSpecs = {};
+    var loserStart;
 
-    var gap = topArray[2] - topArray[1] - height;
 
-    console.log(topArray);
-    console.log(gap);
+    designerSpecs.designerHeight = designer2.innerHeight();
+    designerSpecs.designerWidth = designer2.innerWidth()
+    designerSpecs.gap = designers.eq(2).position().top - designer2.position().top - designerSpecs.designerHeight;
 
-    items.slice(1).each(function(i) {
+    if (roundNumber == 1) {
+        convertCompetitors(designers.slice(1), designerSpecs);
+    } else if (roundNumber == 2) {
+        loserStart = designers.eq(4).position().top;
+        convertCompetitors(designers.slice(1,4), designerSpecs);
+        convertLosers(designers.slice(-4), designerSpecs, loserStart);
+    } else if (roundNumber == 3) {
+        loserStart = designers.eq(2).position().top;
+        convertCompetitors(designers.slice(1,2), designerSpecs);
+        convertLosers(designers.slice(-6), designerSpecs, loserStart);
+    }
+}
 
-        var groupMultiplier = Math.ceil(i/2)
+
+function convertCompetitors(designers, specs) {
+    designers.each(function(i) {
+        var groupMultiplier = Math.ceil(i/2);
+        var oddModTop = (specs.designerHeight*2 + specs.gap)*groupMultiplier + "px";
+        var evenModTop = (specs.designerHeight*2 + specs.gap)*groupMultiplier + specs.designerHeight + "px";
 
         if (i % 2) {    // targets odd indexed rows
-            top = (height*2 + gap)*groupMultiplier +  "px";
-            $(this).css({"position": "absolute", "top": top, "width": itemWidth});
+            $(this).css({
+                "position": "absolute", 
+                "top": oddModTop, 
+                "width": specs.designerWidth
+            });
         } else {    // targets even indexed rows
-            top = (height*2 + gap)*groupMultiplier + height + "px";
-            // top = (height1 + height2 + gap)*groupMultiplier + height1 + "px";
-            $(this).css({"position": "absolute", "top": top, "width": itemWidth});
+            $(this).css({
+                "position": "absolute", 
+                "top": evenModTop, 
+                "width": specs.designerWidth
+            });
         }
+    });
+}
 
-        console.log(top);
+function convertLosers(designers, specs, loserStart) {
+    loserHeight = 45;   // Unfortunate magic number
 
-        // 5 0 0 5 5 10 10
-
+    designers.each(function(i) {
+        $(this).css({
+            "position": "absolute", 
+            "top": loserStart + loserHeight*i, 
+            "width": specs.designerWidth
+        });
     });
 
 }
+
+
+// Pass in the round number
+// Pass in the designer collection
+
+// Get current round number
+// Shut down visible descriptions
+// Convert to absolute
+// Get newOrder
+// Animate
+
+
+// For each in desired find li with equal originalIndex 
+// Animate it to topArray[i]
+// round2: [2, 7, 1, 6, 0, 5, 3, 4],
+
+
+
+
+
 
 
 
