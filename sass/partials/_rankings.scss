@@ -5,10 +5,6 @@
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
-#division2 {
-	display: none;
-}
-
 .viz-rankings {
 	max-width: 634px;
 	margin: 0 auto 55px;
@@ -48,11 +44,6 @@
 	list-style-type: none;
 }
 
-.viz-hidden {
-	display: none;
-	// visibility: hidden;
-}
-
 
 
 // Nav
@@ -65,7 +56,7 @@
 // Topper
 .viz-division-topper {
 	position: relative;
-	margin: 0 auto 15px;
+	margin: 0 auto 10px;
 	padding: 0;	
 	border: 1px solid $light-gray;
 	-webkit-column-break-inside: avoid;
@@ -216,5 +207,13 @@
 	border-top: none;
 	& .viz-vs {
 		display: none;
+	}
+}
+
+// Rearrange styling
+.viz-transition {
+	position: absolute;
+	& .viz-vs {
+		opacity: 0;
 	}
 }

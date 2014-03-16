@@ -196,6 +196,7 @@
 }
 
 .viz-vs {
+	@include trans(0.2s, opacity, ease-in-out);
 	@include absolute(-13px 0px n n);
 	z-index: 1;
 	display: none;
