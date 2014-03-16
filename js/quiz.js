@@ -12,9 +12,7 @@ var spreadsheetURL = "https://docs.google.com/spreadsheet/pub?key=0AmqQKSPoegtOd
 // For template
 var vizEven = false;
 var vizQuiz = false;
-var quizTemplate = _.template(
-    $(".viz-designer-template").html()
-);
+var quizTemplate = _.template( $(".viz-designer-template").html() );
 
 // For bracket
 var divisionColor = ["rgb(255,138,128)", "rgb(183,129,255)", "rgb(129,159,255)", "rgb(255,129,244)"];
@@ -425,14 +423,17 @@ function populateQuiz(data) {
     // Keep in dot notation or else quizData won't stick
     myObj["designers"] = quizData;
     quizData = myObj;
+    
 
     // Compile the list for that round
     for (i = 0; i < quizData.designers.length; i++) {
+
         if (i % 2) {
             vizEven = true;
         } else {
             vizEven = false;
         }
+        
         toAppendString += quizTemplate(quizData.designers[i]);
     }
 
@@ -581,3 +582,52 @@ function getDesired(desiredTargets) {
         return desiredTargets[0].slice(1);
     }
 }
+
+
+
+
+// TESTING
+
+function convertAbs() {
+    var items = $(".viz-division-designers-list").eq(1).find(".viz-choice-item");
+    var topArray = [];
+    var height = items.eq(1).innerHeight();
+    var height1Pad = parseInt(items.eq(1).css("padding-bottom").replace(/[^-\d\.]/g, ''));
+    var itemWidth = items.eq(0).innerWidth()
+    var top;
+    
+    items.each(function() {
+        var pos = $(this).position();
+        topArray.push(pos.top);
+    });
+
+    var gap = topArray[2] - topArray[1] - height;
+
+    console.log(topArray);
+    console.log(gap);
+
+    items.slice(1).each(function(i) {
+
+        var groupMultiplier = Math.ceil(i/2)
+
+        if (i % 2) {    // targets odd indexed rows
+            top = (height*2 + gap)*groupMultiplier +  "px";
+            $(this).css({"position": "absolute", "top": top, "width": itemWidth});
+        } else {    // targets even indexed rows
+            top = (height*2 + gap)*groupMultiplier + height + "px";
+            // top = (height1 + height2 + gap)*groupMultiplier + height1 + "px";
+            $(this).css({"position": "absolute", "top": top, "width": itemWidth});
+        }
+
+        console.log(top);
+
+        // 5 0 0 5 5 10 10
+
+    });
+
+}
+
+
+
+
+

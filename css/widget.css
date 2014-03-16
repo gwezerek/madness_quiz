@@ -1,4 +1,4 @@
-/* line 770, ../sass/partials/_mixins.scss */
+/* line 757, ../sass/partials/_mixins.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -9,272 +9,13 @@
   width: auto;
 }
 
-/* line 777, ../sass/partials/_mixins.scss */
+/* line 764, ../sass/partials/_mixins.scss */
 .viz-designer-header-mod {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-}
-
-@font-face {
-  font-weight: 500;
-  font-style: normal;
-  font-family: "FCKaiserCond";
-  src: url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_cond-medium-webfont.eot");
-  src: url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_cond-medium-webfont.eot?#iefix") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_cond-medium-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_cond-medium-webfont.ttf") format("truetype"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_cond-medium-webfont.svg#FCKaiserCond") format("svg");
-}
-
-@font-face {
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "FCKaiserCond";
-  src: url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_cond-regular-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_cond-regular-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_cond-regular-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_cond-regular-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 200;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "FCKaiserCond";
-  src: url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_cond-extralight-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_cond-extralight-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_cond-extralight-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_cond-extralight-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 200;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "FCKaiserXCond";
-  src: url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_xcond-extralight-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_xcond-extralight-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_xcond-extralight-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_xcond-extralight-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "FCKaiserXCond";
-  src: url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_xcond-regular-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_xcond-regular-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_xcond-regular-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser_xcond-regular-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "FCZizouSans";
-  src: url("http://www.fastcodesign.com/fonts/fczizou/fczizou_sans-regular-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_sans-regular-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_sans-regular-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_sans-regular-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "FCZizouSans";
-  src: url("http://www.fastcodesign.com/fonts/fczizou/fczizou_sans-medium-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_sans-medium-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_sans-medium-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_sans-medium-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 700;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "FCZizouSans";
-  src: url("http://www.fastcodesign.com/fonts/fczizou/fczizou_sans-bold-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_sans-bold-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_sans-bold-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_sans-bold-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 200;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "FCZizouSlab";
-  src: url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-thin-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-thin-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-thin-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-thin-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 300;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "FCZizouSlab";
-  src: url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-light-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-light-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-light-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-light-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "FCZizouSlab";
-  src: url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-regular-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-regular-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-regular-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-regular-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "FCZizouSlab";
-  src: url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-medium-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-medium-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-medium-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-medium-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 700;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "FCZizouSlab";
-  src: url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-bold-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-bold-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-bold-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-bold-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 800;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "FCZizouSlab";
-  src: url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-black-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-black-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-black-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/fczizou/fczizou_slab-black-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "FCKaiser";
-  src: url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser-regular-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser-regular-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser-regular-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser-regular-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "FCKaiser";
-  src: url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser-medium-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser-medium-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser-medium-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/fckaiser/fckaiser-medium-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 100;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "MuseoSans";
-  src: url("http://www.fastcodesign.com/fonts/museosans/museosans-100-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/museosans/museosans-100-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/museosans/museosans-100-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/museosans/museosans-100-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 300;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "MuseoSans";
-  src: url("http://www.fastcodesign.com/fonts/museosans/museosans-300-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/museosans/museosans-300-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/museosans/museosans-300-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/museosans/museosans-300-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "MuseoSans";
-  src: url("http://www.fastcodesign.com/fonts/museosans/museosans-500-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/museosans/museosans-500-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/museosans/museosans-500-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/museosans/museosans-500-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 700;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "MuseoSans";
-  src: url("http://www.fastcodesign.com/fonts/museosans/museosans-700-webfont.eot?") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/museosans/museosans-700-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/museosans/museosans-700-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/museosans/museosans-700-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 700;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "Grumpy-Black36";
-  src: url("http://www.fastcodesign.com/fonts/grumpy/grumpy-black36-webfont.eot?#iefix") format("embedded-opentype"), url("http://www.fastcodesign.com/fonts/grumpy/grumpy-black36-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/grumpy/grumpy-black36-webfont.svg") format("svg"), url("http://www.fastcodesign.com/fonts/grumpy/grumpy-black36-webfont.ttf") format("opentype");
-}
-
-@font-face {
-  font-weight: 600;
-  font-style: normal;
-  font-stretch: normal;
-  font-family: "CaslonFS";
-  src: url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-bold-webfont.eot?#iefix") format("eot"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-bold-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-bold-webfont.ttf") format("truetype"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-bold-webfont.svg#webfontKSc4AWhd") format("svg");
-}
-
-@font-face {
-  font-weight: 600;
-  font-style: italic;
-  font-family: "CaslonFS";
-  src: url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-bold_italic-webfont.eot?#iefix") format("eot"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-bold_italic-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-bold_italic-webfont.ttf") format("truetype"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-bold_italic-webfont.svg#webfontqJplC6D8") format("svg");
-}
-
-@font-face {
-  font-weight: 400;
-  font-style: normal;
-  font-family: "CaslonFS";
-  src: url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-book-webfont.eot?#iefix") format("eot"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-book-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-book-webfont.ttf") format("truetype"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-book-webfont.svg#webfontla9WkFWh") format("svg");
-}
-
-@font-face {
-  font-weight: 400;
-  font-style: italic;
-  font-family: "CaslonFS";
-  src: url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-book_italic-webfont.eot?#iefix") format("eot"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-book_italic-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-book_italic-webfont.ttf") format("truetype"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-book_italic-webfont.svg#webfont2p2hqYg5") format("svg");
-}
-
-@font-face {
-  font-weight: 500;
-  font-style: normal;
-  font-family: "CaslonFS";
-  src: url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-medium-webfont.eot?#iefix") format("eot"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-medium-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-medium-webfont.ttf") format("truetype"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-medium-webfont.svg#webfontsq83qGc8") format("svg");
-}
-
-@font-face {
-  font-weight: 500;
-  font-style: italic;
-  font-family: "CaslonFS";
-  src: url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-medium_italic-webfont.eot?#iefix") format("eot"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-medium_italic-webfont.woff") format("woff"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-medium_italic-webfont.ttf") format("truetype"), url("http://www.fastcodesign.com/fonts/caslonfs/caslonfs-medium_italic-webfont.svg#webfontydPYhPC6") format("svg");
-}
-
-@font-face {
-  font-family: "Colfax";
-  src: url("http://www.fastcolabs.com/fonts/colfax-licensed/ColfaxWebThin.eot?") format("embedded-opentype"), url("http://www.fastcolabs.com/fonts/colfax-licensed/ColfaxWebThin.woff") format("woff");
-  font-style: normal;
-  font-weight: 100;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: "Colfax";
-  src: url("http://www.fastcolabs.com/fonts/colfax-licensed/ColfaxWebLight.eot?") format("embedded-opentype"), url("http://www.fastcolabs.com/fonts/colfax-licensed/ColfaxWebLight.woff") format("woff");
-  font-style: normal;
-  font-weight: 200;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: "Colfax";
-  src: url("http://www.fastcolabs.com/fonts/colfax-licensed/ColfaxWebRegular.eot?") format("embedded-opentype"), url("http://www.fastcolabs.com/fonts/colfax-licensed/ColfaxWebRegular.woff") format("woff");
-  font-style: normal;
-  font-weight: 300;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: "Colfax";
-  src: url("http://www.fastcolabs.com/fonts/colfax-licensed/ColfaxWebMedium.eot?") format("embedded-opentype"), url("http://www.fastcolabs.com/fonts/colfax-licensed/ColfaxWebMedium.woff") format("woff");
-  font-style: normal;
-  font-weight: 500;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: "Colfax";
-  src: url("http://www.fastcolabs.com/fonts/colfax-licensed/ColfaxWebBold.eot?") format("embedded-opentype"), url("http://www.fastcolabs.com/fonts/colfax-licensed/ColfaxWebBold.woff") format("woff");
-  font-style: normal;
-  font-weight: 600;
-  font-stretch: normal;
-}
-
-@font-face {
-  font-family: "Colfax";
-  src: url("http://www.fastcolabs.com/fonts/colfax-licensed/ColfaxWebBlack.eot?") format("embedded-opentype"), url("http://www.fastcolabs.com/fonts/colfax-licensed/ColfaxWebBlack.woff") format("woff");
-  font-style: normal;
-  font-weight: 700;
-  font-stretch: normal;
 }
 
 /* !============================================= */
@@ -416,15 +157,11 @@
   display: block;
 }
 /* line 122, ../sass/partials/_base.scss */
-.viz-choice-item:first-of-type {
-  padding-top: 0;
-}
-/* line 125, ../sass/partials/_base.scss */
 .viz-choice-item:last-of-type {
   padding-bottom: 0;
 }
 
-/* line 130, ../sass/partials/_base.scss */
+/* line 127, ../sass/partials/_base.scss */
 .viz-choices-group {
   -webkit-transition: width 0.2s ease-in-out;
   -moz-transition: width 0.2s ease-in-out;
@@ -437,18 +174,18 @@
   vertical-align: top;
 }
 @media (min-width: 620px) {
-  /* line 130, ../sass/partials/_base.scss */
+  /* line 127, ../sass/partials/_base.scss */
   .viz-choices-group {
     display: inline-block;
     width: 100%;
   }
 }
-/* line 141, ../sass/partials/_base.scss */
+/* line 138, ../sass/partials/_base.scss */
 .viz-choices-group .viz-choice-item {
   margin-bottom: 0;
 }
 
-/* line 146, ../sass/partials/_base.scss */
+/* line 143, ../sass/partials/_base.scss */
 .viz-header-wrapper {
   *zoom: 1;
   position: relative;
@@ -460,7 +197,7 @@
   clear: both;
 }
 
-/* line 151, ../sass/partials/_base.scss */
+/* line 148, ../sass/partials/_base.scss */
 .viz-designer-description {
   display: none;
   margin: 0px;
@@ -471,7 +208,7 @@
   line-height: 140%;
 }
 
-/* line 161, ../sass/partials/_base.scss */
+/* line 158, ../sass/partials/_base.scss */
 .viz-headshot-wrap {
   position: relative;
   float: left;
@@ -480,8 +217,15 @@
   height: 40px;
 }
 
-/* line 170, ../sass/partials/_base.scss */
+/* line 167, ../sass/partials/_base.scss */
 .viz-headshot {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
   -webkit-transition: 0.2s opacity ease-in-out, 0.3s right ease-in-out, 0.3s background-color ease-in-out;
   -moz-transition: 0.2s opacity ease-in-out, 0.3s right ease-in-out, 0.3s background-color ease-in-out;
   -o-transition: 0.2s opacity ease-in-out, 0.3s right ease-in-out, 0.3s background-color ease-in-out;
@@ -491,7 +235,7 @@
   height: 40px;
 }
 
-/* line 177, ../sass/partials/_base.scss */
+/* line 175, ../sass/partials/_base.scss */
 .viz-designer-name {
   -webkit-transition: color 0.2s ease-in-out;
   -moz-transition: color 0.2s ease-in-out;
@@ -500,10 +244,10 @@
   display: block;
   margin: 0 0 2px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
 }
 
-/* line 185, ../sass/partials/_base.scss */
+/* line 183, ../sass/partials/_base.scss */
 .viz-designer-job {
   display: block;
   margin: 0;
@@ -512,13 +256,14 @@
   font-size: 11px;
 }
 
-/* line 193, ../sass/partials/_base.scss */
+/* line 191, ../sass/partials/_base.scss */
 .viz-designer-header-mod {
   left: 47px;
   padding-right: 35px;
+  margin-top: 1px;
 }
 
-/* line 199, ../sass/partials/_base.scss */
+/* line 198, ../sass/partials/_base.scss */
 .viz-vs {
   position: absolute;
   top: -13px;
@@ -562,7 +307,7 @@
 /* line 15, ../sass/partials/_quiz.scss */
 .viz-quiz {
   max-width: 634px;
-  margin: 0 auto 20px;
+  margin: 0 auto;
 }
 
 /* line 22, ../sass/partials/_quiz.scss */
@@ -621,29 +366,44 @@
   opacity: .3;
 }
 
-/* line 7, ../sass/partials/_rankings.scss */
+/* line 8, ../sass/partials/_rankings.scss */
+#division2 {
+  display: none;
+}
+
+/* line 12, ../sass/partials/_rankings.scss */
 .viz-rankings {
   max-width: 634px;
-  margin: 0 auto 35px;
+  margin: 0 auto 55px;
 }
-@media (min-width: 990px) {
-  /* line 7, ../sass/partials/_rankings.scss */
+@media (min-width: 620px) {
+  /* line 12, ../sass/partials/_rankings.scss */
+  .viz-rankings {
+    margin: 0 auto 20px;
+  }
+}
+@media (min-width: 1000px) {
+  /* line 12, ../sass/partials/_rankings.scss */
   .viz-rankings {
     display: none;
   }
 }
 
 @media (min-width: 620px) {
-  /* line 15, ../sass/partials/_rankings.scss */
-  .viz-column-1 {
+  /* line 23, ../sass/partials/_rankings.scss */
+  .viz-group-1 {
     width: 48%;
     float: left;
   }
 }
 
+/* line 31, ../sass/partials/_rankings.scss */
+.viz-group-2 .viz-division:last-of-type {
+  margin-bottom: 0;
+}
 @media (min-width: 620px) {
-  /* line 22, ../sass/partials/_rankings.scss */
-  .viz-column-2 {
+  /* line 30, ../sass/partials/_rankings.scss */
+  .viz-group-2 {
     width: 49%;
     padding-left: 17px;
     margin-left: 15px;
@@ -652,7 +412,7 @@
   }
 }
 
-/* line 32, ../sass/partials/_rankings.scss */
+/* line 44, ../sass/partials/_rankings.scss */
 .viz-division-list {
   *zoom: 1;
   margin: 0;
@@ -666,18 +426,18 @@
   clear: both;
 }
 
-/* line 39, ../sass/partials/_rankings.scss */
+/* line 51, ../sass/partials/_rankings.scss */
 .viz-hidden {
   display: none;
 }
 
-/* line 47, ../sass/partials/_rankings.scss */
+/* line 59, ../sass/partials/_rankings.scss */
 .viz-nav-anchor-list {
   padding: 0;
   list-style-type: none;
 }
 
-/* line 54, ../sass/partials/_rankings.scss */
+/* line 66, ../sass/partials/_rankings.scss */
 .viz-division-topper {
   position: relative;
   margin: 0 auto 15px;
@@ -687,7 +447,7 @@
   -webkit-backface-visibility: hidden;
 }
 
-/* line 63, ../sass/partials/_rankings.scss */
+/* line 75, ../sass/partials/_rankings.scss */
 .viz-division-final-topper {
   border-width: 2px;
   border-color: #33312e;
@@ -696,7 +456,7 @@
   border-right: none;
 }
 
-/* line 71, ../sass/partials/_rankings.scss */
+/* line 83, ../sass/partials/_rankings.scss */
 .viz-division-title {
   display: inline-block;
   margin: -3px 0 0;
@@ -709,14 +469,14 @@
   line-height: 80%;
 }
 
-/* line 83, ../sass/partials/_rankings.scss */
+/* line 95, ../sass/partials/_rankings.scss */
 .viz-division-title-final {
   margin: -3px 0 0;
   text-align: center;
   text-transform: uppercase;
 }
 
-/* line 89, ../sass/partials/_rankings.scss */
+/* line 101, ../sass/partials/_rankings.scss */
 .viz-division-bull {
   margin-left: 4px;
   padding-right: 4px;
@@ -724,7 +484,7 @@
   font-size: 36px;
 }
 
-/* line 96, ../sass/partials/_rankings.scss */
+/* line 108, ../sass/partials/_rankings.scss */
 .viz-division-button {
   display: none;
   -webkit-transition: opacity 0.2s ease-in-out;
@@ -740,34 +500,34 @@
   opacity: 0.5;
   cursor: pointer;
 }
-/* line 107, ../sass/partials/_rankings.scss */
+/* line 119, ../sass/partials/_rankings.scss */
 .viz-division-button:hover {
   opacity: 1;
 }
-/* line 110, ../sass/partials/_rankings.scss */
+/* line 122, ../sass/partials/_rankings.scss */
 .viz-division-button:focus {
   outline: none;
 }
 
-/* line 115, ../sass/partials/_rankings.scss */
+/* line 127, ../sass/partials/_rankings.scss */
 .viz-prev {
   left: 10px;
   background-image: url("http://www.guswezerek.com/projects/bracket_madness/btn-prev.png");
 }
 
-/* line 122, ../sass/partials/_rankings.scss */
+/* line 134, ../sass/partials/_rankings.scss */
 .viz-next {
   right: 10px;
   background-image: url("http://www.guswezerek.com/projects/bracket_madness/btn-next.png");
 }
 
-/* line 128, ../sass/partials/_rankings.scss */
+/* line 140, ../sass/partials/_rankings.scss */
 .viz-division-button-img {
   margin: 0;
   width: 20px;
 }
 
-/* line 133, ../sass/partials/_rankings.scss */
+/* line 145, ../sass/partials/_rankings.scss */
 .viz-division-name {
   margin-top: 0;
   padding: 0 5px;
@@ -775,7 +535,7 @@
   background-color: white;
 }
 
-/* line 140, ../sass/partials/_rankings.scss */
+/* line 152, ../sass/partials/_rankings.scss */
 .viz-division-round {
   color: #33312e;
   letter-spacing: 0.5px;
@@ -785,14 +545,14 @@
   font-weight: 600;
 }
 
-/* line 149, ../sass/partials/_rankings.scss */
+/* line 161, ../sass/partials/_rankings.scss */
 .viz-division-final-round {
   letter-spacing: 0.5px;
   font-size: 15px;
   margin: 0 0 5px;
 }
 
-/* line 156, ../sass/partials/_rankings.scss */
+/* line 168, ../sass/partials/_rankings.scss */
 .viz-division {
   display: -moz-inline-stack;
   display: inline-block;
@@ -801,21 +561,30 @@
   zoom: 1;
   *display: inline;
   width: 100%;
+  margin: 0 0 35px;
 }
 @media (min-width: 620px) {
-  /* line 160, ../sass/partials/_rankings.scss */
+  /* line 173, ../sass/partials/_rankings.scss */
   .viz-division:last-of-type .viz-division-designers-list, .viz-division .viz-choice-item:last-of-type {
     margin-bottom: 0;
   }
 }
 
-/* line 166, ../sass/partials/_rankings.scss */
+/* line 179, ../sass/partials/_rankings.scss */
 .viz-division-finals {
   margin-bottom: 35px;
   display: none;
 }
 
-/* line 171, ../sass/partials/_rankings.scss */
+/* line 184, ../sass/partials/_rankings.scss */
+.viz-rankings-winner-mod {
+  display: none;
+  text-align: center;
+  width: 100px;
+  margin: 0 auto 35px;
+}
+
+/* line 191, ../sass/partials/_rankings.scss */
 .viz-division-winner {
   color: #33312e;
   letter-spacing: 0.5px;
@@ -829,20 +598,21 @@
   display: none;
 }
 
-/* line 184, ../sass/partials/_rankings.scss */
+/* line 204, ../sass/partials/_rankings.scss */
 .viz-division-designers-list {
-  margin: 0 0 35px;
+  position: relative;
+  margin: 0;
   padding: 0 10px;
   list-style-type: none;
 }
 
-/* line 192, ../sass/partials/_rankings.scss */
+/* line 213, ../sass/partials/_rankings.scss */
 .viz-division .viz-choice-loser {
   margin-bottom: 0;
-  padding: 5px 0 0;
-  border-bottom: none;
+  padding: 0 0 5px;
+  border-top: none;
 }
-/* line 196, ../sass/partials/_rankings.scss */
+/* line 217, ../sass/partials/_rankings.scss */
 .viz-division .viz-choice-loser .viz-vs {
   display: none;
 }
@@ -854,7 +624,7 @@
   margin: 0 auto 25px;
   max-width: 940px;
 }
-@media (min-width: 990px) {
+@media (min-width: 1000px) {
   /* line 8, ../sass/partials/_bracket.scss */
   .viz-bracket {
     display: block;
@@ -1099,7 +869,13 @@
 
 /* line 200, ../sass/partials/_bracket.scss */
 .viz-champion-headshot {
-  display: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 /* line 204, ../sass/partials/_bracket.scss */
@@ -1181,66 +957,417 @@
   cursor: pointer;
 }
 
-/* line 27, ../sass/widget.scss */
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+/* line 34, ../sass/widget.scss */
+#page .page-inner {
+  background-image: none;
 }
 
-/* line 31, ../sass/widget.scss */
-body {
+/* line 38, ../sass/widget.scss */
+.full-view {
+  padding-left: 0;
+}
+
+/* line 42, ../sass/widget.scss */
+#page.kind-longread #page-main .after-body {
   margin: 0;
-  padding: 15px 20px;
+}
+
+/* line 46, ../sass/widget.scss */
+#page .page-inner {
+  background-image: none;
+}
+
+/* line 50, ../sass/widget.scss */
+#page.kind-longread #page-main article.full-view > header {
+  padding-right: 0 !important;
+}
+
+/* line 54, ../sass/widget.scss */
+#page.kind-longread #page-main article.full-view .prose.body {
+  padding-right: 0 !important;
+}
+
+/* line 58, ../sass/widget.scss */
+#page-body {
+  padding: 0 20px;
 }
 @media (min-width: 620px) {
-  /* line 31, ../sass/widget.scss */
-  body {
-    padding: 30px 20px;
+  /* line 58, ../sass/widget.scss */
+  #page-body {
+    padding: 0 30px;
+  }
+}
+@media (min-width: 850px) {
+  /* line 58, ../sass/widget.scss */
+  #page-body {
+    padding: 0 50px;
+  }
+}
+@media (min-width: 1000px) {
+  /* line 58, ../sass/widget.scss */
+  #page-body {
+    padding: 0 200px 0 20px;
   }
 }
 
-/* line 47, ../sass/widget.scss */
-.viz-graphic-text {
+/* line 76, ../sass/widget.scss */
+.prose.body * {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+/* line 80, ../sass/widget.scss */
+.prose.body form {
+  margin: 0;
+}
+/* line 84, ../sass/widget.scss */
+.prose.body p, .prose.body p:first-child, .prose.body p:first-line {
+  font-family: inherit !important;
+  color: inherit;
+  line-height: inherit;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+}
+/* line 92, ../sass/widget.scss */
+.prose.body label {
+  margin: 0;
+}
+/* line 97, ../sass/widget.scss */
+.prose.body ol {
+  list-style-type: none;
+  line-height: 100%;
+}
+/* line 102, ../sass/widget.scss */
+.prose.body ol > li {
+  width: auto;
+}
+/* line 106, ../sass/widget.scss */
+.prose.body ol > li:before {
+  position: static;
+}
+/* line 113, ../sass/widget.scss */
+.prose.body .viz-graphic-text {
   color: #ff8a80;
 }
-
-/* line 51, ../sass/widget.scss */
-.viz-interactive-text {
+/* line 117, ../sass/widget.scss */
+.prose.body .viz-interactive-text {
   color: #b781ff;
 }
-
-/* line 55, ../sass/widget.scss */
-.viz-product-text {
+/* line 121, ../sass/widget.scss */
+.prose.body .viz-product-text {
   color: #819fff;
 }
-
-/* line 59, ../sass/widget.scss */
-.viz-architecture-text {
+/* line 125, ../sass/widget.scss */
+.prose.body .viz-architecture-text {
   color: #ff81f4;
 }
-
-/* line 63, ../sass/widget.scss */
-.viz-graphic-img {
+/* line 129, ../sass/widget.scss */
+.prose.body .viz-graphic-img {
   background-color: #ff8a80;
 }
-
-/* line 67, ../sass/widget.scss */
-.viz-interactive-img {
+/* line 133, ../sass/widget.scss */
+.prose.body .viz-interactive-img {
   background-color: #b781ff;
 }
-
-/* line 71, ../sass/widget.scss */
-.viz-product-img {
+/* line 137, ../sass/widget.scss */
+.prose.body .viz-product-img {
   background-color: #819fff;
 }
-
-/* line 75, ../sass/widget.scss */
-.viz-architecture-img {
+/* line 141, ../sass/widget.scss */
+.prose.body .viz-architecture-img {
   background-color: #ff81f4;
 }
-
-/* line 86, ../sass/widget.scss */
-#page .page-inner {
-  background-image: none;
+/* line 145, ../sass/widget.scss */
+.prose.body .viz-title {
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 600 !important;
+  font-size: 42px;
+  font-family: "FCZizouSlab", Georgia, Times, Times New Roman, serif;
+  line-height: 90%;
+  font-color: #33312e;
+}
+/* line 156, ../sass/widget.scss */
+.prose.body .viz-native-copy {
+  line-height: 160%;
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+/* line 164, ../sass/widget.scss */
+.prose.body .viz-bracket {
+  margin: 24px 0;
+  margin-right: -312px;
+}
+/* line 169, ../sass/widget.scss */
+.prose.body .viz-legend {
+  margin: 0 0 0 4px;
+  list-style-type: none !important;
+  font-family: "MuseoSans", Helvetica, Arial, sans-serif;
+}
+/* line 175, ../sass/widget.scss */
+.prose.body .viz-legend-item {
+  position: static;
+  margin: 0 15px 5px 0;
+  padding: 0;
+  width: auto;
+  list-style-type: none !important;
+  font-size: 30px;
+  line-height: 40%;
+}
+/* line 183, ../sass/widget.scss */
+.prose.body .viz-legend-item:before {
+  margin-left: -5px;
+  padding-right: 2px;
+  content: "\002022";
+}
+/* line 188, ../sass/widget.scss */
+.prose.body .viz-legend-item:last-of-type {
+  margin-right: 0;
+}
+/* line 193, ../sass/widget.scss */
+.prose.body .viz-legend-item {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  margin: 0 15px 5px 0;
+  background-color: white;
+  font-size: 36px;
+  line-height: 40%;
+}
+/* line 200, ../sass/widget.scss */
+.prose.body .viz-legend-item:before {
+  margin-left: -5px;
+  padding-right: 2px;
+  color: inherit;
+  content: "\002022" !important;
+}
+/* line 206, ../sass/widget.scss */
+.prose.body .viz-legend-item:last-of-type {
+  margin-right: 0;
+}
+/* line 211, ../sass/widget.scss */
+.prose.body .viz-detail {
+  color: #99948a;
+}
+/* line 215, ../sass/widget.scss */
+.prose.body .viz-bracket-date-list {
+  margin: 0 0 30px;
+}
+/* line 219, ../sass/widget.scss */
+.prose.body .viz-bracket-date {
+  position: absolute;
+  padding: 0;
+  font-size: 11px;
+}
+/* line 223, ../sass/widget.scss */
+.prose.body .viz-bracket-date:nth-of-type(1) {
+  left: 0px;
+}
+/* line 226, ../sass/widget.scss */
+.prose.body .viz-bracket-date:nth-of-type(2) {
+  left: 12%;
+}
+/* line 229, ../sass/widget.scss */
+.prose.body .viz-bracket-date:nth-of-type(3) {
+  left: 23%;
+}
+/* line 232, ../sass/widget.scss */
+.prose.body .viz-bracket-date:nth-of-type(4) {
+  left: 34%;
+}
+/* line 235, ../sass/widget.scss */
+.prose.body .viz-bracket-date:nth-of-type(5) {
+  left: 47%;
+}
+/* line 238, ../sass/widget.scss */
+.prose.body .viz-bracket-date:nth-of-type(6) {
+  right: 34%;
+}
+/* line 241, ../sass/widget.scss */
+.prose.body .viz-bracket-date:nth-of-type(7) {
+  right: 23%;
+}
+/* line 244, ../sass/widget.scss */
+.prose.body .viz-bracket-date:nth-of-type(8) {
+  right: 12%;
+}
+/* line 247, ../sass/widget.scss */
+.prose.body .viz-bracket-date:nth-of-type(9) {
+  right: 0px;
+}
+/* line 252, ../sass/widget.scss */
+.prose.body .viz-bracket-competitor-name {
+  font-weight: 500;
+}
+/* line 256, ../sass/widget.scss */
+.prose.body .viz-info-instructions, .prose.body .viz-info-instructions:first-child, .prose.body .viz-info-instructions:first-line {
+  color: #33312e;
+  font-size: 11px !important;
+  line-height: 120%;
+}
+/* line 262, ../sass/widget.scss */
+.prose.body .viz-headshot {
+  max-width: none;
+}
+/* line 266, ../sass/widget.scss */
+.prose.body .viz-designer-name, .prose.body .viz-designer-job {
+  margin-bottom: 0;
+}
+/* line 270, ../sass/widget.scss */
+.prose.body .viz-bracket-designer-description, .prose.body .viz-bracket-designer-description:first-child, .prose.body .viz-bracket-designer-description:first-line {
+  margin-bottom: 0;
+  color: #99948a;
+  font-size: 12px !important;
+  line-height: 140%;
+}
+/* line 277, ../sass/widget.scss */
+.prose.body .viz-designer-name, .prose.body .viz-designer-name:first-child, .prose.body .viz-designer-name:first-line {
+  margin-bottom: 2px;
+  color: #33312e;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  line-height: 100%;
+}
+/* line 285, ../sass/widget.scss */
+.prose.body .viz-designer-job, .prose.body .viz-designer-job:first-child, .prose.body .viz-designer-job:first-line {
+  color: #99948a;
+  font-size: 11px !important;
+  line-height: 120%;
+}
+/* line 291, ../sass/widget.scss */
+.prose.body .viz-champion-name, .prose.body .viz-champion-name:first-child, .prose.body .viz-champion-name:first-line {
+  margin: 0 0 5px;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+  line-height: 80%;
+  color: #33312e;
+}
+/* line 299, ../sass/widget.scss */
+.prose.body .viz-champion-seed {
+  font-weight: 300;
+}
+/* line 303, ../sass/widget.scss */
+.prose.body .viz-champion-headshot {
+  max-width: none;
+}
+/* line 307, ../sass/widget.scss */
+.prose.body .viz-champion-label, .prose.body .viz-champion-label:first-child, .prose.body .viz-champion-label:first-line {
+  margin: 0;
+  color: #99948a;
+  font-size: 10px !important;
+  line-height: 80%;
+}
+/* line 314, ../sass/widget.scss */
+.prose.body .viz-underline {
+  color: #33312e;
+  line-height: 160% !important;
+  font-size: 15px !important;
+}
+/* line 325, ../sass/widget.scss */
+.prose.body .viz-quiz {
+  max-width: none;
+}
+/* line 329, ../sass/widget.scss */
+.prose.body .viz-choices-group {
+  margin: 0 0 20px;
+  list-style-type: none !important;
+  vertical-align: top;
+}
+/* line 335, ../sass/widget.scss */
+.prose.body .viz-choice-item {
+  margin-bottom: 0;
+  padding: 5px 0;
+  width: 100%;
+  list-style-type: none !important;
+}
+/* line 340, ../sass/widget.scss */
+.prose.body .viz-choice-item:first-of-type {
+  padding-top: 0;
+}
+/* line 343, ../sass/widget.scss */
+.prose.body .viz-choice-item:last-of-type {
+  padding-bottom: 0;
+}
+/* line 348, ../sass/widget.scss */
+.prose.body .viz-vs {
+  color: #ccc6b9;
+  line-height: 120%;
+}
+/* line 353, ../sass/widget.scss */
+.prose.body .viz-submitted-alert {
+  margin: -25px 0 10px;
+  padding: 5px;
+  color: #ccc6b9;
+  font-size: 11px !important;
+}
+/* line 360, ../sass/widget.scss */
+.prose.body .viz-designer-description, .prose.body .viz-designer-description:first-child, .prose.body .viz-designer-description:first-line {
+  margin: 0px;
+  padding: 10px 0;
+  color: #99948a;
+  font-size: 12px !important;
+  line-height: 140%;
+}
+/* line 368, ../sass/widget.scss */
+.prose.body .viz-choice-loser .viz-designer-name, .prose.body .viz-choice-loser .viz-designer-name:first-child, .prose.body .viz-choice-loser .viz-designer-name:first-line {
+  color: #99948a !important;
+  font-weight: 300 !important;
+}
+/* line 377, ../sass/widget.scss */
+.prose.body .viz-rankings {
+  max-width: none;
+}
+/* line 383, ../sass/widget.scss */
+.prose.body .viz-division-finals {
+  width: 100%;
+  margin-bottom: 35px !important;
+  padding: 0;
+}
+/* line 391, ../sass/widget.scss */
+.prose.body .viz-division-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none !important;
+}
+/* line 397, ../sass/widget.scss */
+.prose.body .viz-division {
+  margin: 0 0 35px;
+}
+/* line 401, ../sass/widget.scss */
+.prose.body .viz-group-2 .viz-division:last-of-type {
+  margin-bottom: 0;
+}
+/* line 406, ../sass/widget.scss */
+.prose.body .viz-division-button {
+  border: none;
+}
+/* line 410, ../sass/widget.scss */
+.prose.body .viz-division-title {
+  text-transform: uppercase;
+  font-weight: 300 !important;
+  font-size: 11px !important;
+  line-height: 80%;
+}
+/* line 417, ../sass/widget.scss */
+.prose.body .viz-division-name {
+  font-family: "MuseoSans", Helvetica, Arial, sans-serif;
+}
+/* line 421, ../sass/widget.scss */
+.prose.body .viz-division-round {
+  margin: 10px 0 16px;
+  color: #33312e;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  font-family: "FCZizouSlab", Georgia, Times, Times New Roman, serif !important;
+}
+/* line 429, ../sass/widget.scss */
+.prose.body .viz-division-designers-list {
+  padding: 0 10px;
+  margin: 0;
+  list-style-type: none;
 }

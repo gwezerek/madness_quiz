@@ -1,4 +1,4 @@
-/* line 770, ../sass/partials/_mixins.scss */
+/* line 757, ../sass/partials/_mixins.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -9,7 +9,7 @@
   width: auto;
 }
 
-/* line 777, ../sass/partials/_mixins.scss */
+/* line 764, ../sass/partials/_mixins.scss */
 .viz-designer-header-mod {
   position: absolute;
   top: 50%;
@@ -416,15 +416,11 @@
   display: block;
 }
 /* line 122, ../sass/partials/_base.scss */
-.viz-choice-item:first-of-type {
-  padding-top: 0;
-}
-/* line 125, ../sass/partials/_base.scss */
 .viz-choice-item:last-of-type {
   padding-bottom: 0;
 }
 
-/* line 130, ../sass/partials/_base.scss */
+/* line 127, ../sass/partials/_base.scss */
 .viz-choices-group {
   -webkit-transition: width 0.2s ease-in-out;
   -moz-transition: width 0.2s ease-in-out;
@@ -437,18 +433,18 @@
   vertical-align: top;
 }
 @media (min-width: 620px) {
-  /* line 130, ../sass/partials/_base.scss */
+  /* line 127, ../sass/partials/_base.scss */
   .viz-choices-group {
     display: inline-block;
     width: 100%;
   }
 }
-/* line 141, ../sass/partials/_base.scss */
+/* line 138, ../sass/partials/_base.scss */
 .viz-choices-group .viz-choice-item {
   margin-bottom: 0;
 }
 
-/* line 146, ../sass/partials/_base.scss */
+/* line 143, ../sass/partials/_base.scss */
 .viz-header-wrapper {
   *zoom: 1;
   position: relative;
@@ -460,7 +456,7 @@
   clear: both;
 }
 
-/* line 151, ../sass/partials/_base.scss */
+/* line 148, ../sass/partials/_base.scss */
 .viz-designer-description {
   display: none;
   margin: 0px;
@@ -471,7 +467,7 @@
   line-height: 140%;
 }
 
-/* line 161, ../sass/partials/_base.scss */
+/* line 158, ../sass/partials/_base.scss */
 .viz-headshot-wrap {
   position: relative;
   float: left;
@@ -480,8 +476,15 @@
   height: 40px;
 }
 
-/* line 170, ../sass/partials/_base.scss */
+/* line 167, ../sass/partials/_base.scss */
 .viz-headshot {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
   -webkit-transition: 0.2s opacity ease-in-out, 0.3s right ease-in-out, 0.3s background-color ease-in-out;
   -moz-transition: 0.2s opacity ease-in-out, 0.3s right ease-in-out, 0.3s background-color ease-in-out;
   -o-transition: 0.2s opacity ease-in-out, 0.3s right ease-in-out, 0.3s background-color ease-in-out;
@@ -491,7 +494,7 @@
   height: 40px;
 }
 
-/* line 177, ../sass/partials/_base.scss */
+/* line 175, ../sass/partials/_base.scss */
 .viz-designer-name {
   -webkit-transition: color 0.2s ease-in-out;
   -moz-transition: color 0.2s ease-in-out;
@@ -500,10 +503,10 @@
   display: block;
   margin: 0 0 2px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
 }
 
-/* line 185, ../sass/partials/_base.scss */
+/* line 183, ../sass/partials/_base.scss */
 .viz-designer-job {
   display: block;
   margin: 0;
@@ -512,13 +515,14 @@
   font-size: 11px;
 }
 
-/* line 193, ../sass/partials/_base.scss */
+/* line 191, ../sass/partials/_base.scss */
 .viz-designer-header-mod {
   left: 47px;
   padding-right: 35px;
+  margin-top: 1px;
 }
 
-/* line 199, ../sass/partials/_base.scss */
+/* line 198, ../sass/partials/_base.scss */
 .viz-vs {
   position: absolute;
   top: -13px;
@@ -562,7 +566,7 @@
 /* line 15, ../sass/partials/_quiz.scss */
 .viz-quiz {
   max-width: 634px;
-  margin: 0 auto 20px;
+  margin: 0 auto;
 }
 
 /* line 22, ../sass/partials/_quiz.scss */
@@ -621,29 +625,44 @@
   opacity: .3;
 }
 
-/* line 7, ../sass/partials/_rankings.scss */
+/* line 8, ../sass/partials/_rankings.scss */
+#division2 {
+  display: none;
+}
+
+/* line 12, ../sass/partials/_rankings.scss */
 .viz-rankings {
   max-width: 634px;
-  margin: 0 auto 35px;
+  margin: 0 auto 55px;
 }
-@media (min-width: 990px) {
-  /* line 7, ../sass/partials/_rankings.scss */
+@media (min-width: 620px) {
+  /* line 12, ../sass/partials/_rankings.scss */
+  .viz-rankings {
+    margin: 0 auto 20px;
+  }
+}
+@media (min-width: 1000px) {
+  /* line 12, ../sass/partials/_rankings.scss */
   .viz-rankings {
     display: none;
   }
 }
 
 @media (min-width: 620px) {
-  /* line 15, ../sass/partials/_rankings.scss */
-  .viz-column-1 {
+  /* line 23, ../sass/partials/_rankings.scss */
+  .viz-group-1 {
     width: 48%;
     float: left;
   }
 }
 
+/* line 31, ../sass/partials/_rankings.scss */
+.viz-group-2 .viz-division:last-of-type {
+  margin-bottom: 0;
+}
 @media (min-width: 620px) {
-  /* line 22, ../sass/partials/_rankings.scss */
-  .viz-column-2 {
+  /* line 30, ../sass/partials/_rankings.scss */
+  .viz-group-2 {
     width: 49%;
     padding-left: 17px;
     margin-left: 15px;
@@ -652,7 +671,7 @@
   }
 }
 
-/* line 32, ../sass/partials/_rankings.scss */
+/* line 44, ../sass/partials/_rankings.scss */
 .viz-division-list {
   *zoom: 1;
   margin: 0;
@@ -666,18 +685,18 @@
   clear: both;
 }
 
-/* line 39, ../sass/partials/_rankings.scss */
+/* line 51, ../sass/partials/_rankings.scss */
 .viz-hidden {
   display: none;
 }
 
-/* line 47, ../sass/partials/_rankings.scss */
+/* line 59, ../sass/partials/_rankings.scss */
 .viz-nav-anchor-list {
   padding: 0;
   list-style-type: none;
 }
 
-/* line 54, ../sass/partials/_rankings.scss */
+/* line 66, ../sass/partials/_rankings.scss */
 .viz-division-topper {
   position: relative;
   margin: 0 auto 15px;
@@ -687,7 +706,7 @@
   -webkit-backface-visibility: hidden;
 }
 
-/* line 63, ../sass/partials/_rankings.scss */
+/* line 75, ../sass/partials/_rankings.scss */
 .viz-division-final-topper {
   border-width: 2px;
   border-color: #33312e;
@@ -696,7 +715,7 @@
   border-right: none;
 }
 
-/* line 71, ../sass/partials/_rankings.scss */
+/* line 83, ../sass/partials/_rankings.scss */
 .viz-division-title {
   display: inline-block;
   margin: -3px 0 0;
@@ -709,14 +728,14 @@
   line-height: 80%;
 }
 
-/* line 83, ../sass/partials/_rankings.scss */
+/* line 95, ../sass/partials/_rankings.scss */
 .viz-division-title-final {
   margin: -3px 0 0;
   text-align: center;
   text-transform: uppercase;
 }
 
-/* line 89, ../sass/partials/_rankings.scss */
+/* line 101, ../sass/partials/_rankings.scss */
 .viz-division-bull {
   margin-left: 4px;
   padding-right: 4px;
@@ -724,7 +743,7 @@
   font-size: 36px;
 }
 
-/* line 96, ../sass/partials/_rankings.scss */
+/* line 108, ../sass/partials/_rankings.scss */
 .viz-division-button {
   display: none;
   -webkit-transition: opacity 0.2s ease-in-out;
@@ -740,34 +759,34 @@
   opacity: 0.5;
   cursor: pointer;
 }
-/* line 107, ../sass/partials/_rankings.scss */
+/* line 119, ../sass/partials/_rankings.scss */
 .viz-division-button:hover {
   opacity: 1;
 }
-/* line 110, ../sass/partials/_rankings.scss */
+/* line 122, ../sass/partials/_rankings.scss */
 .viz-division-button:focus {
   outline: none;
 }
 
-/* line 115, ../sass/partials/_rankings.scss */
+/* line 127, ../sass/partials/_rankings.scss */
 .viz-prev {
   left: 10px;
   background-image: url("http://www.guswezerek.com/projects/bracket_madness/btn-prev.png");
 }
 
-/* line 122, ../sass/partials/_rankings.scss */
+/* line 134, ../sass/partials/_rankings.scss */
 .viz-next {
   right: 10px;
   background-image: url("http://www.guswezerek.com/projects/bracket_madness/btn-next.png");
 }
 
-/* line 128, ../sass/partials/_rankings.scss */
+/* line 140, ../sass/partials/_rankings.scss */
 .viz-division-button-img {
   margin: 0;
   width: 20px;
 }
 
-/* line 133, ../sass/partials/_rankings.scss */
+/* line 145, ../sass/partials/_rankings.scss */
 .viz-division-name {
   margin-top: 0;
   padding: 0 5px;
@@ -775,7 +794,7 @@
   background-color: white;
 }
 
-/* line 140, ../sass/partials/_rankings.scss */
+/* line 152, ../sass/partials/_rankings.scss */
 .viz-division-round {
   color: #33312e;
   letter-spacing: 0.5px;
@@ -785,14 +804,14 @@
   font-weight: 600;
 }
 
-/* line 149, ../sass/partials/_rankings.scss */
+/* line 161, ../sass/partials/_rankings.scss */
 .viz-division-final-round {
   letter-spacing: 0.5px;
   font-size: 15px;
   margin: 0 0 5px;
 }
 
-/* line 156, ../sass/partials/_rankings.scss */
+/* line 168, ../sass/partials/_rankings.scss */
 .viz-division {
   display: -moz-inline-stack;
   display: inline-block;
@@ -801,21 +820,30 @@
   zoom: 1;
   *display: inline;
   width: 100%;
+  margin: 0 0 35px;
 }
 @media (min-width: 620px) {
-  /* line 160, ../sass/partials/_rankings.scss */
+  /* line 173, ../sass/partials/_rankings.scss */
   .viz-division:last-of-type .viz-division-designers-list, .viz-division .viz-choice-item:last-of-type {
     margin-bottom: 0;
   }
 }
 
-/* line 166, ../sass/partials/_rankings.scss */
+/* line 179, ../sass/partials/_rankings.scss */
 .viz-division-finals {
   margin-bottom: 35px;
   display: none;
 }
 
-/* line 171, ../sass/partials/_rankings.scss */
+/* line 184, ../sass/partials/_rankings.scss */
+.viz-rankings-winner-mod {
+  display: none;
+  text-align: center;
+  width: 100px;
+  margin: 0 auto 35px;
+}
+
+/* line 191, ../sass/partials/_rankings.scss */
 .viz-division-winner {
   color: #33312e;
   letter-spacing: 0.5px;
@@ -829,20 +857,21 @@
   display: none;
 }
 
-/* line 184, ../sass/partials/_rankings.scss */
+/* line 204, ../sass/partials/_rankings.scss */
 .viz-division-designers-list {
-  margin: 0 0 35px;
+  position: relative;
+  margin: 0;
   padding: 0 10px;
   list-style-type: none;
 }
 
-/* line 192, ../sass/partials/_rankings.scss */
+/* line 213, ../sass/partials/_rankings.scss */
 .viz-division .viz-choice-loser {
   margin-bottom: 0;
-  padding: 5px 0 0;
-  border-bottom: none;
+  padding: 0 0 5px;
+  border-top: none;
 }
-/* line 196, ../sass/partials/_rankings.scss */
+/* line 217, ../sass/partials/_rankings.scss */
 .viz-division .viz-choice-loser .viz-vs {
   display: none;
 }
@@ -854,7 +883,7 @@
   margin: 0 auto 25px;
   max-width: 940px;
 }
-@media (min-width: 990px) {
+@media (min-width: 1000px) {
   /* line 8, ../sass/partials/_bracket.scss */
   .viz-bracket {
     display: block;
@@ -1099,7 +1128,13 @@
 
 /* line 200, ../sass/partials/_bracket.scss */
 .viz-champion-headshot {
-  display: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 /* line 204, ../sass/partials/_bracket.scss */

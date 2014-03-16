@@ -198,7 +198,7 @@
 }
 
 .viz-champion-headshot {
-	display: none;
+	@include user-select;
 }
 
 .viz-champion-info-wrap {

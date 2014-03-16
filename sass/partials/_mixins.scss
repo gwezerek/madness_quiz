@@ -159,19 +159,6 @@ $prefix-for-spec:      true !default; // required for keyframe mixin
 	content: "#{$content}";
 }
 
-// Hide Text
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-// FOR: Visually Hiding Text  
-// WHY: Says exactly what it does. Easier than remembering and writing each time. 
-// The newest proper way to hide text (not the text-indent method anymore)
-// USE: @include hide-text;
-
-@mixin hide-text {
-	color:            transparent;
-	font:             0/0 a;
-	text-shadow:      none;
-}
-
 // Transitions
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 // FOR: Quick application of transition properties
