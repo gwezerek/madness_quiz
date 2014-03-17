@@ -138,13 +138,13 @@
 
 .viz-bracket-info-mod {
 	@include transition(0.3s top ease-in-out, 0.3s left ease-in-out, 0.3s width ease-in-out);
-	@include absolute(325px n n 395px);
+	@include absolute(320px n n 390px);
 	z-index: 1;
 	padding: 15px;
 	background: $bground;
 	border: 1px solid $med-gray;
-	width: 150px;
-	height: 71px;
+	width: 160px;
+	height: 76px;
 }
 
 .viz-info-initiated {
@@ -163,6 +163,16 @@
 .viz-info-designer-wrapper {
 	position: relative;
 	display: none;
+}
+
+.viz-bracket-header-wrapper {
+	display: table;
+}
+
+.viz-bracket-copy-mod {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 7px;
 }
 
 .viz-info-designer-header-mod {

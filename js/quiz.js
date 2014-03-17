@@ -5,9 +5,12 @@
 
 var data = "";
 var i = 0;
-// Plz don't be messing with the form if you happen to be checking out the guts of this page :)
-var formURL = "https://docs.google.com/forms/d/1cV-mVthjntVQGz7eK_PE80gPAKZbJ4SN9qLnXg3B--w/formResponse"; // Example: "https://docs.google.com/forms/d/KEYGOESHERE/formResponse"
-var spreadsheetURL = "https://docs.google.com/spreadsheet/pub?key=0AmqQKSPoegtOdEcyWldpLWpKY0txU0NRNzBDdW5wZlE&single=true&gid=0&output=csv"; // Example: "https://docs.google.com/spreadsheet/pub?key=KEYGOESHERE&single=true&gid=0&output=csv"
+var formURL = "https://docs.google.com/forms/d/1qsTglMf1bNISSEWBYJNafWGhUPmW924njXIhljAdUSY/formResponse"; // Example: "https://docs.google.com/forms/d/KEYGOESHERE/formResponse"
+var spreadsheetURL = "http://www.guswezerek.com/projects/bracket_madness/designers.tsv";
+// var spreadsheetURL = "http://www.fastcodesign.com/asset_files/-/2014/03/17/designers.tsv";
+
+//Dynamic url
+// var spreadsheetURL = "https://docs.google.com/spreadsheet/pub?key=0AmqQKSPoegtOdEcyWldpLWpKY0txU0NRNzBDdW5wZlE&single=true&gid=0&output=csv"; // Example: "https://docs.google.com/spreadsheet/pub?key=KEYGOESHERE&single=true&gid=0&output=csv"
 
 // For template
 var vizEven = false;
@@ -100,7 +103,7 @@ populateRounds();
 // LOAD DAT DATA
 // =============================================
 
-d3.csv(spreadsheetURL, function(error, myData) {
+d3.tsv(spreadsheetURL, function(error, myData) {
 	data = myData;
 	buildBracket(myData, 0, ".viz-bracket-left");
 	buildBracket(myData, 1, ".viz-bracket-right");
@@ -146,8 +149,8 @@ function buildBracket(data, leftRightIndex, target) {
 		.append("g")
 		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-	// d3.json("http://www.guswezerek.com/projects/bracket_madness/treeData.json", function(json) {
-	d3.json("treeData.json", function(json) {
+	d3.json("http://www.guswezerek.com/projects/bracket_madness/treeData.json", function(json) {
+	// d3.json("treeData.json", function(json) {
 
 		var nodes = tree.nodes(json.parents[leftRightIndex]);
 
@@ -386,9 +389,9 @@ $(".viz-bracket").on("click", ".viz-bracket-designer-name", function() {
 			"right": 40 * originalIndex + "px",
 			"background-color": divisionColor[colorsIndex]
 		});
-		infoMod.find(".viz-designer-name").text(divisionObj.name);
-		infoMod.find(".viz-designer-job").text("(" + divisionObj.rank + ") " + divisionObj.job);
-		infoMod.find(".viz-bracket-designer-description").text(divisionObj.description);
+		infoMod.find(".viz-designer-name").html(divisionObj.name);
+		infoMod.find(".viz-designer-job").html("(" + divisionObj.rank + ") " + divisionObj.job);
+		infoMod.find(".viz-bracket-designer-description").html(divisionObj.description);
 		infoMod.find(".viz-info-designer-wrapper").fadeIn(1000);
 	}, 200);
 
@@ -433,71 +436,84 @@ SVGElement.prototype.removeClass = function(className) {
 // Graphic-specific helpers
 
 function populateQuiz(data) {
-	var myObj = {};
-	var toAppendString = "";
-	vizQuiz = true; // This flag shows the viz-choice-target and ul wrapper element in the template
+    var myObj = {};
+    var toAppendString = "";
+    vizQuiz = true; // This flag shows the viz-choice-target and ul wrapper element in the template
 
-	// Get and order only the day's designers
-	var quizData = filterData(data, indicesRound1);
+    // Get and order only the day's designers
+    var quizData = filterData(data, indicesRound1);
 
-	// Create objects that underscore likes
-	// Keep in dot notation or else quizData won't stick
-	myObj["designers"] = quizData;
-	quizData = myObj;
-	
+    // Create objects that underscore likes
+    // Keep in dot notation or else quizData won't stick
+    myObj["designers"] = quizData;
+    quizData = myObj;
+    
 
-	// Compile the list for that round
-	for (i = 0; i < quizData.designers.length; i++) {
+    // Compile the list for that round
+    for (i = 0; i < quizData.designers.length; i++) {
+    	// FOR WIDGET
+    	quizData.designers[i].vizQuiz = true;
+    	// END FOR WIDGET
+    	
+        if (i % 2) {
+        	// FOR WIDGET
+	    	quizData.designers[i].vizEven = true;
+        	// END FOR WIDGET
 
-		if (i % 2) {
-			vizEven = true;
-		} else {
-			vizEven = false;
-		}
-		
-		toAppendString += quizTemplate(quizData.designers[i]);
-	}
+            vizEven = true;
+        } else {
+        	// FOR WIDGET
+	    	quizData.designers[i].vizEven = false;
+        	// END FOR WIDGET
 
-	// Append the list
-	$(".viz-quiz-wrapper").prepend(toAppendString);
+            vizEven = false;
+        }
+        toAppendString += quizTemplate(quizData.designers[i]);
+    }
+
+    // Append the list
+    $(".viz-quiz-wrapper").prepend(toAppendString);
 }
 
 function populateRankings(data) {
-	var divisionElements = $(".viz-division");
-	vizQuiz = false; // This flag hides the viz-choice-target and ul wrapper element in the template
+    var divisionElements = $(".viz-division");
+    vizQuiz = false; // This flag hides the viz-choice-target and ul wrapper element in the template
 
-	// Populate each divison with designers
-	divisionElements.each(function() {
-		var toAppendString = "";
-		var myObj = {};
-		var $this = $(this);
-		var divisionID = $this.attr("id");
-		var divisionRound = divisions[divisionID].roundNumber;
-		var divisionRoundArray = divisions[divisionID].roundArray;
-		var desiredIndices = divisions[divisionID]["round" + divisionRound];
+    // Populate each divison with designers
+    divisionElements.each(function() {
+        var toAppendString = "";
+        var myObj = {};
+        var $this = $(this);
+        var divisionID = $this.attr("id");
+        var divisionRound = divisions[divisionID].roundNumber;
+        var divisionRoundArray = divisions[divisionID].roundArray;
+        var desiredIndices = divisions[divisionID]["round" + divisionRound];
 
-		// Get and order only the division's designers
-		var rankingsData = filterData(data, desiredIndices);
+        // Get and order only the division's designers
+        var rankingsData = filterData(data, desiredIndices);
 
-		// Create objects that underscore likes
-		myObj.designers = rankingsData;
-		rankingsData = myObj;
+        // Create objects that underscore likes
+        myObj.designers = rankingsData;
+        rankingsData = myObj;
 
-		// Compile the list for that division
-		for (i = 0; i < rankingsData.designers.length; i++) {
-			toAppendString += quizTemplate(rankingsData.designers[i]);
-		}
+        // Compile the list for that division
+        for (i = 0; i < rankingsData.designers.length; i++) {
+        	// FOR WIDGET
+        	rankingsData.designers[i].vizQuiz = false;
+        	// END FOR WIDGET
+            toAppendString += quizTemplate(rankingsData.designers[i]);
+        }
 
-		// Append the list
-		$this.find(".viz-division-designers-list").append(toAppendString);
+        // Append the list
+        $this.find(".viz-division-designers-list").append(toAppendString);
 
-		// Fade out the losers
-		setLosers(divisionRound, $this);
+        // Fade out the losers
+        setLosers(divisionRound, $this);
 
-		// Show and hide the right buttons
-		setButtons(divisionRound, divisionRoundArray, $this);
+        // Show and hide the right buttons
+        setButtons(divisionRound, divisionRoundArray, $this);
 
-	});
+    });
 }
 
 function filterData(data, desiredIndices) {
@@ -505,25 +521,6 @@ function filterData(data, desiredIndices) {
 
 	for (i = 0; i < desiredIndices.length; i++) {
 		filteredArray.push(data[desiredIndices[i]]);
-	}
-	return filteredArray;
-}
-
-function refilterData(container, desiredIndices, currentDivisionRound, designers) {
-	var filteredArray = [];
-
-	for (i = 0; i < desiredIndices.length; i++) {
-		var desiredElement = container.find("[data-originalIndex='" + desiredIndices[i] + "']");
-		desiredElement.animate({
-			top: divisions["topPosRound" + currentDivisionRound][i]
-		}, 1000, function() {
-			// Remove transition-specific styling
-			designers.removeClass("viz-transition")
-			designers.css("width", "100%");
-			container.css("height", "auto");
-		});
-
-		filteredArray.push(desiredElement[0]);
 	}
 	return filteredArray;
 }
@@ -547,6 +544,25 @@ function convertCompetitors(designers, specs) {
 			"width": specs.designerWidth
 		});
 	});
+}
+
+function refilterData(container, desiredIndices, currentDivisionRound, designers) {
+	var filteredArray = [];
+
+	for (i = 0; i < desiredIndices.length; i++) {
+		var desiredElement = container.find("[data-originalIndex='" + desiredIndices[i] + "']");
+		desiredElement.animate({
+			top: divisions["topPosRound" + currentDivisionRound][i]
+		}, 1000, function() {
+			// Remove transition-specific styling
+			designers.removeClass("viz-transition")
+			designers.css("width", "100%");
+			container.css("height", "auto");
+		});
+
+		filteredArray.push(desiredElement[0]);
+	}
+	return filteredArray;
 }
 
 function populateRounds() {

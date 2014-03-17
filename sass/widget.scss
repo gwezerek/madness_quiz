@@ -68,6 +68,19 @@
 	}
 }
 
+#page.kind-longread #page-main article.full-view>header .title {
+	margin-top: 24px;
+	margin-bottom: 15px;
+}
+
+.full-view>header .title {
+	font-weight: 700 !important;
+}
+
+.full-view>header .deck, .full-view>header .deck p {
+	font-weight: 500 !important;
+	margin-bottom: 0;
+}
 
 .prose.body {
 
@@ -78,14 +91,13 @@
 	}
 
 	form {
-		margin: 0;
+		margin: 0 0 -15px 0;
 	}
 
 	p, p:first-child, p:first-line {
 		font-family: inherit !important;
 		color: inherit;
 		line-height: inherit;
-		font-size: inherit !important;
 		font-weight: inherit !important;
 	}
 
@@ -105,6 +117,10 @@
 
 	ol>li:before {
 		position: static;
+	}
+
+	ul>li:before {
+		content: none;
 	}
 
 
@@ -145,7 +161,7 @@
 	.viz-title {
 		text-transform: none;
 		letter-spacing: normal;
-		font-weight: 600 !important;
+		font-weight: 500 !important;
 		font-size: 42px;
 		font-family: $slab;
 		line-height: 90%;
@@ -255,8 +271,8 @@
 
 	.viz-info-instructions, .viz-info-instructions:first-child, .viz-info-instructions:first-line {
 		color: $txt-black;
-		font-size: 11px !important;
-		line-height: 120%;
+		font-size: 12px !important;
+		line-height: 130%;
 	}
 
 	.viz-headshot {
@@ -333,16 +349,22 @@
 	}
 
 	.viz-choice-item {
+		position: static;
 		margin-bottom: 0;
 		padding: 5px 0;
 		width: 100%;
 		list-style-type: none !important;
-		&:first-of-type {
-			padding-top: 0;
+		&:nth-child(2n) {
+			margin-bottom: 10px;
 		}
 		&:last-of-type {
 			padding-bottom: 0;
 		}
+	}
+
+	.viz-division .viz-choice-loser {
+		margin-bottom: 0;
+		padding: 5px 0 0px;
 	}
 
 	.viz-vs {
@@ -378,15 +400,11 @@
 		max-width: none;
 	}
 
-	// RETURN TO viz-division-winner and viz-division-finals
-
 	.viz-division-finals {
 		width: 100%;
 		margin-bottom: 35px !important;
 		padding: 0;
 	}
-
-
 
 	.viz-division-list {
 		margin: 0;
@@ -431,6 +449,13 @@
 		margin: 0;
 		list-style-type: none;
 	}
+
+	.viz-transition {
+		position: absolute;
+	& .viz-vs {
+		opacity: 0;
+	}
+}
 
 }
 
