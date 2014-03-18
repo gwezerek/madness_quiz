@@ -7,8 +7,8 @@
 .viz-quiz-wrapper {
 	@media (min-width: $small) {
 		@include pie-clearfix;
-		@include column-count(2);
-		@include column-gap(30px);
+		// @include column-count(2);
+		// @include column-gap(30px);
 	}
 }
 
@@ -17,6 +17,16 @@
 	margin: 0 auto;
 	// display: none;
 	// Set to display: none after voting ends
+}
+
+.viz-quiz-left {
+	width: 49%;
+	float: left;
+}
+
+.viz-quiz-right {
+	width: 48%;
+	float: right;
 }
 
 .viz-radio {

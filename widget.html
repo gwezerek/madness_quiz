@@ -40,7 +40,7 @@
 				<div class="viz-info-designer-wrapper">
 					<div class="viz-header-wrapper viz-bracket-header-wrapper">
 						<div class="viz-headshot-wrap">
-							<img src="http://www.fastcodesign.com/asset_files/-/2014/03/17/headshots.png" class="viz-headshot" >
+							<img src="http://www.fastcodesign.com/asset_files/-/2014/03/18/headshots.png" class="viz-headshot" >
 						</div>
 						<div class="viz-bracket-copy-mod">
 							<p class="viz-designer-name"></p>
@@ -165,6 +165,8 @@
 				<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" =></iframe>
 				<form class="viz-form" action="assigned in chart.js" method="POST" target="hidden_iframe">
 					<div role="list" class="viz-quiz-wrapper">
+						<div class="viz-quiz-left"></div>
+						<div class="viz-quiz-right"></div>
 						<input type="hidden" name="draftResponse" value="[,,&quot;-4787593087135153577&quot;]">
 						<input type="hidden" name="pageHistory" value="0">
 						<input type="hidden" name="fromEmail" value="false">
@@ -191,7 +193,7 @@
 					<div class="viz-header-wrapper">
 						<span class="viz-vs">vs</span>
 						<div class="viz-headshot-wrap">
-							<img src="http://www.fastcodesign.com/asset_files/-/2014/03/17/headshots.png" class="viz-headshot viz-<%= division %>-img" style="right:<%= 40 * original_index %>px"/>
+							<img src="http://www.fastcodesign.com/asset_files/-/2014/03/18/headshots.png" class="viz-headshot viz-<%= division %>-img" style="right:<%= 40 * original_index %>px"/>
 						</div>
 						<div class="viz-designer-header-mod">
 							<p class="ss-choice-label viz-designer-name"><%= name %></p>
@@ -225,7 +227,7 @@
 			var i = 0;
 			// Plz don't be messing with the form if you happen to be checking out the guts of this page :)
 			var formURL = "https://docs.google.com/forms/d/1qsTglMf1bNISSEWBYJNafWGhUPmW924njXIhljAdUSY/formResponse"; // Example: "https://docs.google.com/forms/d/KEYGOESHERE/formResponse"
-			var spreadsheetURL = "http://www.fastcodesign.com/asset_files/-/2014/03/17/designers.tsv";
+			var spreadsheetURL = "http://www.fastcodesign.com/asset_files/-/2014/03/18/designers.tsv";
 
 			// For template
 			var vizEven = false;
@@ -237,7 +239,7 @@
 			var designerText = "";
 
 			// For quiz
-			var indicesRound1 = [0, 7, 1, 6, 2, 5, 3, 4, 8, 15, 9, 14, 10, 13, 11, 12, 16, 23, 17, 22, 18, 21, 19, 20, 24, 31, 25, 30, 26, 29, 27, 28];
+			var indicesRound1 = [0, 7, 3, 4, 2, 5, 1, 6, 8, 15, 11, 12, 10, 13, 9, 14, 16, 23, 19, 20, 18, 21, 17, 22, 24, 31, 27, 28, 26, 29, 25, 30];
 			var indicesRound2 = [16, 23, 17, 22, 18, 21, 19, 20, 24, 31, 25, 30, 26, 29, 27, 28];
 			var indicesRound3 = [16, 23, 17, 22, 18, 21, 19, 20];
 			var indicesRound4 = [16, 23, 17, 22];
@@ -260,7 +262,7 @@
 
 				division1: {
 					roundNumber: 1,
-					roundArray: [1, 2, 3],
+					roundArray: [1],
 					round1: [0, 7, 1, 6, 2, 5, 3, 4],
 					round2: [0, 1, 2, 3, 4, 5, 6, 7],
 					round3: [0, 7, 1, 6, 2, 5, 3, 4]
@@ -364,8 +366,7 @@
 					.append("g")
 					.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-				d3.json("http://www.fastcodesign.com/asset_files/-/2014/03/12/treeData.json", function(json) {
-				// d3.json("treeData.json", function(json) {
+				d3.json("http://www.fastcodesign.com/asset_files/-/2014/03/18/treeData.json", function(json) {
 
 					var nodes = tree.nodes(json.parents[leftRightIndex]);
 
@@ -652,7 +653,8 @@
 
 			function populateQuiz(data) {
 			    var myObj = {};
-			    var toAppendString = "";
+			    var toAppendStringLeft = "";
+			    var toAppendStringRight = "";
 			    vizQuiz = true; // This flag shows the viz-choice-target and ul wrapper element in the template
 
 			    // Get and order only the day's designers
@@ -683,11 +685,18 @@
 
 			            vizEven = false;
 			        }
-			        toAppendString += quizTemplate(quizData.designers[i]);
+
+					if (i < 16) {
+			        	toAppendStringLeft += quizTemplate(quizData.designers[i]);
+			        } else {
+			        	toAppendStringRight += quizTemplate(quizData.designers[i]);
+			        }
+
 			    }
 
 			    // Append the list
-			    $(".viz-quiz-wrapper").prepend(toAppendString);
+			    $(".viz-quiz-left").prepend(toAppendStringLeft);
+			    $(".viz-quiz-right").prepend(toAppendStringRight);
 			}
 
 			function populateRankings(data) {

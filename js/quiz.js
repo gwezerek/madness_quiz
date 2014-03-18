@@ -6,7 +6,8 @@
 var data = "";
 var i = 0;
 var formURL = "https://docs.google.com/forms/d/1qsTglMf1bNISSEWBYJNafWGhUPmW924njXIhljAdUSY/formResponse"; // Example: "https://docs.google.com/forms/d/KEYGOESHERE/formResponse"
-var spreadsheetURL = "http://www.guswezerek.com/projects/bracket_madness/designers.tsv";
+// var spreadsheetURL = "http://www.guswezerek.com/projects/bracket_madness/designers.tsv";
+var spreadsheetURL = "/designers.tsv";
 // var spreadsheetURL = "http://www.fastcodesign.com/asset_files/-/2014/03/17/designers.tsv";
 
 //Dynamic url
@@ -22,7 +23,7 @@ var divisionColor = ["rgb(255,138,128)", "rgb(183,129,255)", "rgb(129,159,255)",
 var designerText = "";
 
 // For quiz
-var indicesRound1 = [0, 7, 1, 6, 2, 5, 3, 4, 8, 15, 9, 14, 10, 13, 11, 12, 16, 23, 17, 22, 18, 21, 19, 20, 24, 31, 25, 30, 26, 29, 27, 28];
+var indicesRound1 = [0, 7, 3, 4, 2, 5, 1, 6, 8, 15, 11, 12, 10, 13, 9, 14, 16, 23, 19, 20, 18, 21, 17, 22, 24, 31, 27, 28, 26, 29, 25, 30];
 var indicesRound2 = [16, 23, 17, 22, 18, 21, 19, 20, 24, 31, 25, 30, 26, 29, 27, 28];
 var indicesRound3 = [16, 23, 17, 22, 18, 21, 19, 20];
 var indicesRound4 = [16, 23, 17, 22];
@@ -149,8 +150,8 @@ function buildBracket(data, leftRightIndex, target) {
 		.append("g")
 		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-	d3.json("http://www.guswezerek.com/projects/bracket_madness/treeData.json", function(json) {
-	// d3.json("treeData.json", function(json) {
+	// d3.json("http://www.guswezerek.com/projects/bracket_madness/treeData.json", function(json) {
+	d3.json("treeData.json", function(json) {
 
 		var nodes = tree.nodes(json.parents[leftRightIndex]);
 
@@ -437,7 +438,8 @@ SVGElement.prototype.removeClass = function(className) {
 
 function populateQuiz(data) {
     var myObj = {};
-    var toAppendString = "";
+    var toAppendStringLeft = "";
+    var toAppendStringRight = "";
     vizQuiz = true; // This flag shows the viz-choice-target and ul wrapper element in the template
 
     // Get and order only the day's designers
@@ -468,11 +470,18 @@ function populateQuiz(data) {
 
             vizEven = false;
         }
-        toAppendString += quizTemplate(quizData.designers[i]);
+
+		if (i < 16) {
+        	toAppendStringLeft += quizTemplate(quizData.designers[i]);
+        } else {
+        	toAppendStringRight += quizTemplate(quizData.designers[i]);
+        }
+
     }
 
     // Append the list
-    $(".viz-quiz-wrapper").prepend(toAppendString);
+    $(".viz-quiz-left").prepend(toAppendStringLeft);
+    $(".viz-quiz-right").prepend(toAppendStringRight);
 }
 
 function populateRankings(data) {

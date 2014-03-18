@@ -41,12 +41,12 @@
 				                    "level": "16",
 				                    "parents": [
 					                    {
-					                        "competitorIndex": "1",
+					                        "competitorIndex": "3",
 					                        "lost": "false",
 					                        "level": "32"
 					                    },
 					                    {
-					                        "competitorIndex": "6",
+					                        "competitorIndex": "4",
 					                        "lost": "false",
 					                        "level": "32"
 					                    }
@@ -82,12 +82,12 @@
 				                    "level": "16",
 				                    "parents": [
 					                    {
-					                        "competitorIndex": "3",
+					                        "competitorIndex": "1",
 					                        "lost": "false",
 					                        "level": "32"
 					                    },
 					                    {
-					                        "competitorIndex": "4",
+					                        "competitorIndex": "6",
 					                        "lost": "false",
 					                        "level": "32"
 					                    }
@@ -130,12 +130,12 @@
 				                    "level": "16",
 				                    "parents": [
 					                    {
-					                        "competitorIndex": "9",
+					                        "competitorIndex": "11",
 					                        "lost": "false",
 					                        "level": "32"
 					                    },
 					                    {
-					                        "competitorIndex": "14",
+					                        "competitorIndex": "12",
 					                        "lost": "false",
 					                        "level": "32"
 					                    }
@@ -171,12 +171,12 @@
 				                    "level": "16",
 				                    "parents": [
 					                    {
-					                        "competitorIndex": "11",
+					                        "competitorIndex": "9",
 					                        "lost": "false",
 					                        "level": "32"
 					                    },
 					                    {
-					                        "competitorIndex": "12",
+					                        "competitorIndex": "14",
 					                        "lost": "false",
 					                        "level": "32"
 					                    }
@@ -226,12 +226,12 @@
 				                    "level": "16",
 				                    "parents": [
 					                    {
-					                        "competitorIndex": "17",
+					                        "competitorIndex": "19",
 					                        "lost": "false",
 					                        "level": "32"
 					                    },
 					                    {
-					                        "competitorIndex": "22",
+					                        "competitorIndex": "20",
 					                        "lost": "false",
 					                        "level": "32"
 					                    }
@@ -267,12 +267,12 @@
 				                    "level": "16",
 				                    "parents": [
 					                    {
-					                        "competitorIndex": "19",
+					                        "competitorIndex": "17",
 					                        "lost": "false",
 					                        "level": "32"
 					                    },
 					                    {
-					                        "competitorIndex": "20",
+					                        "competitorIndex": "22",
 					                        "lost": "false",
 					                        "level": "32"
 					                    }
@@ -315,12 +315,12 @@
 				                    "level": "16",
 				                    "parents": [
 					                    {
-					                        "competitorIndex": "25",
+					                        "competitorIndex": "27",
 					                        "lost": "false",
 					                        "level": "32"
 					                    },
 					                    {
-					                        "competitorIndex": "30",
+					                        "competitorIndex": "28",
 					                        "lost": "false",
 					                        "level": "32"
 					                    }
@@ -356,12 +356,12 @@
 				                    "level": "16",
 				                    "parents": [
 					                    {
-					                        "competitorIndex": "27",
+					                        "competitorIndex": "25",
 					                        "lost": "false",
 					                        "level": "32"
 					                    },
 					                    {
-					                        "competitorIndex": "28",
+					                        "competitorIndex": "30",
 					                        "lost": "false",
 					                        "level": "32"
 					                    }
