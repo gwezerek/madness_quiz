@@ -6,9 +6,9 @@
 var data = "";
 var i = 0;
 var formURL = "https://docs.google.com/forms/d/17DH9Pz93-dSye9QCFmrO27INIlCZwXhFtQ9EV0IOGo0/formResponse"; // Example: "https://docs.google.com/forms/d/KEYGOESHERE/formResponse"
-// var spreadsheetURL = "http://www.guswezerek.com/projects/bracket_madness/designers.tsv";
-var spreadsheetURL = "/designers.tsv";
-// var spreadsheetURL = "http://www.fastcodesign.com/asset_files/-/2014/03/17/designers.tsv";
+// var spreadsheetURL = "http://www.guswezerek.com/projects/bracket_madness/designers_1.tsv";
+var spreadsheetURL = "/designers_1.tsv";
+// var spreadsheetURL = "http://www.fastcodesign.com/asset_files/-/2014/03/19/designers_1.tsv";
 
 //Dynamic url
 // var spreadsheetURL = "https://docs.google.com/spreadsheet/pub?key=0AmqQKSPoegtOdEcyWldpLWpKY0txU0NRNzBDdW5wZlE&single=true&gid=0&output=csv"; // Example: "https://docs.google.com/spreadsheet/pub?key=KEYGOESHERE&single=true&gid=0&output=csv"
