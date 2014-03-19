@@ -304,24 +304,28 @@
   margin: 0 auto;
 }
 
-/* line 22, ../sass/partials/_quiz.scss */
-.viz-quiz-left {
-  width: 49%;
-  float: left;
+@media (min-width: 620px) {
+  /* line 22, ../sass/partials/_quiz.scss */
+  .viz-quiz-left {
+    width: 49%;
+    float: left;
+  }
 }
 
-/* line 27, ../sass/partials/_quiz.scss */
-.viz-quiz-right {
-  width: 48%;
-  float: right;
+@media (min-width: 620px) {
+  /* line 29, ../sass/partials/_quiz.scss */
+  .viz-quiz-right {
+    width: 48%;
+    float: right;
+  }
 }
 
-/* line 32, ../sass/partials/_quiz.scss */
+/* line 36, ../sass/partials/_quiz.scss */
 .viz-radio {
   display: none;
 }
 
-/* line 36, ../sass/partials/_quiz.scss */
+/* line 40, ../sass/partials/_quiz.scss */
 .viz-quiz-target {
   -webkit-transition: opacity 0.2s ease-in-out;
   -moz-transition: opacity 0.2s ease-in-out;
@@ -337,12 +341,12 @@
   background-size: 25px;
   opacity: 0.25;
 }
-/* line 46, ../sass/partials/_quiz.scss */
+/* line 50, ../sass/partials/_quiz.scss */
 .viz-quiz-target:hover {
   opacity: 1;
 }
 
-/* line 51, ../sass/partials/_quiz.scss */
+/* line 55, ../sass/partials/_quiz.scss */
 .viz-submitted-alert {
   display: none;
   margin: -25px 0 10px;
@@ -353,22 +357,22 @@
   font-size: 11px;
 }
 
-/* line 62, ../sass/partials/_quiz.scss */
+/* line 66, ../sass/partials/_quiz.scss */
 .viz-choice-winner .viz-quiz-target {
   background-position: 0 -50px;
   opacity: 1;
 }
 
-/* line 69, ../sass/partials/_quiz.scss */
+/* line 73, ../sass/partials/_quiz.scss */
 .viz-choice-loser .viz-quiz-target {
   background-position: 0 -25px;
 }
-/* line 72, ../sass/partials/_quiz.scss */
+/* line 76, ../sass/partials/_quiz.scss */
 .viz-choice-loser .viz-designer-name {
   color: #99948a;
   font-weight: 300;
 }
-/* line 76, ../sass/partials/_quiz.scss */
+/* line 80, ../sass/partials/_quiz.scss */
 .viz-choice-loser .viz-headshot {
   opacity: .3;
 }
@@ -804,7 +808,7 @@
   -o-transition: 0.3s top ease-in-out, 0.3s left ease-in-out, 0.3s width ease-in-out;
   transition: 0.3s top ease-in-out, 0.3s left ease-in-out, 0.3s width ease-in-out;
   position: absolute;
-  top: 320px;
+  top: 400px;
   left: 390px;
   z-index: 1;
   padding: 15px;
@@ -816,7 +820,7 @@
 
 /* line 150, ../sass/partials/_bracket.scss */
 .viz-info-initiated {
-  top: 300px;
+  top: 400px;
   left: 340px;
   width: 260px;
   height: auto;
@@ -824,7 +828,7 @@
 
 /* line 157, ../sass/partials/_bracket.scss */
 .viz-info-instructions {
-  font-size: 11px;
+  font-size: 12px;
   text-align: center;
   margin: 0;
 }

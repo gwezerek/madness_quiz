@@ -5,7 +5,7 @@
 
 var data = "";
 var i = 0;
-var formURL = "https://docs.google.com/forms/d/1qsTglMf1bNISSEWBYJNafWGhUPmW924njXIhljAdUSY/formResponse"; // Example: "https://docs.google.com/forms/d/KEYGOESHERE/formResponse"
+var formURL = "https://docs.google.com/forms/d/17DH9Pz93-dSye9QCFmrO27INIlCZwXhFtQ9EV0IOGo0/formResponse"; // Example: "https://docs.google.com/forms/d/KEYGOESHERE/formResponse"
 // var spreadsheetURL = "http://www.guswezerek.com/projects/bracket_madness/designers.tsv";
 var spreadsheetURL = "/designers.tsv";
 // var spreadsheetURL = "http://www.fastcodesign.com/asset_files/-/2014/03/17/designers.tsv";
@@ -642,10 +642,10 @@ function adjustFinalsLeft() {
 
 function adjustFinalsRight() {
 	var elbows = $(".viz-bracket-right .viz-bracket-elbow");
-	elbows.eq(0).attr("d", "M0,372H100V135");
-	elbows.eq(1).attr("d", "M0,372H100V405");
+	elbows.eq(0).attr("d", "M0,232H100V135");
+	elbows.eq(1).attr("d", "M0,232H100V405");
 
-	$(".viz-bracket-right .viz-node").eq(0).attr("transform", "translate(0,372)");
+	$(".viz-bracket-right .viz-node").eq(0).attr("transform", "translate(0,232)");
 }
 
 function elbowLeft(d, i) {

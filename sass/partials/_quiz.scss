@@ -20,13 +20,17 @@
 }
 
 .viz-quiz-left {
-	width: 49%;
-	float: left;
+	@media (min-width: $small) {
+		width: 49%;
+		float: left;
+	}
 }
 
 .viz-quiz-right {
-	width: 48%;
-	float: right;
+	@media (min-width: $small) {
+		width: 48%;
+		float: right;
+	}
 }
 
 .viz-radio {

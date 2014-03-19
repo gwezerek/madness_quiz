@@ -138,7 +138,7 @@
 
 .viz-bracket-info-mod {
 	@include transition(0.3s top ease-in-out, 0.3s left ease-in-out, 0.3s width ease-in-out);
-	@include absolute(320px n n 390px);
+	@include absolute(400px n n 390px);
 	z-index: 1;
 	padding: 15px;
 	background: $bground;
@@ -148,14 +148,14 @@
 }
 
 .viz-info-initiated {
-	top: 300px;
+	top: 400px;
 	left: 340px;
 	width: 260px;
 	height: auto;
 }
 
 .viz-info-instructions {
-	font-size: 11px;
+	font-size: 12px;
 	text-align: center;
 	margin: 0;
 }
