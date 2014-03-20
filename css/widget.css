@@ -305,7 +305,7 @@
 }
 
 @media (min-width: 620px) {
-  /* line 22, ../sass/partials/_quiz.scss */
+  /* line 24, ../sass/partials/_quiz.scss */
   .viz-quiz-left {
     width: 49%;
     float: left;
@@ -313,19 +313,19 @@
 }
 
 @media (min-width: 620px) {
-  /* line 29, ../sass/partials/_quiz.scss */
+  /* line 31, ../sass/partials/_quiz.scss */
   .viz-quiz-right {
     width: 48%;
     float: right;
   }
 }
 
-/* line 36, ../sass/partials/_quiz.scss */
+/* line 38, ../sass/partials/_quiz.scss */
 .viz-radio {
   display: none;
 }
 
-/* line 40, ../sass/partials/_quiz.scss */
+/* line 42, ../sass/partials/_quiz.scss */
 .viz-quiz-target {
   -webkit-transition: opacity 0.2s ease-in-out;
   -moz-transition: opacity 0.2s ease-in-out;
@@ -341,12 +341,12 @@
   background-size: 25px;
   opacity: 0.25;
 }
-/* line 50, ../sass/partials/_quiz.scss */
+/* line 52, ../sass/partials/_quiz.scss */
 .viz-quiz-target:hover {
   opacity: 1;
 }
 
-/* line 55, ../sass/partials/_quiz.scss */
+/* line 57, ../sass/partials/_quiz.scss */
 .viz-submitted-alert {
   display: none;
   margin: -25px 0 10px;
@@ -357,22 +357,22 @@
   font-size: 11px;
 }
 
-/* line 66, ../sass/partials/_quiz.scss */
+/* line 68, ../sass/partials/_quiz.scss */
 .viz-choice-winner .viz-quiz-target {
   background-position: 0 -50px;
   opacity: 1;
 }
 
-/* line 73, ../sass/partials/_quiz.scss */
+/* line 75, ../sass/partials/_quiz.scss */
 .viz-choice-loser .viz-quiz-target {
   background-position: 0 -25px;
 }
-/* line 76, ../sass/partials/_quiz.scss */
+/* line 78, ../sass/partials/_quiz.scss */
 .viz-choice-loser .viz-designer-name {
   color: #99948a;
   font-weight: 300;
 }
-/* line 80, ../sass/partials/_quiz.scss */
+/* line 82, ../sass/partials/_quiz.scss */
 .viz-choice-loser .viz-headshot {
   opacity: .3;
 }
@@ -647,8 +647,12 @@
   height: 550px;
   width: 500px;
 }
+/* line 23, ../sass/partials/_bracket.scss */
+.viz-bracket-left .viz-node:nth-of-type(7) .viz-bracket-designer-name, .viz-bracket-left .viz-node:nth-of-type(8) .viz-bracket-designer-name {
+  font-size: 10px;
+}
 
-/* line 24, ../sass/partials/_bracket.scss */
+/* line 29, ../sass/partials/_bracket.scss */
 .viz-bracket-right {
   position: absolute;
   top: 83px;
@@ -657,7 +661,7 @@
   height: 550px;
 }
 
-/* line 32, ../sass/partials/_bracket.scss */
+/* line 37, ../sass/partials/_bracket.scss */
 .viz-legend {
   position: absolute;
   top: 23px;
@@ -668,7 +672,7 @@
   list-style-position: inside;
 }
 
-/* line 40, ../sass/partials/_bracket.scss */
+/* line 45, ../sass/partials/_bracket.scss */
 .viz-legend-item {
   display: -moz-inline-stack;
   display: inline-block;
@@ -685,23 +689,23 @@
   font-size: 36px;
   line-height: 40%;
 }
-/* line 47, ../sass/partials/_bracket.scss */
+/* line 52, ../sass/partials/_bracket.scss */
 .viz-legend-item:before {
   margin-left: -5px;
   padding-right: 2px;
   content: "\002022";
 }
-/* line 52, ../sass/partials/_bracket.scss */
+/* line 57, ../sass/partials/_bracket.scss */
 .viz-legend-item:last-of-type {
   margin-right: 0;
 }
 
-/* line 57, ../sass/partials/_bracket.scss */
+/* line 62, ../sass/partials/_bracket.scss */
 .viz-legend-text {
   vertical-align: middle;
 }
 
-/* line 61, ../sass/partials/_bracket.scss */
+/* line 66, ../sass/partials/_bracket.scss */
 .viz-bracket-date-list {
   position: relative;
   margin: 0 0 35px;
@@ -709,7 +713,7 @@
   list-style-type: none;
 }
 
-/* line 68, ../sass/partials/_bracket.scss */
+/* line 73, ../sass/partials/_bracket.scss */
 .viz-bracket-date {
   display: -moz-inline-stack;
   display: inline-block;
@@ -724,84 +728,84 @@
   font-weight: 300;
   font-size: 11px;
 }
-/* line 76, ../sass/partials/_bracket.scss */
+/* line 81, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(1) {
   left: 0px;
 }
-/* line 79, ../sass/partials/_bracket.scss */
+/* line 84, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(2) {
   left: 13%;
 }
-/* line 82, ../sass/partials/_bracket.scss */
+/* line 87, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(3) {
   left: 24%;
 }
-/* line 85, ../sass/partials/_bracket.scss */
+/* line 90, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(4) {
   left: 36%;
 }
-/* line 88, ../sass/partials/_bracket.scss */
+/* line 93, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(5) {
   left: 47%;
 }
-/* line 91, ../sass/partials/_bracket.scss */
+/* line 96, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(6) {
   right: 36%;
 }
-/* line 94, ../sass/partials/_bracket.scss */
+/* line 99, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(7) {
   right: 24%;
 }
-/* line 97, ../sass/partials/_bracket.scss */
+/* line 102, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(8) {
   right: 13%;
 }
-/* line 100, ../sass/partials/_bracket.scss */
+/* line 105, ../sass/partials/_bracket.scss */
 .viz-bracket-date:nth-of-type(9) {
   right: 0px;
 }
 
-/* line 105, ../sass/partials/_bracket.scss */
+/* line 110, ../sass/partials/_bracket.scss */
 .viz-date-finished {
   text-decoration: line-through;
 }
 
-/* line 109, ../sass/partials/_bracket.scss */
+/* line 114, ../sass/partials/_bracket.scss */
 .viz-bracket-division-border {
   position: absolute;
   width: 3px;
   height: 245px;
 }
 
-/* line 115, ../sass/partials/_bracket.scss */
+/* line 120, ../sass/partials/_bracket.scss */
 .viz-graphic-border {
   background-color: #ff8a80;
   top: 100px;
   left: 0;
 }
 
-/* line 121, ../sass/partials/_bracket.scss */
+/* line 126, ../sass/partials/_bracket.scss */
 .viz-interactive-border {
   background-color: #b781ff;
   top: 370px;
   left: 0;
 }
 
-/* line 127, ../sass/partials/_bracket.scss */
+/* line 132, ../sass/partials/_bracket.scss */
 .viz-product-border {
   background-color: #819fff;
   top: 100px;
   right: 0;
 }
 
-/* line 133, ../sass/partials/_bracket.scss */
+/* line 138, ../sass/partials/_bracket.scss */
 .viz-architecture-border {
   background-color: #ff81f4;
   top: 370px;
   right: 0;
 }
 
-/* line 139, ../sass/partials/_bracket.scss */
+/* line 144, ../sass/partials/_bracket.scss */
 .viz-bracket-info-mod {
   -webkit-transition: 0.3s top ease-in-out, 0.3s left ease-in-out, 0.3s width ease-in-out;
   -moz-transition: 0.3s top ease-in-out, 0.3s left ease-in-out, 0.3s width ease-in-out;
@@ -818,7 +822,7 @@
   height: 76px;
 }
 
-/* line 150, ../sass/partials/_bracket.scss */
+/* line 155, ../sass/partials/_bracket.scss */
 .viz-info-initiated {
   top: 400px;
   left: 340px;
@@ -826,39 +830,39 @@
   height: auto;
 }
 
-/* line 157, ../sass/partials/_bracket.scss */
+/* line 162, ../sass/partials/_bracket.scss */
 .viz-info-instructions {
   font-size: 12px;
   text-align: center;
   margin: 0;
 }
 
-/* line 163, ../sass/partials/_bracket.scss */
+/* line 168, ../sass/partials/_bracket.scss */
 .viz-info-designer-wrapper {
   position: relative;
   display: none;
 }
 
-/* line 168, ../sass/partials/_bracket.scss */
+/* line 173, ../sass/partials/_bracket.scss */
 .viz-bracket-header-wrapper {
   display: table;
 }
 
-/* line 172, ../sass/partials/_bracket.scss */
+/* line 177, ../sass/partials/_bracket.scss */
 .viz-bracket-copy-mod {
   display: table-cell;
   vertical-align: middle;
   padding-left: 7px;
 }
 
-/* line 178, ../sass/partials/_bracket.scss */
+/* line 183, ../sass/partials/_bracket.scss */
 .viz-info-designer-header-mod {
   position: absolute;
   top: 5px;
   left: 47px;
 }
 
-/* line 184, ../sass/partials/_bracket.scss */
+/* line 189, ../sass/partials/_bracket.scss */
 .viz-bracket-designer-description {
   margin: 0px;
   padding: 10px 0 0;
@@ -868,7 +872,7 @@
   line-height: 140%;
 }
 
-/* line 193, ../sass/partials/_bracket.scss */
+/* line 198, ../sass/partials/_bracket.scss */
 .viz-bracket-winner-mod {
   position: absolute;
   top: 120px;
@@ -877,7 +881,7 @@
   width: 100px;
 }
 
-/* line 199, ../sass/partials/_bracket.scss */
+/* line 204, ../sass/partials/_bracket.scss */
 .viz-champion-headshot-wrap {
   float: none;
   margin: 0 auto 10px;
@@ -889,7 +893,7 @@
   border-radius: 50%;
 }
 
-/* line 210, ../sass/partials/_bracket.scss */
+/* line 215, ../sass/partials/_bracket.scss */
 .viz-champion-headshot {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -900,13 +904,13 @@
   user-drag: none;
 }
 
-/* line 214, ../sass/partials/_bracket.scss */
+/* line 219, ../sass/partials/_bracket.scss */
 .viz-champion-info-wrap {
   border-top: 1px solid #99948a;
   padding: 10px 0 0;
 }
 
-/* line 219, ../sass/partials/_bracket.scss */
+/* line 224, ../sass/partials/_bracket.scss */
 .viz-champion-seed {
   margin: 0;
   color: #99948a;
@@ -915,7 +919,7 @@
   font-size: 12px;
 }
 
-/* line 227, ../sass/partials/_bracket.scss */
+/* line 232, ../sass/partials/_bracket.scss */
 .viz-champion-name {
   display: none;
   padding: 0;
@@ -923,13 +927,13 @@
   font-size: 12px;
 }
 
-/* line 234, ../sass/partials/_bracket.scss */
+/* line 239, ../sass/partials/_bracket.scss */
 .viz-champion-label {
   margin: 0;
   font-size: 10px;
 }
 
-/* line 242, ../sass/partials/_bracket.scss */
+/* line 247, ../sass/partials/_bracket.scss */
 .viz-bracket-elbow {
   -webkit-transition: 0.3s stroke-width ease-in, 0.2s stroke ease-in;
   -moz-transition: 0.3s stroke-width ease-in, 0.2s stroke ease-in;
@@ -940,26 +944,26 @@
   stroke: #99948a;
 }
 
-/* line 249, ../sass/partials/_bracket.scss */
+/* line 254, ../sass/partials/_bracket.scss */
 .viz-bracket-designer-name {
   font-size: 11px;
   cursor: pointer;
 }
 
-/* line 254, ../sass/partials/_bracket.scss */
+/* line 259, ../sass/partials/_bracket.scss */
 .viz-bracket-designer-loser {
   text-decoration: line-through;
   fill: #99948a;
 }
 
-/* line 259, ../sass/partials/_bracket.scss */
+/* line 264, ../sass/partials/_bracket.scss */
 .viz-bracket-seed {
   font-weight: 300;
   font-family: "FCKaiserCond", Helvetica, Arial, sans-serif;
   fill: #99948a;
 }
 
-/* line 265, ../sass/partials/_bracket.scss */
+/* line 270, ../sass/partials/_bracket.scss */
 .viz-active-path {
   -webkit-transition: 0.3s stroke-width ease-in, 0.2s stroke ease-in;
   -moz-transition: 0.3s stroke-width ease-in, 0.2s stroke ease-in;
@@ -969,7 +973,7 @@
   stroke: #33312e;
 }
 
-/* line 271, ../sass/partials/_bracket.scss */
+/* line 276, ../sass/partials/_bracket.scss */
 .viz-bracket-left-finals-surrogate {
   display: none;
   position: absolute;
@@ -1039,85 +1043,90 @@
 }
 
 /* line 76, ../sass/widget.scss */
+.full-view .byline {
+  display: none;
+}
+
+/* line 80, ../sass/widget.scss */
 .full-view > header .title {
   font-weight: 700 !important;
 }
 
-/* line 80, ../sass/widget.scss */
+/* line 84, ../sass/widget.scss */
 .full-view > header .deck, .full-view > header .deck p {
   font-weight: 500 !important;
   margin-bottom: 0;
 }
 
-/* line 89, ../sass/widget.scss */
+/* line 93, ../sass/widget.scss */
 .prose.body * {
   -webkit-font-smoothing: subpixel-antialiased;
 }
-/* line 93, ../sass/widget.scss */
+/* line 97, ../sass/widget.scss */
 .prose.body form {
   margin: 0 0 -15px 0;
 }
-/* line 97, ../sass/widget.scss */
+/* line 101, ../sass/widget.scss */
 .prose.body p, .prose.body p:first-child, .prose.body p:first-line {
   font-family: inherit !important;
   color: inherit;
   line-height: inherit;
   font-weight: inherit !important;
 }
-/* line 104, ../sass/widget.scss */
+/* line 108, ../sass/widget.scss */
 .prose.body label {
   margin: 0;
 }
-/* line 109, ../sass/widget.scss */
+/* line 113, ../sass/widget.scss */
 .prose.body ol {
   list-style-type: none;
   line-height: 100%;
 }
-/* line 114, ../sass/widget.scss */
+/* line 118, ../sass/widget.scss */
 .prose.body ol > li {
   width: auto;
 }
-/* line 118, ../sass/widget.scss */
+/* line 122, ../sass/widget.scss */
 .prose.body ol > li:before {
   position: static;
 }
-/* line 122, ../sass/widget.scss */
+/* line 126, ../sass/widget.scss */
 .prose.body ul > li:before {
   content: none;
 }
-/* line 129, ../sass/widget.scss */
+/* line 133, ../sass/widget.scss */
 .prose.body .viz-graphic-text {
   color: #ff8a80;
 }
-/* line 133, ../sass/widget.scss */
+/* line 137, ../sass/widget.scss */
 .prose.body .viz-interactive-text {
   color: #b781ff;
 }
-/* line 137, ../sass/widget.scss */
+/* line 141, ../sass/widget.scss */
 .prose.body .viz-product-text {
   color: #819fff;
 }
-/* line 141, ../sass/widget.scss */
+/* line 145, ../sass/widget.scss */
 .prose.body .viz-architecture-text {
   color: #ff81f4;
 }
-/* line 145, ../sass/widget.scss */
+/* line 149, ../sass/widget.scss */
 .prose.body .viz-graphic-img {
   background-color: #ff8a80;
 }
-/* line 149, ../sass/widget.scss */
+/* line 153, ../sass/widget.scss */
 .prose.body .viz-interactive-img {
   background-color: #b781ff;
 }
-/* line 153, ../sass/widget.scss */
+/* line 157, ../sass/widget.scss */
 .prose.body .viz-product-img {
   background-color: #819fff;
 }
-/* line 157, ../sass/widget.scss */
+/* line 161, ../sass/widget.scss */
 .prose.body .viz-architecture-img {
   background-color: #ff81f4;
 }
-/* line 161, ../sass/widget.scss */
+/* line 165, ../sass/widget.scss */
 .prose.body .viz-title {
   text-transform: none;
   letter-spacing: normal;
@@ -1127,24 +1136,24 @@
   line-height: 90%;
   font-color: #33312e;
 }
-/* line 172, ../sass/widget.scss */
+/* line 176, ../sass/widget.scss */
 .prose.body .viz-native-copy {
   line-height: 160%;
   font-size: 15px;
   margin-bottom: 24px;
 }
-/* line 180, ../sass/widget.scss */
+/* line 184, ../sass/widget.scss */
 .prose.body .viz-bracket {
   margin: 24px 0;
   margin-right: -312px;
 }
-/* line 185, ../sass/widget.scss */
+/* line 189, ../sass/widget.scss */
 .prose.body .viz-legend {
   margin: 0 0 0 4px;
   list-style-type: none !important;
   font-family: "MuseoSans", Helvetica, Arial, sans-serif;
 }
-/* line 191, ../sass/widget.scss */
+/* line 195, ../sass/widget.scss */
 .prose.body .viz-legend-item {
   position: static;
   margin: 0 15px 5px 0;
@@ -1154,17 +1163,17 @@
   font-size: 30px;
   line-height: 40%;
 }
-/* line 199, ../sass/widget.scss */
+/* line 203, ../sass/widget.scss */
 .prose.body .viz-legend-item:before {
   margin-left: -5px;
   padding-right: 2px;
   content: "\002022";
 }
-/* line 204, ../sass/widget.scss */
+/* line 208, ../sass/widget.scss */
 .prose.body .viz-legend-item:last-of-type {
   margin-right: 0;
 }
-/* line 209, ../sass/widget.scss */
+/* line 213, ../sass/widget.scss */
 .prose.body .viz-legend-item {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1181,93 +1190,93 @@
   font-size: 36px;
   line-height: 40%;
 }
-/* line 216, ../sass/widget.scss */
+/* line 220, ../sass/widget.scss */
 .prose.body .viz-legend-item:before {
   margin-left: -5px;
   padding-right: 2px;
   color: inherit;
   content: "\002022" !important;
 }
-/* line 222, ../sass/widget.scss */
+/* line 226, ../sass/widget.scss */
 .prose.body .viz-legend-item:last-of-type {
   margin-right: 0;
 }
-/* line 227, ../sass/widget.scss */
+/* line 231, ../sass/widget.scss */
 .prose.body .viz-detail {
   color: #99948a;
 }
-/* line 231, ../sass/widget.scss */
+/* line 235, ../sass/widget.scss */
 .prose.body .viz-bracket-date-list {
   margin: 0 0 30px;
 }
-/* line 235, ../sass/widget.scss */
+/* line 239, ../sass/widget.scss */
 .prose.body .viz-bracket-date {
   position: absolute;
   padding: 0;
   font-size: 11px;
 }
-/* line 239, ../sass/widget.scss */
+/* line 243, ../sass/widget.scss */
 .prose.body .viz-bracket-date:nth-of-type(1) {
   left: 0px;
 }
-/* line 242, ../sass/widget.scss */
+/* line 246, ../sass/widget.scss */
 .prose.body .viz-bracket-date:nth-of-type(2) {
   left: 12%;
 }
-/* line 245, ../sass/widget.scss */
+/* line 249, ../sass/widget.scss */
 .prose.body .viz-bracket-date:nth-of-type(3) {
   left: 23%;
 }
-/* line 248, ../sass/widget.scss */
+/* line 252, ../sass/widget.scss */
 .prose.body .viz-bracket-date:nth-of-type(4) {
   left: 34%;
 }
-/* line 251, ../sass/widget.scss */
+/* line 255, ../sass/widget.scss */
 .prose.body .viz-bracket-date:nth-of-type(5) {
   left: 47%;
 }
-/* line 254, ../sass/widget.scss */
+/* line 258, ../sass/widget.scss */
 .prose.body .viz-bracket-date:nth-of-type(6) {
   right: 34%;
 }
-/* line 257, ../sass/widget.scss */
+/* line 261, ../sass/widget.scss */
 .prose.body .viz-bracket-date:nth-of-type(7) {
   right: 23%;
 }
-/* line 260, ../sass/widget.scss */
+/* line 264, ../sass/widget.scss */
 .prose.body .viz-bracket-date:nth-of-type(8) {
   right: 12%;
 }
-/* line 263, ../sass/widget.scss */
+/* line 267, ../sass/widget.scss */
 .prose.body .viz-bracket-date:nth-of-type(9) {
   right: 0px;
 }
-/* line 268, ../sass/widget.scss */
+/* line 272, ../sass/widget.scss */
 .prose.body .viz-bracket-competitor-name {
   font-weight: 500;
 }
-/* line 272, ../sass/widget.scss */
+/* line 276, ../sass/widget.scss */
 .prose.body .viz-info-instructions, .prose.body .viz-info-instructions:first-child, .prose.body .viz-info-instructions:first-line {
   color: #33312e;
   font-size: 12px !important;
   line-height: 130%;
 }
-/* line 278, ../sass/widget.scss */
+/* line 282, ../sass/widget.scss */
 .prose.body .viz-headshot {
   max-width: none;
 }
-/* line 282, ../sass/widget.scss */
+/* line 286, ../sass/widget.scss */
 .prose.body .viz-designer-name, .prose.body .viz-designer-job {
   margin-bottom: 0;
 }
-/* line 286, ../sass/widget.scss */
+/* line 290, ../sass/widget.scss */
 .prose.body .viz-bracket-designer-description, .prose.body .viz-bracket-designer-description:first-child, .prose.body .viz-bracket-designer-description:first-line {
   margin-bottom: 0;
   color: #99948a;
   font-size: 12px !important;
   line-height: 140%;
 }
-/* line 293, ../sass/widget.scss */
+/* line 297, ../sass/widget.scss */
 .prose.body .viz-designer-name, .prose.body .viz-designer-name:first-child, .prose.body .viz-designer-name:first-line {
   margin-bottom: 2px;
   color: #33312e;
@@ -1275,13 +1284,13 @@
   font-size: 13px !important;
   line-height: 100%;
 }
-/* line 301, ../sass/widget.scss */
+/* line 305, ../sass/widget.scss */
 .prose.body .viz-designer-job, .prose.body .viz-designer-job:first-child, .prose.body .viz-designer-job:first-line {
   color: #99948a;
   font-size: 11px !important;
   line-height: 120%;
 }
-/* line 307, ../sass/widget.scss */
+/* line 311, ../sass/widget.scss */
 .prose.body .viz-champion-name, .prose.body .viz-champion-name:first-child, .prose.body .viz-champion-name:first-line {
   margin: 0 0 5px;
   font-weight: 500 !important;
@@ -1289,38 +1298,38 @@
   line-height: 80%;
   color: #33312e;
 }
-/* line 315, ../sass/widget.scss */
+/* line 319, ../sass/widget.scss */
 .prose.body .viz-champion-seed {
   font-weight: 300;
 }
-/* line 319, ../sass/widget.scss */
+/* line 323, ../sass/widget.scss */
 .prose.body .viz-champion-headshot {
   max-width: none;
 }
-/* line 323, ../sass/widget.scss */
+/* line 327, ../sass/widget.scss */
 .prose.body .viz-champion-label, .prose.body .viz-champion-label:first-child, .prose.body .viz-champion-label:first-line {
   margin: 0;
   color: #99948a;
   font-size: 10px !important;
   line-height: 80%;
 }
-/* line 330, ../sass/widget.scss */
+/* line 334, ../sass/widget.scss */
 .prose.body .viz-underline {
   color: #33312e;
   line-height: 160% !important;
   font-size: 15px !important;
 }
-/* line 341, ../sass/widget.scss */
+/* line 345, ../sass/widget.scss */
 .prose.body .viz-quiz {
   max-width: none;
 }
-/* line 345, ../sass/widget.scss */
+/* line 349, ../sass/widget.scss */
 .prose.body .viz-choices-group {
   margin: 0 0 20px;
   list-style-type: none !important;
   vertical-align: top;
 }
-/* line 351, ../sass/widget.scss */
+/* line 355, ../sass/widget.scss */
 .prose.body .viz-choice-item {
   position: static;
   margin-bottom: 0;
@@ -1328,32 +1337,32 @@
   width: 100%;
   list-style-type: none !important;
 }
-/* line 357, ../sass/widget.scss */
+/* line 361, ../sass/widget.scss */
 .prose.body .viz-choice-item:nth-child(2n) {
   margin-bottom: 10px;
 }
-/* line 360, ../sass/widget.scss */
+/* line 364, ../sass/widget.scss */
 .prose.body .viz-choice-item:last-of-type {
   padding-bottom: 0;
 }
-/* line 365, ../sass/widget.scss */
+/* line 369, ../sass/widget.scss */
 .prose.body .viz-division .viz-choice-loser {
   margin-bottom: 0;
   padding: 5px 0 0px;
 }
-/* line 370, ../sass/widget.scss */
+/* line 374, ../sass/widget.scss */
 .prose.body .viz-vs {
   color: #ccc6b9;
   line-height: 120%;
 }
-/* line 375, ../sass/widget.scss */
+/* line 379, ../sass/widget.scss */
 .prose.body .viz-submitted-alert {
   margin: -25px 0 10px;
   padding: 5px;
   color: #ccc6b9;
   font-size: 11px !important;
 }
-/* line 382, ../sass/widget.scss */
+/* line 386, ../sass/widget.scss */
 .prose.body .viz-designer-description, .prose.body .viz-designer-description:first-child, .prose.body .viz-designer-description:first-line {
   margin: 0px;
   padding: 10px 0;
@@ -1361,51 +1370,51 @@
   font-size: 12px !important;
   line-height: 140%;
 }
-/* line 390, ../sass/widget.scss */
+/* line 394, ../sass/widget.scss */
 .prose.body .viz-choice-loser .viz-designer-name, .prose.body .viz-choice-loser .viz-designer-name:first-child, .prose.body .viz-choice-loser .viz-designer-name:first-line {
   color: #99948a !important;
   font-weight: 300 !important;
 }
-/* line 399, ../sass/widget.scss */
+/* line 403, ../sass/widget.scss */
 .prose.body .viz-rankings {
   max-width: none;
 }
-/* line 403, ../sass/widget.scss */
+/* line 407, ../sass/widget.scss */
 .prose.body .viz-division-finals {
   width: 100%;
   margin-bottom: 35px !important;
   padding: 0;
 }
-/* line 409, ../sass/widget.scss */
+/* line 413, ../sass/widget.scss */
 .prose.body .viz-division-list {
   margin: 0;
   padding: 0;
   list-style-type: none !important;
 }
-/* line 415, ../sass/widget.scss */
+/* line 419, ../sass/widget.scss */
 .prose.body .viz-division {
   margin: 0 0 35px;
 }
-/* line 419, ../sass/widget.scss */
+/* line 423, ../sass/widget.scss */
 .prose.body .viz-group-2 .viz-division:last-of-type {
   margin-bottom: 0;
 }
-/* line 424, ../sass/widget.scss */
+/* line 428, ../sass/widget.scss */
 .prose.body .viz-division-button {
   border: none;
 }
-/* line 428, ../sass/widget.scss */
+/* line 432, ../sass/widget.scss */
 .prose.body .viz-division-title {
   text-transform: uppercase;
   font-weight: 300 !important;
   font-size: 11px !important;
   line-height: 80%;
 }
-/* line 435, ../sass/widget.scss */
+/* line 439, ../sass/widget.scss */
 .prose.body .viz-division-name {
   font-family: "MuseoSans", Helvetica, Arial, sans-serif;
 }
-/* line 439, ../sass/widget.scss */
+/* line 443, ../sass/widget.scss */
 .prose.body .viz-division-round {
   margin: 10px 0 16px;
   color: #33312e;
@@ -1413,17 +1422,17 @@
   font-size: 15px !important;
   font-family: "FCZizouSlab", Georgia, Times, Times New Roman, serif !important;
 }
-/* line 447, ../sass/widget.scss */
+/* line 451, ../sass/widget.scss */
 .prose.body .viz-division-designers-list {
   padding: 0 10px;
   margin: 0;
   list-style-type: none;
 }
-/* line 453, ../sass/widget.scss */
+/* line 457, ../sass/widget.scss */
 .prose.body .viz-transition {
   position: absolute;
 }
-/* line 455, ../sass/widget.scss */
+/* line 459, ../sass/widget.scss */
 .prose.body .viz-transition .viz-vs {
   opacity: 0;
 }

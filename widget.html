@@ -19,7 +19,7 @@
 					</ol>
 				</div>
 				<ol class="viz-bracket-date-list">
-					<li class="viz-bracket-date">March 18</li>
+					<li class="viz-bracket-date viz-date-finished">March 18</li>
 					<li class="viz-bracket-date">March 20</li>
 					<li class="viz-bracket-date">March 22</li>
 					<li class="viz-bracket-date">March 24</li>
@@ -27,7 +27,7 @@
 					<li class="viz-bracket-date">March 24</li>
 					<li class="viz-bracket-date">March 22</li>
 					<li class="viz-bracket-date">March 20</li>
-					<li class="viz-bracket-date">March 18</li>
+					<li class="viz-bracket-date viz-date-finished">March 18</li>
 				</ol>
 			</header>
 			<div class="viz-bracket-wrapper viz-bracket-left">
@@ -153,15 +153,15 @@
 			</div>
 		</section>
 
-		<!-- QUIZ MOD -->
-		<section class="viz-content-block viz-quiz">
+			<!-- QUIZ MOD -->
+			<section class="viz-content-block viz-quiz">
 			<header class="viz-content-header">
 				<div class="viz-overline-wrapper">
 					<h4 class="viz-title">Today's Ballot</h4>
 				</div>
-				<p class="viz-underline">Click the circle next to the designers you want to see move on to the next&nbsp;round.</p>
+				<p class="viz-underline">Click the circle next to the designers you want to see move on to the next round.</p>
 			</header>
-			<div class="ss-form">
+			<div class="ss-form viz-quiz-content">
 				<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" =></iframe>
 				<form class="viz-form" action="assigned in chart.js" method="POST" target="hidden_iframe">
 					<div role="list" class="viz-quiz-wrapper">
@@ -176,6 +176,28 @@
 			</div>
 		</section>
 
+		<!-- QUIZ MOD -->
+<!-- 		<section class="viz-content-block viz-quiz">
+			<header class="viz-content-header">
+				<div class="viz-overline-wrapper">
+					<h4 class="viz-title">On to Round II!</h4>
+				</div>
+				<p class="viz-underline">Voting for Round I is now closed. Thank you to all who participated. Check back tomorrow at 9 a.m. EST for a new post with the results and Round II voting.</p>
+			</header>
+			<div class="ss-form viz-quiz-content">
+				<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" =></iframe>
+				<form class="viz-form" action="assigned in chart.js" method="POST" target="hidden_iframe">
+					<div role="list" class="viz-quiz-wrapper">
+						<div class="viz-quiz-left"></div>
+						<div class="viz-quiz-right"></div>
+						<input type="hidden" name="draftResponse" value="[,,&quot;6794774896077403743&quot;]">
+				        <input type="hidden" name="pageHistory" value="0">
+				        <input type="hidden" name="fromEmail" value="false">
+				        <input type="hidden" name="fbzx" value="6794774896077403743">
+					</div>
+				</form>
+			</div>
+		</section> -->
 		
 
 	<!-- Templates for Questions -->
@@ -225,9 +247,13 @@
 
 			var data = "";
 			var i = 0;
-			// Plz don't be messing with the form if you happen to be checking out the guts of this page :)
 			var formURL = "https://docs.google.com/forms/d/17DH9Pz93-dSye9QCFmrO27INIlCZwXhFtQ9EV0IOGo0/formResponse"; // Example: "https://docs.google.com/forms/d/KEYGOESHERE/formResponse"
+			// var spreadsheetURL = "http://www.guswezerek.com/projects/bracket_madness/designers_1.tsv";
+			// var spreadsheetURL = "/designers_1.tsv";
 			var spreadsheetURL = "http://www.fastcodesign.com/asset_files/-/2014/03/19/designers_1.tsv";
+
+			//Dynamic url
+			// var spreadsheetURL = "https://docs.google.com/spreadsheet/pub?key=0AmqQKSPoegtOdEcyWldpLWpKY0txU0NRNzBDdW5wZlE&single=true&gid=0&output=csv"; // Example: "https://docs.google.com/spreadsheet/pub?key=KEYGOESHERE&single=true&gid=0&output=csv"
 
 			// For template
 			var vizEven = false;
@@ -240,7 +266,7 @@
 
 			// For quiz
 			var indicesRound1 = [0, 7, 3, 4, 2, 5, 1, 6, 8, 15, 11, 12, 10, 13, 9, 14, 16, 23, 19, 20, 18, 21, 17, 22, 24, 31, 27, 28, 26, 29, 25, 30];
-			var indicesRound2 = [16, 23, 17, 22, 18, 21, 19, 20, 24, 31, 25, 30, 26, 29, 27, 28];
+			var indicesRound2 = [0, 3, 2, 6, 15, 12, 13, 14, 16, 19, 21, 17, 24, 28, 29, 25];
 			var indicesRound3 = [16, 23, 17, 22, 18, 21, 19, 20];
 			var indicesRound4 = [16, 23, 17, 22];
 			var indicesRound5 = [16, 23];
@@ -261,31 +287,31 @@
 				topPosRound3: [0, 50, 111, 156, 201, 246, 291, 336],
 
 				division1: {
-					roundNumber: 1,
-					roundArray: [1],
+					roundNumber: 2,
+					roundArray: [1, 2],
 					round1: [0, 7, 1, 6, 2, 5, 3, 4],
-					round2: [0, 1, 2, 3, 4, 5, 6, 7],
+					round2: [0, 3, 2, 6, 7, 1, 4, 5],
 					round3: [0, 7, 1, 6, 2, 5, 3, 4]
 				},
 				division2: {
-					roundNumber: 1,
-					roundArray: [1],
+					roundNumber: 2,
+					roundArray: [1, 2],
 					round1: [8, 15, 9, 14, 10, 13, 11, 12],
-					round2: [8, 15, 9, 14, 10, 13, 11, 12],
+					round2: [15, 12, 13, 14, 8, 9, 10, 11],
 					round3: [8, 15, 9, 14, 10, 13, 11, 12]
 				},
 				division3: {
-					roundNumber: 1,
-					roundArray: [1],
+					roundNumber: 2,
+					roundArray: [1, 2],
 					round1: [16, 23, 17, 22, 18, 21, 19, 20],
-					round2: [16, 23, 17, 22, 18, 21, 19, 20],
+					round2: [16, 19, 21, 17, 23, 20, 22, 18],
 					round3: [16, 23, 17, 22, 18, 21, 19, 20]
 				},
 				division4: {
-					roundNumber: 1,
-					roundArray: [1],
+					roundNumber: 2,
+					roundArray: [1, 2],
 					round1: [24, 31, 25, 30, 26, 29, 27, 28],
-					round2: [24, 31, 25, 30, 26, 29, 27, 28],
+					round2: [24, 28, 29, 25, 31, 30, 26, 27],
 					round3: [24, 31, 25, 30, 26, 29, 27, 28]
 				},
 				division5: {
@@ -366,7 +392,7 @@
 					.append("g")
 					.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-				d3.json("http://www.fastcodesign.com/asset_files/-/2014/03/18/treeData.json", function(json) {
+				d3.json("http://www.fastcodesign.com/asset_files/-/2014/03/20/treeData.json", function(json) {
 
 					var nodes = tree.nodes(json.parents[leftRightIndex]);
 
@@ -471,14 +497,14 @@
 							return "translate(" + (width - d.y) + "," + d.x + ")";
 						});
 						link.attr("d", elbowRight);
-						designerText.attr("text-anchor", "start").attr("x", 6);
+						designerText.attr("text-anchor", "start").attr("x", 5);
 					} else {
 						node.attr("transform", function(d) {
 							return "translate(" + d.y + "," + d.x + ")";
 						});
 						link.attr("d", elbowLeft);
 						adjustFinalsRight();
-						designerText.attr("text-anchor", "end").attr("x", 94);
+						designerText.attr("text-anchor", "end").attr("x", 95);
 					}
 
 					adjustFinalsLeft();
@@ -658,7 +684,7 @@
 			    vizQuiz = true; // This flag shows the viz-choice-target and ul wrapper element in the template
 
 			    // Get and order only the day's designers
-			    var quizData = filterData(data, indicesRound1);
+			    var quizData = filterData(data, indicesRound2);
 
 			    // Create objects that underscore likes
 			    // Keep in dot notation or else quizData won't stick
@@ -686,7 +712,7 @@
 			            vizEven = false;
 			        }
 
-					if (i < 16) {
+					if (i < 8) {
 			        	toAppendStringLeft += quizTemplate(quizData.designers[i]);
 			        } else {
 			        	toAppendStringRight += quizTemplate(quizData.designers[i]);
@@ -723,6 +749,7 @@
 			        // Compile the list for that division
 			        for (i = 0; i < rankingsData.designers.length; i++) {
 			        	// FOR WIDGET
+			        	rankingsData.designers[i].vizEven = false;
 			        	rankingsData.designers[i].vizQuiz = false;
 			        	// END FOR WIDGET
 			            toAppendString += quizTemplate(rankingsData.designers[i]);
@@ -886,6 +913,34 @@
 	    });
 
 	</script>
+	<!-- Begin MailChimp Signup Form -->
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		#mc_embed_signup {
+		    background:#fff;
+		    clear:left;
+		    font:14px Helvetica, Arial, sans-serif;
+		}
+		#mc_embed_signup form {
+			margin: 35px 0 0;
+			padding: 0;
+		}
+	</style>
+
+	<div id="mc_embed_signup">
+	    <form action="http://fastcompany.us2.list-manage.com/subscribe/post?u=7e7f5c9060be0fa4c269f97d9&amp;id=4b14e1d599" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+	        <label for="mce-EMAIL">Receive tomorrow's bracket winners in your inbox!</label>
+	        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
+	        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+	        <div style="position: absolute; left: -5000px;">
+	            <input type="text" name="b_7e7f5c9060be0fa4c269f97d9_4b14e1d599" value="">
+	        </div>
+	        <div>
+	            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+	        </div>
+	    </form>
+	</div>
+	<!--End mc_embed_signup-->
 
 </article>
 

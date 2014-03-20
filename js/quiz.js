@@ -24,7 +24,7 @@ var designerText = "";
 
 // For quiz
 var indicesRound1 = [0, 7, 3, 4, 2, 5, 1, 6, 8, 15, 11, 12, 10, 13, 9, 14, 16, 23, 19, 20, 18, 21, 17, 22, 24, 31, 27, 28, 26, 29, 25, 30];
-var indicesRound2 = [16, 23, 17, 22, 18, 21, 19, 20, 24, 31, 25, 30, 26, 29, 27, 28];
+var indicesRound2 = [0, 3, 2, 6, 15, 12, 13, 14, 16, 19, 21, 17, 24, 28, 29, 25];
 var indicesRound3 = [16, 23, 17, 22, 18, 21, 19, 20];
 var indicesRound4 = [16, 23, 17, 22];
 var indicesRound5 = [16, 23];
@@ -45,31 +45,31 @@ var divisions = {
 	topPosRound3: [0, 50, 111, 156, 201, 246, 291, 336],
 
 	division1: {
-		roundNumber: 1,
-		roundArray: [1, 2, 3],
+		roundNumber: 2,
+		roundArray: [1, 2],
 		round1: [0, 7, 1, 6, 2, 5, 3, 4],
-		round2: [0, 1, 2, 3, 4, 5, 6, 7],
+		round2: [0, 3, 2, 6, 7, 1, 4, 5],
 		round3: [0, 7, 1, 6, 2, 5, 3, 4]
 	},
 	division2: {
-		roundNumber: 1,
-		roundArray: [1],
+		roundNumber: 2,
+		roundArray: [1, 2],
 		round1: [8, 15, 9, 14, 10, 13, 11, 12],
-		round2: [8, 15, 9, 14, 10, 13, 11, 12],
+		round2: [15, 12, 13, 14, 8, 9, 10, 11],
 		round3: [8, 15, 9, 14, 10, 13, 11, 12]
 	},
 	division3: {
-		roundNumber: 1,
-		roundArray: [1],
+		roundNumber: 2,
+		roundArray: [1, 2],
 		round1: [16, 23, 17, 22, 18, 21, 19, 20],
-		round2: [16, 23, 17, 22, 18, 21, 19, 20],
+		round2: [16, 19, 21, 17, 23, 20, 22, 18],
 		round3: [16, 23, 17, 22, 18, 21, 19, 20]
 	},
 	division4: {
-		roundNumber: 1,
-		roundArray: [1],
+		roundNumber: 2,
+		roundArray: [1, 2],
 		round1: [24, 31, 25, 30, 26, 29, 27, 28],
-		round2: [24, 31, 25, 30, 26, 29, 27, 28],
+		round2: [24, 28, 29, 25, 31, 30, 26, 27],
 		round3: [24, 31, 25, 30, 26, 29, 27, 28]
 	},
 	division5: {
@@ -256,14 +256,14 @@ function buildBracket(data, leftRightIndex, target) {
 				return "translate(" + (width - d.y) + "," + d.x + ")";
 			});
 			link.attr("d", elbowRight);
-			designerText.attr("text-anchor", "start").attr("x", 6);
+			designerText.attr("text-anchor", "start").attr("x", 5);
 		} else {
 			node.attr("transform", function(d) {
 				return "translate(" + d.y + "," + d.x + ")";
 			});
 			link.attr("d", elbowLeft);
 			adjustFinalsRight();
-			designerText.attr("text-anchor", "end").attr("x", 94);
+			designerText.attr("text-anchor", "end").attr("x", 95);
 		}
 
 		adjustFinalsLeft();
@@ -443,7 +443,7 @@ function populateQuiz(data) {
     vizQuiz = true; // This flag shows the viz-choice-target and ul wrapper element in the template
 
     // Get and order only the day's designers
-    var quizData = filterData(data, indicesRound1);
+    var quizData = filterData(data, indicesRound2);
 
     // Create objects that underscore likes
     // Keep in dot notation or else quizData won't stick
@@ -471,7 +471,7 @@ function populateQuiz(data) {
             vizEven = false;
         }
 
-		if (i < 16) {
+		if (i < 8) {
         	toAppendStringLeft += quizTemplate(quizData.designers[i]);
         } else {
         	toAppendStringRight += quizTemplate(quizData.designers[i]);

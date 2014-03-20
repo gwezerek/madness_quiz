@@ -19,6 +19,11 @@
 	margin-left: 10px;
 	height: 550px;
 	width: 500px;
+	.viz-node:nth-of-type(7), .viz-node:nth-of-type(8) {
+		.viz-bracket-designer-name {
+			font-size: 10px;
+		}
+	}
 }
 
 .viz-bracket-right {
