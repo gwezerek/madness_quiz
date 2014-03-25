@@ -25,9 +25,11 @@ var designerText = "";
 // For quiz
 var indicesRound1 = [0, 7, 3, 4, 2, 5, 1, 6, 8, 15, 11, 12, 10, 13, 9, 14, 16, 23, 19, 20, 18, 21, 17, 22, 24, 31, 27, 28, 26, 29, 25, 30];
 var indicesRound2 = [0, 3, 2, 6, 15, 12, 13, 14, 16, 19, 21, 17, 24, 28, 29, 25];
-var indicesRound3 = [16, 23, 17, 22, 18, 21, 19, 20];
+var indicesRound3 = [0, 2, 12, 13, 16, 17, 28, 29];
 var indicesRound4 = [16, 23, 17, 22];
 var indicesRound5 = [16, 23];
+
+var currentRound = indicesRound3;
 
 // For rankings
 var divisions = {
@@ -45,32 +47,32 @@ var divisions = {
 	topPosRound3: [0, 50, 111, 156, 201, 246, 291, 336],
 
 	division1: {
-		roundNumber: 2,
-		roundArray: [1, 2],
+		roundNumber: 3,
+		roundArray: [1, 2, 3],
 		round1: [0, 7, 1, 6, 2, 5, 3, 4],
 		round2: [0, 3, 2, 6, 7, 1, 4, 5],
-		round3: [0, 7, 1, 6, 2, 5, 3, 4]
+		round3: [0, 2, 3, 6, 7, 1, 4, 5]
 	},
 	division2: {
-		roundNumber: 2,
-		roundArray: [1, 2],
+		roundNumber: 3,
+		roundArray: [1, 2, 3],
 		round1: [8, 15, 9, 14, 10, 13, 11, 12],
 		round2: [15, 12, 13, 14, 8, 9, 10, 11],
-		round3: [8, 15, 9, 14, 10, 13, 11, 12]
+		round3: [12, 13, 15, 14, 8, 9, 10, 11]
 	},
 	division3: {
-		roundNumber: 2,
-		roundArray: [1, 2],
+		roundNumber: 3,
+		roundArray: [1, 2, 3],
 		round1: [16, 23, 17, 22, 18, 21, 19, 20],
 		round2: [16, 19, 21, 17, 23, 20, 22, 18],
-		round3: [16, 23, 17, 22, 18, 21, 19, 20]
+		round3: [16, 17, 19, 21, 23, 20, 22, 18]
 	},
 	division4: {
-		roundNumber: 2,
-		roundArray: [1, 2],
+		roundNumber: 3,
+		roundArray: [1, 2, 3],
 		round1: [24, 31, 25, 30, 26, 29, 27, 28],
 		round2: [24, 28, 29, 25, 31, 30, 26, 27],
-		round3: [24, 31, 25, 30, 26, 29, 27, 28]
+		round3: [28, 29, 24, 25, 31, 30, 26, 27]
 	},
 	division5: {
 		roundNumber: 1,
@@ -376,16 +378,53 @@ $(".viz-division-button").on("click", function() {
 
 });
 
+
 // Selecting designers for the infoMod in the middle of the bracket
+// And moving the info mod to the correct position
 $(".viz-bracket").on("click", ".viz-bracket-designer-name", function() {
+
 	var originalIndex = d3.select(this).datum().competitorIndex;
 	var divisionObj = data[originalIndex];
 	var infoMod = $(".viz-bracket-info-mod");
 	var colorsIndex = Math.floor(originalIndex / (data.length / 4));
 
+	// Variables for tooltip positioning
+
+	var bracket = $(this).closest(".viz-bracket-wrapper");
+	var node = $(this).parent()[0];
+	var position = $(this).parent().attr("transform").replace("translate(","");
+	var pozLeft = parseInt(position.match(/\d+/)[0]);
+	var pozTop = parseInt(position.match( /,\d+/)[0].replace(",",""));
+
+	if (bracket.hasClass("viz-bracket-left")) {
+		if (node.hasClass("viz-leaf")) {
+			pozLeft += 10;
+			pozTop -= 36;
+		} else if (node.hasClass("viz-inner")) {
+			pozLeft += 15;
+			pozTop -= 24;
+		}
+	} else if (bracket.hasClass("viz-bracket-right")) {
+		if (node.hasClass("viz-leaf")) {
+			pozLeft += 270;
+			pozTop -= 36;
+		} else if (node.hasClass("viz-inner")) {
+			pozLeft += 265;
+			pozTop -= 25;
+		}
+	}
+
+
 	infoMod.find(".viz-info-instructions").fadeOut(200);
+
 	window.setTimeout(function() {
+
 		infoMod.addClass("viz-info-initiated");
+		infoMod.fadeIn(200);
+		infoMod.css({
+			"top": pozTop + "px",
+			"left": pozLeft + "px"
+		});
 		infoMod.find(".viz-headshot").css({
 			"right": 40 * originalIndex + "px",
 			"background-color": divisionColor[colorsIndex]
@@ -398,6 +437,12 @@ $(".viz-bracket").on("click", ".viz-bracket-designer-name", function() {
 
 });
 
+// Hiding the info mod if someone clics off it
+$(document).click(function(e) {
+    if (!$(".viz-info-initiated").find(e.target).length) {
+        $(".viz-info-initiated").fadeOut(200);
+    }
+});
 
 
 
@@ -443,7 +488,7 @@ function populateQuiz(data) {
     vizQuiz = true; // This flag shows the viz-choice-target and ul wrapper element in the template
 
     // Get and order only the day's designers
-    var quizData = filterData(data, indicesRound2);
+    var quizData = filterData(data, currentRound);
 
     // Create objects that underscore likes
     // Keep in dot notation or else quizData won't stick
@@ -471,7 +516,7 @@ function populateQuiz(data) {
             vizEven = false;
         }
 
-		if (i < 8) {
+		if (i < (currentRound.length/2)) {
         	toAppendStringLeft += quizTemplate(quizData.designers[i]);
         } else {
         	toAppendStringRight += quizTemplate(quizData.designers[i]);
@@ -642,10 +687,10 @@ function adjustFinalsLeft() {
 
 function adjustFinalsRight() {
 	var elbows = $(".viz-bracket-right .viz-bracket-elbow");
-	elbows.eq(0).attr("d", "M0,232H100V135");
-	elbows.eq(1).attr("d", "M0,232H100V405");
+	elbows.eq(0).attr("d", "M0,372H100V135");
+	elbows.eq(1).attr("d", "M0,372H100V405");
 
-	$(".viz-bracket-right .viz-node").eq(0).attr("transform", "translate(0,232)");
+	$(".viz-bracket-right .viz-node").eq(0).attr("transform", "translate(0,372)");
 }
 
 function elbowLeft(d, i) {
@@ -663,6 +708,9 @@ function getDesired(desiredTargets) {
 		return desiredTargets[0].slice(1);
 	}
 }
+
+
+
 
 
 

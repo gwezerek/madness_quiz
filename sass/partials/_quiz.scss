@@ -7,8 +7,6 @@
 .viz-quiz-wrapper {
 	@media (min-width: $small) {
 		@include pie-clearfix;
-		// @include column-count(2);
-		// @include column-gap(30px);
 	}
 }
 

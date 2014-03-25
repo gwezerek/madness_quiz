@@ -20,13 +20,13 @@
 				</div>
 				<ol class="viz-bracket-date-list">
 					<li class="viz-bracket-date viz-date-finished">March 18</li>
-					<li class="viz-bracket-date">March 20</li>
-					<li class="viz-bracket-date">March 22</li>
+					<li class="viz-bracket-date viz-date-finished">March 20</li>
 					<li class="viz-bracket-date">March 24</li>
 					<li class="viz-bracket-date">March 26</li>
+					<li class="viz-bracket-date">March 28</li>
+					<li class="viz-bracket-date">March 26</li>
 					<li class="viz-bracket-date">March 24</li>
-					<li class="viz-bracket-date">March 22</li>
-					<li class="viz-bracket-date">March 20</li>
+					<li class="viz-bracket-date viz-date-finished">March 20</li>
 					<li class="viz-bracket-date viz-date-finished">March 18</li>
 				</ol>
 			</header>
@@ -180,9 +180,9 @@
 <!-- 		<section class="viz-content-block viz-quiz">
 			<header class="viz-content-header">
 				<div class="viz-overline-wrapper">
-					<h4 class="viz-title">On to Round II!</h4>
+					<h4 class="viz-title">On to Round 3!</h4>
 				</div>
-				<p class="viz-underline">Voting for Round I is now closed. Thank you to all who participated. Check back tomorrow at 9 a.m. EST for a new post with the results and Round II voting.</p>
+				<p class="viz-underline">Voting for Round 2 is now closed. Thank you to all who participated. Check back tomorrow at 9 a.m. EST for a new post with the results and Round 3 voting.</p>
 			</header>
 			<div class="ss-form viz-quiz-content">
 				<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" =></iframe>
@@ -248,12 +248,7 @@
 			var data = "";
 			var i = 0;
 			var formURL = "https://docs.google.com/forms/d/17DH9Pz93-dSye9QCFmrO27INIlCZwXhFtQ9EV0IOGo0/formResponse"; // Example: "https://docs.google.com/forms/d/KEYGOESHERE/formResponse"
-			// var spreadsheetURL = "http://www.guswezerek.com/projects/bracket_madness/designers_1.tsv";
-			// var spreadsheetURL = "/designers_1.tsv";
-			var spreadsheetURL = "http://www.fastcodesign.com/asset_files/-/2014/03/19/designers_1.tsv";
-
-			//Dynamic url
-			// var spreadsheetURL = "https://docs.google.com/spreadsheet/pub?key=0AmqQKSPoegtOdEcyWldpLWpKY0txU0NRNzBDdW5wZlE&single=true&gid=0&output=csv"; // Example: "https://docs.google.com/spreadsheet/pub?key=KEYGOESHERE&single=true&gid=0&output=csv"
+			var spreadsheetURL = "http://www.fastcodesign.com/asset_files/-/2014/03/24/designers_1.tsv";
 
 			// For template
 			var vizEven = false;
@@ -267,9 +262,11 @@
 			// For quiz
 			var indicesRound1 = [0, 7, 3, 4, 2, 5, 1, 6, 8, 15, 11, 12, 10, 13, 9, 14, 16, 23, 19, 20, 18, 21, 17, 22, 24, 31, 27, 28, 26, 29, 25, 30];
 			var indicesRound2 = [0, 3, 2, 6, 15, 12, 13, 14, 16, 19, 21, 17, 24, 28, 29, 25];
-			var indicesRound3 = [16, 23, 17, 22, 18, 21, 19, 20];
+			var indicesRound3 = [0, 2, 12, 13, 16, 17, 28, 29];
 			var indicesRound4 = [16, 23, 17, 22];
 			var indicesRound5 = [16, 23];
+
+			var currentRound = indicesRound3;
 
 			// For rankings
 			var divisions = {
@@ -287,32 +284,32 @@
 				topPosRound3: [0, 50, 111, 156, 201, 246, 291, 336],
 
 				division1: {
-					roundNumber: 2,
-					roundArray: [1, 2],
+					roundNumber: 3,
+					roundArray: [1, 2, 3],
 					round1: [0, 7, 1, 6, 2, 5, 3, 4],
 					round2: [0, 3, 2, 6, 7, 1, 4, 5],
-					round3: [0, 7, 1, 6, 2, 5, 3, 4]
+					round3: [0, 2, 3, 6, 7, 1, 4, 5]
 				},
 				division2: {
-					roundNumber: 2,
-					roundArray: [1, 2],
+					roundNumber: 3,
+					roundArray: [1, 2, 3],
 					round1: [8, 15, 9, 14, 10, 13, 11, 12],
 					round2: [15, 12, 13, 14, 8, 9, 10, 11],
-					round3: [8, 15, 9, 14, 10, 13, 11, 12]
+					round3: [12, 13, 15, 14, 8, 9, 10, 11]
 				},
 				division3: {
-					roundNumber: 2,
-					roundArray: [1, 2],
+					roundNumber: 3,
+					roundArray: [1, 2, 3],
 					round1: [16, 23, 17, 22, 18, 21, 19, 20],
 					round2: [16, 19, 21, 17, 23, 20, 22, 18],
-					round3: [16, 23, 17, 22, 18, 21, 19, 20]
+					round3: [16, 17, 19, 21, 23, 20, 22, 18]
 				},
 				division4: {
-					roundNumber: 2,
-					roundArray: [1, 2],
+					roundNumber: 3,
+					roundArray: [1, 2, 3],
 					round1: [24, 31, 25, 30, 26, 29, 27, 28],
 					round2: [24, 28, 29, 25, 31, 30, 26, 27],
-					round3: [24, 31, 25, 30, 26, 29, 27, 28]
+					round3: [28, 29, 24, 25, 31, 30, 26, 27]
 				},
 				division5: {
 					roundNumber: 1,
@@ -392,7 +389,7 @@
 					.append("g")
 					.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-				d3.json("http://www.fastcodesign.com/asset_files/-/2014/03/20/treeData.json", function(json) {
+				d3.json("http://www.fastcodesign.com/asset_files/-/2014/03/24/treeData.json", function(json) {
 
 					var nodes = tree.nodes(json.parents[leftRightIndex]);
 
@@ -684,7 +681,7 @@
 			    vizQuiz = true; // This flag shows the viz-choice-target and ul wrapper element in the template
 
 			    // Get and order only the day's designers
-			    var quizData = filterData(data, indicesRound2);
+			    var quizData = filterData(data, currentRound);
 
 			    // Create objects that underscore likes
 			    // Keep in dot notation or else quizData won't stick
@@ -712,7 +709,7 @@
 			            vizEven = false;
 			        }
 
-					if (i < 8) {
+					if (i < (currentRound.length/2)) {
 			        	toAppendStringLeft += quizTemplate(quizData.designers[i]);
 			        } else {
 			        	toAppendStringRight += quizTemplate(quizData.designers[i]);

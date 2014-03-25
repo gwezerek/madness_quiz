@@ -15,6 +15,14 @@
 	}
 }
 
+.viz-bracket-mod {
+	position: relative;
+}
+
+.viz-bracket-wrapper {
+	position: relative;
+}
+
 .viz-bracket-left {
 	margin-left: 10px;
 	height: 550px;
@@ -28,7 +36,7 @@
 
 .viz-bracket-right {
 	position: absolute;
-	top: 83px;
+	top: 0;
 	right: 10px;
 	width: 500px;
 	height: 550px;
@@ -143,20 +151,18 @@
 
 .viz-bracket-info-mod {
 	@include transition(0.3s top ease-in-out, 0.3s left ease-in-out, 0.3s width ease-in-out);
-	@include absolute(400px n n 390px);
+	@include absolute(20px n n 390px);
 	z-index: 1;
 	padding: 15px;
 	background: $bground;
-	border: 1px solid $med-gray;
 	width: 160px;
 	height: 76px;
 }
 
 .viz-info-initiated {
-	top: 400px;
-	left: 340px;
 	width: 260px;
 	height: auto;
+	border: 1px solid $med-gray;
 }
 
 .viz-info-instructions {
@@ -196,9 +202,9 @@
 }
 
 .viz-bracket-winner-mod {
-	@include absolute(120px n n 419px);
+	@include absolute(225px n n 430px);
 	text-align: center;
-	width: 100px;
+	width: 80px;
 }
 
 .viz-champion-headshot-wrap {
@@ -247,7 +253,7 @@
 .viz-bracket-elbow {
 	@include transition(0.3s stroke-width ease-in, 0.2s stroke ease-in);
 	fill: none;
-	stroke-width: 1;
+	stroke-width: 0.5;
 	stroke: $med-gray;
 }
 
@@ -282,6 +288,10 @@
 	cursor: pointer;
 }
 
+
+
+// TOOLTIP POSITIONING
+// THIS IS A HORRIBLE HACK TO GET AROUND THE FACT THAT WE 
 
 
 
