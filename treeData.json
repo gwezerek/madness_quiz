@@ -1,15 +1,15 @@
 {
-	"competitorIndex": "",
+	"competitorIndex": "17",
     "lost": "false",
     "level": "1",
     "parents": [
         {
-		    "competitorIndex": "",
-		    "lost": "false",
+		    "competitorIndex": "0",
+		    "lost": "true",
 		    "level": "2",
 		    "parents": [
 		        {
-		            "competitorIndex": "",
+		            "competitorIndex": "0",
 		            "lost": "false",
 		            "level": "4",
 		            "parents": [
@@ -56,7 +56,7 @@
 			            },
 			            {
 			                "competitorIndex": "2",
-			                "lost": "false",
+			                "lost": "true",
 			                "level": "8",
 			                "parents": [
 				                {
@@ -98,13 +98,13 @@
 		            ]
 		        },
 		        {
-		            "competitorIndex": "",
-		            "lost": "false",
+		            "competitorIndex": "13",
+		            "lost": "true",
 		            "level": "4",
 		            "parents": [
 			            {
 			                "competitorIndex": "12",
-			                "lost": "false",
+			                "lost": "true",
 			                "level": "8",
 			                "parents": [
 				                {
@@ -189,18 +189,18 @@
 		    ]
 	    },
 	    {
-		    "competitorIndex": "",
+		    "competitorIndex": "17",
 		    "lost": "false",
 		    "level": "2",
 		    "parents": [
 		        {
-		            "competitorIndex": "",
+		            "competitorIndex": "17",
 		            "lost": "false",
 		            "level": "4",
 		            "parents": [
 			            {
 			                "competitorIndex": "16",
-			                "lost": "false",
+			                "lost": "true",
 			                "level": "8",
 			                "parents": [
 				                {
@@ -283,8 +283,8 @@
 		            ]
 		        },
 		        {
-		            "competitorIndex": "",
-		            "lost": "false",
+		            "competitorIndex": "28",
+		            "lost": "true",
 		            "level": "4",
 		            "parents": [
 			            {
@@ -330,7 +330,7 @@
 			            },
 			            {
 			                "competitorIndex": "29",
-			                "lost": "false",
+			                "lost": "true",
 			                "level": "8",
 			                "parents": [
 				                {

@@ -162,7 +162,7 @@
 .viz-info-initiated {
 	width: 260px;
 	height: auto;
-	border: 1px solid $med-gray;
+	border: 1px solid $light-gray;
 }
 
 .viz-info-instructions {
@@ -202,14 +202,14 @@
 }
 
 .viz-bracket-winner-mod {
-	@include absolute(225px n n 430px);
+	@include absolute(218px n n 430px);
 	text-align: center;
 	width: 80px;
 }
 
 .viz-champion-headshot-wrap {
 	float: none;
-	margin: 0 auto 10px;
+	margin: 0 auto 7px;
 	width: 60px;
 	height: 60px;
 	border: 1px solid $med-gray;
@@ -220,11 +220,12 @@
 
 .viz-champion-headshot {
 	@include user-select;
+	width: 60px;
 }
 
 .viz-champion-info-wrap {
 	border-top: 1px solid $med-gray;
-	padding: 10px 0 0; // Change to 5px 0 0 when reveal champion-name
+	padding: 7px 0 0; // Change to 5px 0 0 when reveal champion-name
 }
 
 .viz-champion-seed {
@@ -236,7 +237,7 @@
 }
 
 .viz-champion-name {
-	display: none;
+	// display: none;
 	padding: 0;
 	margin: 0 0 5px;
 	font-size: 12px;
@@ -280,18 +281,13 @@
 }
 
 .viz-bracket-left-finals-surrogate {
-	display: none; // Reveal when we have a winner and you've set the ID
+	// display: none; // Reveal when we have a winner and you've set the ID
 	position: absolute;
 	width: 100px;
-	top: 245px;
+	top: 160px;
 	left: 411px;
 	cursor: pointer;
 }
-
-
-
-// TOOLTIP POSITIONING
-// THIS IS A HORRIBLE HACK TO GET AROUND THE FACT THAT WE 
 
 
 

@@ -11,6 +11,7 @@
 }
 
 .viz-quiz {
+	display: none;
 	max-width: 634px;
 	margin: 0 auto;
 }
@@ -21,8 +22,8 @@
 
 .viz-quiz-left {
 	@media (min-width: $small) {
-		width: 49%;
-		float: left;
+		// width: 49%;
+		// float: left;
 	}
 }
 

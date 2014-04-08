@@ -26,10 +26,10 @@ var designerText = "";
 var indicesRound1 = [0, 7, 3, 4, 2, 5, 1, 6, 8, 15, 11, 12, 10, 13, 9, 14, 16, 23, 19, 20, 18, 21, 17, 22, 24, 31, 27, 28, 26, 29, 25, 30];
 var indicesRound2 = [0, 3, 2, 6, 15, 12, 13, 14, 16, 19, 21, 17, 24, 28, 29, 25];
 var indicesRound3 = [0, 2, 12, 13, 16, 17, 28, 29];
-var indicesRound4 = [16, 23, 17, 22];
-var indicesRound5 = [16, 23];
+var indicesRound4 = [0, 13, 17, 28];
+var indicesRound5 = [0, 17];
 
-var currentRound = indicesRound3;
+var currentRound = indicesRound5;
 
 // For rankings
 var divisions = {
@@ -75,15 +75,10 @@ var divisions = {
 		round3: [28, 29, 24, 25, 31, 30, 26, 27]
 	},
 	division5: {
-		roundNumber: 1,
-		roundArray: [1],
-		round1: [0, 1, 2, 3],
-		round2: [2, 3, 1, 0]
-	},
-	division6: {
-		roundNumber: 1,
-		roundArray: [1],
-		round1: [2]
+		roundNumber: 2,
+		roundArray: [1,2],
+		round1: [0, 13, 17, 28],
+		round2: [0, 17, 13, 28]
 	}
 };
 
@@ -110,7 +105,7 @@ d3.tsv(spreadsheetURL, function(error, myData) {
 	data = myData;
 	buildBracket(myData, 0, ".viz-bracket-left");
 	buildBracket(myData, 1, ".viz-bracket-right");
-	populateQuiz(myData);
+	// populateQuiz(myData);
 	populateRankings(myData);
 });
 
@@ -151,6 +146,7 @@ function buildBracket(data, leftRightIndex, target) {
 		.attr("height", height + margin.top + margin.bottom)
 		.append("g")
 		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
 
 	// d3.json("http://www.guswezerek.com/projects/bracket_madness/treeData.json", function(json) {
 	d3.json("treeData.json", function(json) {
@@ -228,11 +224,11 @@ function buildBracket(data, leftRightIndex, target) {
 				}
 
 				var desiredTargets = link.filter(function(d) {
-					if (d.target.competitorIndex === desiredIndex) {
+					if (d.target.competitorIndex === desiredIndex && d.target.lost != "true") {
 						return d;
 					}
 				});
-				var desiredPaths = getDesired(desiredTargets);
+				var desiredPaths = desiredTargets[0];
 
 				desiredTargets.moveToFront();
 
@@ -437,7 +433,68 @@ $(".viz-bracket").on("click", ".viz-bracket-designer-name", function() {
 
 });
 
-// Hiding the info mod if someone clics off it
+
+// Special case for surrogate
+// This code could easily be refactored into the handler above
+// But it's after midnight.
+
+$(".viz-bracket-left-finals-surrogate").on("click", function() {
+
+	var originalIndex = this.dataset.originalindex;
+	var divisionObj = data[originalIndex];
+	var infoMod = $(".viz-bracket-info-mod");
+	var colorsIndex = Math.floor(originalIndex / (data.length / 4));
+
+	// Variables for tooltip positioning
+	var forcedTarget = $(".viz-bracket-designer-name").first();
+	var bracket = forcedTarget.closest(".viz-bracket-wrapper");
+	var node = forcedTarget.parent()[0];
+	var position = forcedTarget.parent().attr("transform").replace("translate(","");
+	var pozLeft = parseInt(position.match(/\d+/)[0]);
+	var pozTop = parseInt(position.match( /,\d+/)[0].replace(",",""));
+
+	if (bracket.hasClass("viz-bracket-left")) {
+		if (node.hasClass("viz-leaf")) {
+			pozLeft += 10;
+			pozTop -= 36;
+		} else if (node.hasClass("viz-inner")) {
+			pozLeft += 15;
+			pozTop -= 24;
+		}
+	} else if (bracket.hasClass("viz-bracket-right")) {
+		if (node.hasClass("viz-leaf")) {
+			pozLeft += 270;
+			pozTop -= 36;
+		} else if (node.hasClass("viz-inner")) {
+			pozLeft += 265;
+			pozTop -= 25;
+		}
+	}
+
+
+	infoMod.find(".viz-info-instructions").fadeOut(200);
+
+	window.setTimeout(function() {
+
+		infoMod.addClass("viz-info-initiated");
+		infoMod.fadeIn(200);
+		infoMod.css({
+			"top": pozTop + "px",
+			"left": pozLeft + "px"
+		});
+		infoMod.find(".viz-headshot").css({
+			"right": 40 * originalIndex + "px",
+			"background-color": divisionColor[colorsIndex]
+		});
+		infoMod.find(".viz-designer-name").html(divisionObj.name);
+		infoMod.find(".viz-designer-job").html("(" + divisionObj.rank + ") " + divisionObj.job);
+		infoMod.find(".viz-bracket-designer-description").html(divisionObj.description);
+		infoMod.find(".viz-info-designer-wrapper").fadeIn(1000);
+	}, 200);
+
+});
+
+// Hiding the info mod if someone clicks off it
 $(document).click(function(e) {
     if (!$(".viz-info-initiated").find(e.target).length) {
         $(".viz-info-initiated").fadeOut(200);
@@ -516,7 +573,7 @@ function populateQuiz(data) {
             vizEven = false;
         }
 
-		if (i < (currentRound.length/2)) {
+		if (i < (currentRound.length)) {
         	toAppendStringLeft += quizTemplate(quizData.designers[i]);
         } else {
         	toAppendStringRight += quizTemplate(quizData.designers[i]);
@@ -662,13 +719,20 @@ function updateTopperText(container, roundNumber) {
 function setLosers(roundNumber, container) {
 	var designers = container.find(".viz-choice-item");
 
+	if (roundNumber == 2 && container.hasClass("viz-division-finals")) {
+		roundNumber = "finals";
+	}
+
 	// Reset losers
 	designers.removeClass("viz-choice-loser");
+
 
 	if (roundNumber == 2) {
 		designers.slice(-4).addClass("viz-choice-loser");
 	} else if (roundNumber == 3) {
 		designers.slice(-6).addClass("viz-choice-loser");
+	} else if (roundNumber === "finals") {
+		designers.slice(-2).addClass("viz-choice-loser");
 	}
 
 }
@@ -701,21 +765,29 @@ function elbowRight(d, i) {
 	return "M" + (baseWidth - d.source.y) + "," + d.source.x + "H" + (baseWidth - d.target.y) + "V" + d.target.x + (d.target.children ? "" : "h" + (-100));
 }
 
-function getDesired(desiredTargets) {
-	if (desiredTargets[0].length == 4) {
-		return desiredTargets[0];
-	} else {
-		return desiredTargets[0].slice(1);
-	}
-}
+// Badass deduping script in case mofos wanna try to game the system again
+// d3.csv("dedupe.csv", function(csv) {
+// 	var prevVal = "Dieter Rams";
+// 	var dupeCounter = 0;
 
+// 	var noDupes = csv.filter(function(d) {
+// 		if (d.Column === prevVal && dupeCounter > 4) {
+// 			dupeCounter++;
+// 		} else if (d.Column === prevVal) {
+// 			dupeCounter++;
+// 			return d;
+// 		} else {
+// 			dupeCounter = 0;
+// 			prevVal = d.Column;
+// 			return d;
+// 		}
+// 	});
 
+// 	var finalString = JSON.stringify(noDupes);
 
+// 	console.log(finalString);
 
-
-
-
-
+// });
 
 
 
