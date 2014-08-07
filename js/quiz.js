@@ -15,7 +15,7 @@ var spreadsheetURL = "/designers_1.tsv";
 
 // For template
 var vizEven = false;
-var vizQuiz = false;
+var vizQuiz = true;
 var quizTemplate = _.template( $(".viz-designer-template").html() );
 
 // For bracket
@@ -29,7 +29,7 @@ var indicesRound3 = [0, 2, 12, 13, 16, 17, 28, 29];
 var indicesRound4 = [0, 13, 17, 28];
 var indicesRound5 = [0, 17];
 
-var currentRound = indicesRound5;
+var currentRound = indicesRound3;
 
 // For rankings
 var divisions = {
@@ -105,7 +105,7 @@ d3.tsv(spreadsheetURL, function(error, myData) {
 	data = myData;
 	buildBracket(myData, 0, ".viz-bracket-left");
 	buildBracket(myData, 1, ".viz-bracket-right");
-	// populateQuiz(myData);
+	populateQuiz(myData);
 	populateRankings(myData);
 });
 
@@ -551,14 +551,14 @@ function populateQuiz(data) {
     // Keep in dot notation or else quizData won't stick
     myObj["designers"] = quizData;
     quizData = myObj;
-    
+
 
     // Compile the list for that round
     for (i = 0; i < quizData.designers.length; i++) {
     	// FOR WIDGET
     	quizData.designers[i].vizQuiz = true;
     	// END FOR WIDGET
-    	
+
         if (i % 2) {
         	// FOR WIDGET
 	    	quizData.designers[i].vizEven = true;
@@ -573,7 +573,7 @@ function populateQuiz(data) {
             vizEven = false;
         }
 
-		if (i < (currentRound.length)) {
+		if (i < (currentRound.length/2)) {
         	toAppendStringLeft += quizTemplate(quizData.designers[i]);
         } else {
         	toAppendStringRight += quizTemplate(quizData.designers[i]);
@@ -651,7 +651,7 @@ function convertAbs(designers, oldRoundNumber) {
 function convertCompetitors(designers, specs) {
 	designers.each(function(i) {
 		$(this).css({
-			"top": specs.currentPos[i], 
+			"top": specs.currentPos[i],
 			"width": specs.designerWidth
 		});
 	});

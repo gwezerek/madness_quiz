@@ -415,12 +415,20 @@
 .viz-choice-item:nth-child(2n) .viz-vs {
   display: block;
 }
-/* line 122, ../sass/partials/_base.scss */
+/* line 121, ../sass/partials/_base.scss */
+.viz-choice-item:nth-child(2n) .viz-designer-description {
+  padding: 10px 0 0;
+}
+/* line 125, ../sass/partials/_base.scss */
+.viz-choice-item:nth-of-type(1) {
+  padding: 0 0 5px;
+}
+/* line 128, ../sass/partials/_base.scss */
 .viz-choice-item:last-of-type {
   padding-bottom: 0;
 }
 
-/* line 127, ../sass/partials/_base.scss */
+/* line 133, ../sass/partials/_base.scss */
 .viz-choices-group {
   -webkit-transition: width 0.2s ease-in-out;
   -moz-transition: width 0.2s ease-in-out;
@@ -433,30 +441,30 @@
   vertical-align: top;
 }
 @media (min-width: 620px) {
-  /* line 127, ../sass/partials/_base.scss */
+  /* line 133, ../sass/partials/_base.scss */
   .viz-choices-group {
     display: inline-block;
     width: 100%;
   }
 }
-/* line 138, ../sass/partials/_base.scss */
+/* line 144, ../sass/partials/_base.scss */
 .viz-choices-group .viz-choice-item {
   margin-bottom: 0;
 }
 
-/* line 143, ../sass/partials/_base.scss */
+/* line 149, ../sass/partials/_base.scss */
 .viz-header-wrapper {
   *zoom: 1;
   position: relative;
 }
-/* line 38, ../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/gem/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .viz-header-wrapper:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 148, ../sass/partials/_base.scss */
+/* line 154, ../sass/partials/_base.scss */
 .viz-designer-description {
   display: none;
   margin: 0px;
@@ -467,7 +475,7 @@
   line-height: 140%;
 }
 
-/* line 158, ../sass/partials/_base.scss */
+/* line 164, ../sass/partials/_base.scss */
 .viz-headshot-wrap {
   position: relative;
   float: left;
@@ -476,7 +484,7 @@
   height: 40px;
 }
 
-/* line 167, ../sass/partials/_base.scss */
+/* line 173, ../sass/partials/_base.scss */
 .viz-headshot {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -494,7 +502,7 @@
   height: 40px;
 }
 
-/* line 175, ../sass/partials/_base.scss */
+/* line 181, ../sass/partials/_base.scss */
 .viz-designer-name {
   -webkit-transition: color 0.2s ease-in-out;
   -moz-transition: color 0.2s ease-in-out;
@@ -506,7 +514,7 @@
   font-size: 13px;
 }
 
-/* line 183, ../sass/partials/_base.scss */
+/* line 189, ../sass/partials/_base.scss */
 .viz-designer-job {
   display: block;
   margin: 0;
@@ -515,14 +523,14 @@
   font-size: 11px;
 }
 
-/* line 191, ../sass/partials/_base.scss */
+/* line 197, ../sass/partials/_base.scss */
 .viz-designer-header-mod {
   left: 47px;
   padding-right: 35px;
   margin-top: 1px;
 }
 
-/* line 198, ../sass/partials/_base.scss */
+/* line 204, ../sass/partials/_base.scss */
 .viz-vs {
   -webkit-transition: opacity 0.2s ease-in-out;
   -moz-transition: opacity 0.2s ease-in-out;
@@ -549,7 +557,7 @@
   .viz-quiz-wrapper {
     *zoom: 1;
   }
-  /* line 38, ../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/gem/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
   .viz-quiz-wrapper:after {
     content: "";
     display: table;
@@ -559,9 +567,16 @@
 
 /* line 13, ../sass/partials/_quiz.scss */
 .viz-quiz {
-  display: none;
   max-width: 634px;
   margin: 0 auto;
+}
+
+@media (min-width: 620px) {
+  /* line 23, ../sass/partials/_quiz.scss */
+  .viz-quiz-left {
+    width: 49%;
+    float: left;
+  }
 }
 
 @media (min-width: 620px) {
@@ -677,7 +692,7 @@
   padding: 0;
   list-style-type: none;
 }
-/* line 38, ../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/gem/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .viz-division-list:after {
   content: "";
   display: table;
