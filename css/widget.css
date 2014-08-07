@@ -936,6 +936,7 @@
 
 /* line 239, ../sass/partials/_bracket.scss */
 .viz-champion-name {
+  display: none;
   padding: 0;
   margin: 0 0 5px;
   font-size: 12px;

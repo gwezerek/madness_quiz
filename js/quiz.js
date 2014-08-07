@@ -7,7 +7,7 @@ var data = "";
 var i = 0;
 var formURL = "https://docs.google.com/forms/d/17DH9Pz93-dSye9QCFmrO27INIlCZwXhFtQ9EV0IOGo0/formResponse"; // Example: "https://docs.google.com/forms/d/KEYGOESHERE/formResponse"
 // var spreadsheetURL = "http://www.guswezerek.com/projects/bracket_madness/designers_1.tsv";
-var spreadsheetURL = "/designers_1.tsv";
+var spreadsheetURL = "./designers_1.tsv";
 // var spreadsheetURL = "http://www.fastcodesign.com/asset_files/-/2014/03/19/designers_1.tsv";
 
 //Dynamic url
@@ -149,7 +149,7 @@ function buildBracket(data, leftRightIndex, target) {
 
 
 	// d3.json("http://www.guswezerek.com/projects/bracket_madness/treeData.json", function(json) {
-	d3.json("treeData.json", function(json) {
+	d3.json("./treeData.json", function(json) {
 
 		var nodes = tree.nodes(json.parents[leftRightIndex]);
 
