@@ -224,11 +224,20 @@ function buildBracket(data, leftRightIndex, target) {
 				}
 
 				var desiredTargets = link.filter(function(d) {
-					if (d.target.competitorIndex === desiredIndex && d.target.lost != "true") {
-						return d;
-					}
-				});
-				var desiredPaths = desiredTargets[0];
+                    if (d.target.competitorIndex === desiredIndex) {
+                        return d;
+                    }
+                });
+                var desiredPaths = getDesired(desiredTargets);
+
+
+                // For final rounds
+    //             var desiredTargets = link.filter(function(d) {
+				// 	if (d.target.competitorIndex === desiredIndex && d.target.lost != "true") {
+				// 		return d;
+				// 	}
+				// });
+				// var desiredPaths = desiredTargets[0];
 
 				desiredTargets.moveToFront();
 
